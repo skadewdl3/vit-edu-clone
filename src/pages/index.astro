@@ -1,0 +1,11 @@
+---
+import Counter from '../components/Counter'
+import SiteLayout from '../layouts/SiteLayout.astro';
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+---
+
+<SiteLayout>
+	<Counter client:load />
+</SiteLayout>
