@@ -6,7 +6,10 @@
 export {}
 declare global {
   const Counter: typeof import('../components/Counter')['default']
+  const Counter2: typeof import('../components/Counter2')['default']
+  const Menu: typeof import('../components/Menu')['default']
   const createRef: typeof import('react')['createRef']
+  const defineStore: typeof import('pinia')['defineStore']
   const forwardRef: typeof import('react')['forwardRef']
   const getMetadata: typeof import('../utils/utils.js')['getMetadata']
   const getVariable: typeof import('../utils/utils.js')['getVariable']

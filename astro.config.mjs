@@ -21,11 +21,14 @@ const autoImportConfig = {
   dirs: [
     resolve(__dirname, 'src', 'utils', '**'),
     resolve(__dirname, 'src', 'components', '**'),
+    resolve(__dirname, 'src', 'store', '**'),
   ],
   imports: [
-    'react',
     {
       react: ['useState', 'useEffect'],
+    },
+    {
+      pinia: ['defineStore'],
     },
   ],
   dts: resolve(__dirname, 'src', 'types', 'env.d.ts'),

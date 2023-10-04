@@ -8,6 +8,7 @@
       "@utils/*": ["src/utils/*"],
       "@pages/*": ["src/pages/*"],
       "@layouts/*": ["src/layouts/*"],
+      "@assets/*": ["src/assets/*"]
     },
 
     // type definitions for astro and auto-imports
