@@ -2,6 +2,9 @@
 import { XCircleIcon } from '@heroicons/vue/24/outline'
 import type { MenuSection, MenuSectionDependent } from '@typing/menu'
 import { ref } from 'vue'
+import {useStore} from '@nanostores/vue'
+import { isMenuOpen } from '@store/menu'
+
 
 const sections: MenuSection[] = [
   {
@@ -140,6 +143,8 @@ const sections: MenuSection[] = [
 const activeSection = ref(-1)
 const activeSubsection = ref(-1)
 
+const menuOpen = useStore(isMenuOpen)
+
 console.log(typeof sections[0])
 </script>
 
@@ -166,7 +171,8 @@ console.log(typeof sections[0])
       </div>
       <button
         class="menu-close text-3xl flex items-center justify-end cursor-pointer text-gray-400 hover:text-white transition-colors"
-      >
+        @click="isMenuOpen.set(false)"
+        >
         Close <XCircleIcon class="pl-2 w-16" />
       </button>
     </div>

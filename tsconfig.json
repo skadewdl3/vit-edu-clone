@@ -11,7 +11,7 @@
         "src/utils/*"
       ],
       "@pages/*": [
-        "src/pages/*"
+        "src/pages-vue/*"
       ],
       "@layouts/*": [
         "src/layouts/*"
@@ -21,6 +21,10 @@
       ],
       "@typing/*": [
         "src/typing/*"
+      ],
+
+      "@store/*": [
+        "src/store/*"
       ]
     },
     "types": [
