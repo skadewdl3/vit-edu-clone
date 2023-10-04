@@ -2,7 +2,6 @@
 import { defineConfig } from 'astro/config'
 
 // Astro plugins for react and tailwind setup
-import react from '@astrojs/react'
 import tailwind from '@astrojs/tailwind'
 
 // Node.js path module
@@ -11,13 +10,13 @@ import { fileURLToPath } from 'url'
 
 // auto-import plugin
 import AutoImport from 'unplugin-auto-import/astro'
-
+import vue from '@astrojs/vue'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
 // For automaticaly importing react, react-dom and hooks
 const autoImportConfig = {
-  include: [/\.[tj]sx?$/],
+  include: [/\.[tj]s+.vue?$/],
   dirs: [
     resolve(__dirname, 'src', 'utils', '**'),
     resolve(__dirname, 'src', 'components', '**'),
@@ -25,18 +24,15 @@ const autoImportConfig = {
   ],
   imports: [
     {
-      react: ['useState', 'useEffect'],
-    },
-    {
-      pinia: ['defineStore'],
+      vue: ['ref', 'watch', 'computed', 'onMounted', 'onUnmounted'],
     },
   ],
-  dts: resolve(__dirname, 'src', 'types', 'env.d.ts'),
+  dts: resolve(__dirname, 'src', 'auto-imports.d.ts'),
 }
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), tailwind(), AutoImport(autoImportConfig)],
+  integrations: [vue(), tailwind(), AutoImport(autoImportConfig)],
   vite: {
     css: {
       preprocessorOptions: {

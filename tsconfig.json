@@ -1,22 +1,31 @@
 {
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
-    // aliases for paths in tsconfig.json
     "baseUrl": ".",
+    "verbatimModuleSyntax": true,
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@utils/*": ["src/utils/*"],
-      "@pages/*": ["src/pages/*"],
-      "@layouts/*": ["src/layouts/*"],
-      "@assets/*": ["src/assets/*"]
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ],
+      "@pages/*": [
+        "src/pages/*"
+      ],
+      "@layouts/*": [
+        "src/layouts/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
+      ],
+      "@typing/*": [
+        "src/typing/*"
+      ]
     },
-
-    // type definitions for astro and auto-imports
-    "types": ["astro/client", "./src/types/*.d.ts"],
-    
-    // type checking options
-    "jsx": "react-jsx",
-    "jsxImportSource": "react",
+    "types": [
+      "astro/client",
+    ],
     "allowJs": true
   }
 }
