@@ -5,6 +5,10 @@ import { ref } from 'vue'
 
 const sections: MenuSection[] = [
   {
+    name: 'Test',
+    route: '/heheboi',
+  },
+  {
     name: 'Academics',
     sections: [
       {
@@ -134,16 +138,18 @@ const sections: MenuSection[] = [
 ]
 
 const activeSection = ref(-1)
-const activeSubection = ref(-1)
+const activeSubsection = ref(-1)
 
 console.log(typeof sections[0])
 </script>
 
 <template>
   <div
-    class="menu absolute top-0 left-0 w-screen h-screen bg-black px-16 py-8 text-white"
+    class="menu absolute top-0 left-0 w-screen h-screen bg-stone-950 px-16 py-4 text-white"
   >
-    <div class="menu-bar w-full bg-red flex items-center justify-between">
+    <div
+      class="menu-bar w-full my-4 mb-40 bg-red flex items-center justify-between"
+    >
       <div class="menu-bar-left flex flex-col items-start justify-center">
         <div class="menu-logo-main flex items-end justify-start">
           <img
@@ -165,13 +171,14 @@ console.log(typeof sections[0])
       </button>
     </div>
 
-    <div class="menu-content">
+    <!-- <div class="menu-content">
       <div
-        class="menu-section cursor-pointer"
+        class="menu-section font-heading text-8xl px-20 my-20 cursor-pointer"
         v-for="(section, sectionIndex) in sections"
         @click="activeSection = sectionIndex"
       >
-        {{ section.name }}
+        <a v-if="!section['sections']" :href="section['route']">{{ section.name }}</a>
+        <p v-else>{{ section.name }}</p>
         <div
           class="menu-subsections"
           v-if="section['sections'] && sectionIndex == activeSection"
@@ -179,25 +186,82 @@ console.log(typeof sections[0])
           <div
             class="menu-subsection cursor-pointer"
             v-for="(subsection, subsectionIndex) in section['sections']"
-            @click="activeSubection = subsectionIndex"
+            @click="activeSubsection = subsectionIndex"
           >
-            {{ subsection.name }}
+            <a v-if="!subsection['sections']" :href="subsection['route']">{{ subsection.name }}</a>
+            <p v-else>{{ subsection.name }}</p>
             <div
               class="menu-subsubsections"
-              v-if="subsection['sections'] && sectionIndex == activeSubection"
+              v-if="subsection['sections'] && subsectionIndex == activeSubsection"
             >
               <div
-                class="menu-subsection"
+                class="menu-subsubsection"
                 v-for="subsubsection in subsection['sections']"
               >
-                {{ subsubsection.name }}
+                <a :href="subsubsection['route']">{{ subsubsection.name }}</a>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div> -->
+    <div class="menu-content grid grid-cols-3 w-full px-20">
+      <div class="menu-sections text-8xl font-heading">
+        <div
+          class="menu-section my-12 cursor-pointer"
+          v-for="(section, sectionIndex) in sections"
+          @click="activeSection = sectionIndex"
+        >
+          <a v-if="!section['sections']" :href="section['route']">
+            {{ section.name }}
+          </a>
+          <p v-else>{{ section.name }}</p>
+        </div>
+      </div>
+
+      <Transition name="slideInFromLeft">
+        <div class="menu-subsections text-4xl" v-if="activeSection >= 0" :key="activeSection">
+          <div
+            class="menu-subsection my-8 cursor-pointer"
+            v-for="(subsection, subsectionIndex) in sections[activeSection][
+              'sections'
+            ]"
+            @click="activeSubsection = subsectionIndex"
+          >
+            <a v-if="!subsection['sections']" :href="subsection['route']">
+              {{ subsection.name }}
+            </a>
+            <p v-else>{{ subsection.name }}</p>
+          </div>
+        </div>
+      </Transition>
+
+      <Transition name="slideInFromLeft">
+        <div
+          class="menu-subsubsections text-3xl"
+          v-if="activeSection >= 0 && activeSubsection >= 0"
+          :key="activeSubsection"
+        >
+          <div
+            class="menu-subsubsection  my-8 cursor-pointer"
+            v-for="subsubsection in sections[activeSection]['sections'][
+              activeSubsection
+            ]['sections']"
+          >
+            <a :href="subsubsection.route">{{ subsubsection.name }}</a>
+          </div>
+        </div>
+      </Transition>
     </div>
   </div>
 </template>
 
-<style></style>
+<style lang="stylus" scoped>
+.slideInFromLeft-enter-active
+  transition all 0.5s ease
+
+.slideInFromLeft-enter-from, .slideInFromLeft-leave-to 
+  transform translateX(-4%)
+  opacity 0
+
+</style>
