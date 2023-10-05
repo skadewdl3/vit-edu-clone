@@ -29,6 +29,7 @@
     },
     "types": [
       "astro/client",
+      "src/auto-imports.d.ts"
     ],
     "allowJs": true
   }

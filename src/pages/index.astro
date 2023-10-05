@@ -1,12 +1,63 @@
 ---
-import Home from '@pages/Home.vue'
-import Menu from '@components/Menu.vue'
+import Menu from '@components/Menu.vapor.vue'
 import SiteLayout from '@layouts/SiteLayout.astro'
-
+import { Image } from 'astro:assets'
+import logo from '@assets/images/logo.png'
+import Icon from '@components/Icon.vapor.vue'
+const openMenu = () => {
+  isMenuOpen.set(true)
+  console.log(isMenuOpen.get())
+}
 ---
 
+<script>
+  import { isMenuOpen } from '@store/menu'
+
+  const openMenu = () => isMenuOpen.set(true)
+  const closeMenu = () => isMenuOpen.set(false)
+
+  document.querySelector('.menu-trigger').addEventListener('click', openMenu)
+</script>
+
 <SiteLayout>
-  <Home client:load>
-    <Menu client:visible />
-  </Home>
+  <button class="menu-trigger">Click me</button>
+  <!-- The Menu Island contains javascript for navigation and options,
+  hence the client:load directive has been used -->
+  <Menu client:load>
+    <div
+      class="menu-bar w-full my-4 mb-40 bg-red flex items-center justify-between"
+      slot="menu-bar"
+      >
+      <div class="menu-bar-left flex flex-col items-start justify-center">
+        <div class="menu-logo-main flex items-end justify-start">
+          <div class="menu-logo-img w-28 aspect-square">
+
+            <!-- Using Astro's built in Image component gives better optimisation for images -->
+            <Image
+              slot="logo"
+              alt="Vishwakarma Institute of Technology Logo"
+              src={logo}
+            />
+          </div>
+          <div class="menu-logo font-heading text-6xl">ishwakarma</div>
+        </div>
+
+        <div class="menu-logo font-heading text-2xl px-28">
+          Institute of Technology
+        </div>
+      </div>
+      <button
+        class="menu-close text-3xl flex items-center justify-end cursor-pointer text-gray-400 hover:text-white transition-colors"
+      >
+        Close
+       
+       <!-- Even though Icon is also an island, it won't ship with any javascript.
+       It will be rendered on server and only html/css will be sent to browser. -->
+        <Icon name="x-circle" class="ml-4 w-16" />
+      </button>
+    </div>
+  </Menu>
 </SiteLayout>
+
+<style lang="stylus">
+</style>

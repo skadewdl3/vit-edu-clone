@@ -14,3 +14,14 @@ export const getMetadata = pathName => {
   }
   return metadata['/']
 }
+
+export const pascalize = s => {
+  let str = s.replace(/-./g, x => x[1].toUpperCase())
+  return str.charAt(0).toUpperCase() + str.slice(1)
+}
+
+export const evilDOMHack = (callback, timeout = 0) => {
+  setTimeout(() => {
+    callback()
+  }, timeout)
+}
