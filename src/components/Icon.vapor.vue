@@ -6,6 +6,7 @@
       required: true
     },
     class: {
+      required: false,
       default: ''
     }
   })

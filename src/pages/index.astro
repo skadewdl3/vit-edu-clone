@@ -1,6 +1,7 @@
 ---
 import Menu from '@components/Menu.vapor.vue'
 import SiteLayout from '@layouts/SiteLayout.astro'
+import NavbarLinks from '@components/NavbarLinks.vapor.vue'
 import { Image } from 'astro:assets'
 import logo from '@assets/images/logo.png'
 import Icon from '@components/Icon.vapor.vue'
@@ -20,44 +21,79 @@ const openMenu = () => {
 </script>
 
 <SiteLayout>
-  <button class="menu-trigger">Click me</button>
-  <!-- The Menu Island contains javascript for navigation and options,
-  hence the client:load directive has been used -->
-  <Menu client:load>
-    <div
-      class="menu-bar w-full my-4 mb-40 bg-red flex items-center justify-between"
-      slot="menu-bar"
-      >
-      <div class="menu-bar-left flex flex-col items-start justify-center">
-        <div class="menu-logo-main flex items-end justify-start">
-          <div class="menu-logo-img w-28 aspect-square">
-
-            <!-- Using Astro's built in Image component gives better optimisation for images -->
-            <Image
-              slot="logo"
-              alt="Vishwakarma Institute of Technology Logo"
-              src={logo}
-            />
+  <main class="w-screen h-screen">
+    <div class="home w-screen h-5/6">
+      <div class="navbar px-60 text-white py-8 w-full flex items-center justify-between">
+        <div class="navbar-left flex flex-col items-start justify-center">
+          <div class="menu-logo-main flex items-end justify-start">
+            <div class="menu-logo-img w-28 aspect-square">
+              <Image
+                slot="logo"
+                alt="Vishwakarma Institute of Technology Logo"
+                src={logo}
+              />
+            </div>
+            <div class="menu-logo font-heading text-6xl">ishwakarma</div>
           </div>
-          <div class="menu-logo font-heading text-6xl">ishwakarma</div>
-        </div>
 
-        <div class="menu-logo font-heading text-2xl px-28">
-          Institute of Technology
+          <div class="menu-logo font-heading text-2xl px-28">
+            Institute of Technology
+          </div>
+        </div>
+        <div class="navbar-right flex flex-col items-end justify-start w-[80%]">
+
+          <div class="navbar-right-top">
+            <button class="menu-trigger flex items-center justify-center text-4xl">
+              <span>Menu</span>
+              <Icon name="bars-2" class="w-8 ml-4" />
+            </button>
+          </div>
+          
+          <NavbarLinks client:load />
         </div>
       </div>
-      <button
-        class="menu-close text-3xl flex items-center justify-end cursor-pointer text-gray-400 hover:text-white transition-colors"
-      >
-        Close
-       
-       <!-- Even though Icon is also an island, it won't ship with any javascript.
-       It will be rendered on server and only html/css will be sent to browser. -->
-        <Icon name="x-circle" class="ml-4 w-16" />
-      </button>
+
+      <Menu client:load>
+        <div
+          class="menu-bar w-full my-4 mb-40 bg-red flex items-center justify-between"
+          slot="menu-bar"
+        >
+          <div class="menu-bar-left flex flex-col items-start justify-center">
+            <div class="menu-logo-main flex items-end justify-start">
+              <div class="menu-logo-img w-28 aspect-square">
+                <!-- Using Astro's built in Image component gives better optimisation for images -->
+                <Image
+                  slot="logo"
+                  alt="Vishwakarma Institute of Technology Logo"
+                  src={logo}
+                />
+              </div>
+              <div class="menu-logo font-heading text-6xl">ishwakarma</div>
+            </div>
+
+            <div class="menu-logo font-heading text-2xl px-28">
+              Institute of Technology
+            </div>
+          </div>
+          <button
+            class="menu-close text-3xl flex items-center justify-end cursor-pointer text-gray-400 hover:text-white transition-colors"
+          >
+            Close
+
+            <!-- Even though Icon is also an island, it won't ship with any javascript.
+               It will be rendered on server and only html/css will be sent to browser. -->
+            <Icon name="x-circle" class="ml-4 w-16" />
+          </button>
+        </div>
+      </Menu>
     </div>
-  </Menu>
+  </main>
 </SiteLayout>
 
 <style lang="stylus">
+  .home
+    background-image linear-gradient(to bottom, rgba(#000, 0.8), rgba(#000, 0.005)), linear-gradient(to bottom, rgba(#000, 0.1), rgba(#000, 0.1)), url('../assets/images/hero.jpeg')
+    background-repeat no-repeat
+    background-size 100%
+    background-position center
 </style>

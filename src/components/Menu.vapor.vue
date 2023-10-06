@@ -2,153 +2,24 @@
 import type { MenuSection } from '@typing/menu'
 import { ref, watch } from 'vue'
 import { useStore } from '@nanostores/vue'
-import { isMenuOpen } from '@store/menu'
-import { evilDOMHack } from '@utils/utils'
+import { isMenuOpen, activeSection as activeSectionAtom, activeSubsection as activeSubsectionAtom } from '@store/menu'
+import { evilDOMHack, sections } from '@utils/utils'
+import { StopCircleIcon } from '@heroicons/vue/24/outline'
 
-const sections: MenuSection[] = [
-  {
-    name: 'Test',
-    route: '/heheboi',
-  },
-  {
-    name: 'Academics',
-    sections: [
-      {
-        name: 'Syllabus',
-        route: '/academics/syllabus',
-      },
-      {
-        name: 'Courses',
-        route: '/academics/courses',
-      },
-      {
-        name: 'Timetable',
-        sections: [
-          {
-            name: 'First Year',
-            route: '/academics/timetable/fy',
-          },
-          {
-            name: 'Second Year',
-            route: '/academics/timetable/sy',
-          },
-          {
-            name: 'Third Year',
-            route: '/academics/timetable/ty',
-          },
-          {
-            name: 'Final Year',
-            route: '/academics/timetable/btech',
-          },
-        ],
-      },
-      {
-        name: 'Calendar',
-        sections: [
-          {
-            name: 'Academic Calendar',
-            route: '/academics/calendar/academic',
-          },
-          {
-            name: 'Examination Calendar',
-            route: '/academics/calendar/examination',
-          },
-          {
-            name: 'Holidays',
-            route: '/academics/calendar/holidays',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    name: 'Placements',
-    sections: [
-      {
-        name: 'Placement Statistics',
-        route: '/placements/statistics',
-      },
-      {
-        name: 'Recruiters',
-        route: '/placements/recruiters',
-      },
-      {
-        name: "MOU's",
-        route: '/placements/mous',
-      },
-      {
-        name: 'Enterpreneurs',
-        route: '/placements/enterpreneurs',
-      },
-      {
-        name: 'Higher Studies',
-        route: '/placements/higher-studies',
-      },
-    ],
-  },
-  {
-    name: 'Innovation',
-    sections: [
-      {
-        name: 'Research Grants',
-        route: '/innovation/grants',
-      },
-      {
-        name: 'Patents',
-        route: '/innovation/patents',
-      },
-      {
-        name: 'Faculty Research',
-        route: '/innovation/faculty',
-      },
-      {
-        name: 'Student Innovation',
-        route: '/innovation/student',
-      },
-    ],
-  },
-  {
-    name: 'In Focus',
-    sections: [
-      {
-        name: 'Student Clubs',
-        route: '/in-focus/clubs',
-      },
-      {
-        name: 'Stellar Achievements',
-        route: '/in-focus/achievements',
-      },
-      {
-        name: 'Alumni',
-        route: '/in-focus/alumni',
-      },
-    ],
-  },
-  {
-    name: 'News',
-    sections: [
-      {
-        name: 'IT Vishwa',
-        route: '/news/bulletin',
-      },
-      {
-        name: 'Events',
-        route: '/news/events',
-      },
-    ],
-  },
-]
-
-const activeSection = ref(-1)
-const activeSubsection = ref(-1)
+const activeSection = useStore(activeSectionAtom)
+const activeSubsection = useStore(activeSubsectionAtom)
 
 const menuOpen = useStore(isMenuOpen)
 
 const setSection = (sectionIndex: number) => {
-  activeSubsection.value = -1
+  activeSubsectionAtom.set(-1)
   evilDOMHack(() => {
-    activeSection.value = sectionIndex
+    activeSectionAtom.set(sectionIndex)
   })
+}
+
+const setSubsection = (subsectionIndex: number) => {
+  activeSubsectionAtom.set(subsectionIndex)
 }
 
 console.log(typeof sections[0])
@@ -159,14 +30,11 @@ if (!listenerAdded) {
   
 }
 
-const unwatch = watch(menuOpen, () => {
-  if (listenerAdded) {
-    unwatch()
-    return
-  }
+watch(menuOpen, () => {
   evilDOMHack(() => {
     document.querySelector('.menu-close').addEventListener('click', () => {
       isMenuOpen.set(false)
+      setSection(-1)
     })
   })
 })
@@ -219,7 +87,7 @@ const unwatch = watch(menuOpen, () => {
               v-for="(subsection, subsectionIndex) in sections[activeSection][
                 'sections'
               ]"
-              @click="activeSubsection = subsectionIndex"
+              @click="setSubsection(subsectionIndex)"
             >
               <a v-if="!subsection['sections']" :href="subsection['route']">
                 {{ subsection.name }}
