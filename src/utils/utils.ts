@@ -28,28 +28,40 @@ export const evilDOMHack = (callback, timeout = 0) => {
 }
 
 export const sections: MenuSection[] = [
-  {
-    name: 'Test',
-    route: '/heheboi',
-  },
+  // {
+  //   name: 'Test',
+  //   route: '/heheboi',
+  // },
   {
     name: 'Academics',
+    id: 'academics.webp',
     sections: [
+      {
+        name: 'Courses',
+        description: 'Learning at VIT breaks the boundaries of the classroom.',
+        sections: [
+          {
+            name: 'Second Year',
+            route: '/academics/courses/sy',
+          },
+          {
+            name: 'Third Year',
+            route: '/academics/courses/sy',
+          },
+          {
+            name: 'Final Year',
+            route: '/academics/courses/btech',
+          },
+        ],
+      },
       {
         name: 'Syllabus',
         route: '/academics/syllabus',
       },
-      {
-        name: 'Courses',
-        route: '/academics/courses',
-      },
+
       {
         name: 'Timetable',
         sections: [
-          {
-            name: 'First Year',
-            route: '/academics/timetable/fy',
-          },
           {
             name: 'Second Year',
             route: '/academics/timetable/sy',
@@ -85,6 +97,7 @@ export const sections: MenuSection[] = [
   },
   {
     name: 'Placements',
+    id: 'placements.jpg',
     sections: [
       {
         name: 'Placement Statistics',
@@ -110,6 +123,7 @@ export const sections: MenuSection[] = [
   },
   {
     name: 'Innovation',
+    id: 'innovation',
     sections: [
       {
         name: 'Research Grants',
@@ -131,6 +145,7 @@ export const sections: MenuSection[] = [
   },
   {
     name: 'In Focus',
+    id: 'in-focus',
     sections: [
       {
         name: 'Student Clubs',
@@ -148,6 +163,7 @@ export const sections: MenuSection[] = [
   },
   {
     name: 'News',
+    id: 'news',
     sections: [
       {
         name: 'IT Vishwa',
