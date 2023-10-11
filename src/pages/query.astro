@@ -1,0 +1,10 @@
+---
+import QueryComponent from '@components/Query.vapor.vue'
+import SiteLayout from '@layouts/SiteLayout.astro'
+
+export const prerender = false
+---
+
+<SiteLayout>
+  <QueryComponent client:load />
+</SiteLayout>

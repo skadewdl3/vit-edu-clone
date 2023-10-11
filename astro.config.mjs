@@ -32,6 +32,7 @@ const autoImportConfig = {
 
 // https://astro.build/config
 export default defineConfig({
+  output: 'hybrid',
   integrations: [vue(), tailwind(), AutoImport(autoImportConfig)],
   vite: {
     css: {
