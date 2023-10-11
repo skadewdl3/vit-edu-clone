@@ -1,0 +1,11 @@
+---
+import Courses from './CourseList.vapor.vue'
+import SiteLayout from '@layouts/SiteLayout.astro'
+
+const res = await fetch(`${Astro.url.origin}/api/courses/list`)
+let json = await res.json()
+---
+
+<SiteLayout>
+  <Courses courses={json[0].result} />
+</SiteLayout>

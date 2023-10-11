@@ -1,0 +1,26 @@
+---
+import SiteLayout from '@layouts/SiteLayout.astro'
+import Course from './Course.vapor.vue'
+const courseID = Astro.params.course_id
+
+const res = await fetch(
+  `${Astro.url.origin}/api/courses/details?courseID=${courseID}`,
+  {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  },
+)
+
+let teachers = await res.json()
+let teacherNames = teachers[0].result[0].teachers
+
+console.log(teacherNames)
+
+export const prerender = false
+---
+
+<SiteLayout>
+  {courseID}
+  <Course teachers={teacherNames} />
+</SiteLayout>
