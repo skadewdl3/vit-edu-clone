@@ -13,7 +13,6 @@
 
   const name = pascalize(props.name)
   name[0].toUpperCase()
-  console.log(name)
 
 const icon = Icons[`${name}Icon`]
 </script>

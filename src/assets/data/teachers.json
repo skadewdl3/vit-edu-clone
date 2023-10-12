@@ -1,0 +1,164 @@
+[
+  {
+    "prefix": "Dr.",
+    "first_name": "Premanand",
+    "middle_name": "P.",
+    "last_name": "Ghadekar",
+    "id": "premanand_ghadekar",
+    "qualification": ["ME/M. Tech", "PhD"],
+    "specialization": ["Image Processing", "IoT", "Embedded System"],
+    "designation": "Professor",
+    "join_date": "2003-01-21T00:00:00.000Z",
+    "designated_date": "2019-07-01T00:00:00.000Z",
+    "courses": ["Image Processing and CV", "Design Thinking"],
+    "courseIDs": ["ipcv", "dt"]
+  },
+  {
+    "prefix": "Dr.",
+    "first_name": "Priyadarshan",
+    "middle_name": "S.",
+    "last_name": "Dhabe",
+    "id": "priyadarshan_dhabe",
+    "qualification": ["ME/M. Tech", "PhD"],
+    "specialization": [
+      "Artificial Intelligence",
+      "GPU Computing",
+      "DBMS",
+      "Fuzzy Neural Network"
+    ],
+    "designation": "Professor",
+    "join_date": "2005-07-15T00:00:00.000Z",
+    "designated_date": "2019-07-01T00:00:00.000Z",
+    "courses": ["Artificial Intelligence", "Web Technology", "Design Thinking"],
+    "courseIDs": ["ai", "wt"]
+  },
+  {
+    "prefix": "Dr.",
+    "first_name": "Dr. Preeti",
+    "middle_name": "A.",
+    "last_name": "Bailke",
+    "id": "preeti_bailke",
+    "qualification": ["ME/M. Tech", "PhD"],
+    "specialization": ["Data Mining ", "Automata Theory", "Algorithm Analysis"],
+    "designation": "Associate Professor",
+    "join_date": "2003-07-02T00:00:00.000Z",
+    "designated_date": "2019-07-01T00:00:00.000Z",
+    "courses": [
+      "Automata Theory",
+      "Web Technology",
+      "Advanced Data Structures"
+    ],
+    "courseIDs": ["at", "wt", "ads"]
+  },
+  {
+    "prefix": "Dr.",
+    "first_name": "Dr. Kuldeep",
+    "middle_name": "B.",
+    "last_name": "Vayadande",
+    "id": "kuldeep_vayadande",
+    "qualification": ["ME/M. Tech", "PhD"],
+    "specialization": ["Automata Theory", "System Programming"],
+    "designation": "Assistant Professor",
+    "join_date": "2021-06-01T00:00:00.000Z",
+    "courses": [
+      "Digital Electronics and Microprocessor",
+      "Web Technology",
+      "From Campus to Corporate"
+    ],
+    "courseIDs": ["deam", "wt", "fcc"]
+  },
+  {
+    "prefix": "Dr.",
+    "first_name": "Kavita",
+    "middle_name": "A.",
+    "last_name": "Sultanpure",
+    "id": "kavita_sultanpure",
+    "qualification": ["ME/M. Tech", "PhD"],
+    "specialization": ["Cloud Computing"],
+    "designation": "Associate Professor",
+    "join_date": "2023-07-12T00:00:00.000Z",
+    "designated_date": "2023-07-12T00:00:00.000Z",
+    "courses": ["Advanced Data Structures", "Web Technology"],
+    "courseIDs": ["ads", "wt"]
+  },
+  {
+    "first_name": "Aparna",
+    "middle_name": "R.",
+    "last_name": "Sawant",
+    "id": "aparna_sawant",
+    "qualification": ["ME/M. Tech"],
+    "specialization": ["Operating Systems", "Web Technology"],
+    "designation": "Assistant Professor",
+    "join_date": "2006-07-18T00:00:00.000Z",
+    "courses": [
+      "Operating Systems",
+      "Web Technology",
+      "Advanced Data Structures"
+    ],
+    "courseIDs": ["os", "wt", "ads"]
+  },
+  {
+    "first_name": "Deepali",
+    "middle_name": "J.",
+    "last_name": "Joshi",
+    "id": "deepali_joshi",
+    "qualification": ["ME/M. Tech"],
+    "specialization": ["Software Engineering", "Data Science", "Data Mining"],
+    "designation": "Assistant Professor",
+    "join_date": "2008-05-15T00:00:00.000Z",
+    "courses": ["Software Design and Methodologies"],
+    "courseIDs": ["sdam"]
+  },
+  {
+    "first_name": "Deepali",
+    "middle_name": "R.",
+    "last_name": "Deshpande",
+    "id": "deepali_deshpande",
+    "qualification": ["ME/M. Tech"],
+    "specialization": ["Image Processing", "Wireless Sensor Network", "IoT"],
+    "designation": "Assistant Professor",
+    "join_date": "2007-02-02T00:00:00.000Z",
+    "courses": ["Digital Electronics and Microprocessor"],
+    "courseIDs": ["deam"]
+  },
+  {
+    "first_name": "Ranjana",
+    "middle_name": "S.",
+    "last_name": "Jadhav",
+    "id": "ranjana_jadhav",
+    "qualification": ["ME/M. Tech"],
+    "specialization": ["Computer Networks and Security", "NLP"],
+    "designation": "Assistant Professor",
+    "join_date": "2012-07-02T00:00:00.000Z",
+    "courses": ["Computer Networks"],
+    "courseIDs": ["cn"]
+  },
+  {
+    "first_name": "Varsha",
+    "middle_name": "R.",
+    "last_name": "Dange",
+    "id": "varsha_dange",
+    "qualification": ["ME/M. Tech"],
+    "specialization": ["Data Mining", "OOP", "DBMS"],
+    "designation": "Assistant Professor",
+    "join_date": "2019-07-01T00:00:00.000Z",
+    "courses": [],
+    "courseIDs": []
+  },
+  {
+    "first_name": "Pankaj",
+    "middle_name": "R.",
+    "last_name": "Kunekar",
+    "id": "pankaj_kunekar",
+    "qualification": ["ME/M. Tech"],
+    "specialization": ["Machine Learning", "Cyber Security", "Cloud Computing"],
+    "designation": "Assistant Professor",
+    "join_date": "2021-06-21T00:00:00.000Z",
+    "courses": [
+      "Advanced Data Structures",
+      "Computer Networks",
+      "Cyber Security and Privacy"
+    ],
+    "courseIDs": ["ads", "cn", "csap"]
+  }
+]

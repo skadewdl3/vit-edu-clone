@@ -13,9 +13,14 @@ const res = await fetch(
 )
 
 let teachers = await res.json()
-let teacherNames = teachers[0].result[0].teachers
+let first_names = teachers[0].result.first_names
+let last_names = teachers[0].result.last_names
+let prefixes = teachers[0].result.prefixes
 
-console.log(teacherNames)
+let teacherNames = first_names.map((name, index) => {
+  return `${prefixes[index] != null ? prefixes[index] + ' ' : ''}${name} ${
+    last_names[index]}`
+})
 
 export const prerender = false
 ---

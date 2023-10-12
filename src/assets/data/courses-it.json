@@ -1,0 +1,891 @@
+[
+  {
+    "code": "IT2275",
+    "id": "deam",
+    "title": "Digital Electronics and Microprocessor",
+    "prerequisites": ["Basic electronics system"],
+    "objectives": [
+      "To understand all the concepts of Logic Gates and Boolean Functions.",
+      "To learn about Combinational Logic and Sequential Logic Circuits.",
+      "To design Combinational Logic and Sequential Logic Circuits",
+      "To understand basics of 8086 Microprocessor architecture"
+    ],
+    "credits": 4,
+    "teaching_scheme": {
+      "theory": "2 Hours/Week",
+      "lab": "2 Hours/Week",
+      "tutorial": "1 Hour/Week"
+    },
+    "sections": [
+      {
+        "title": "Digital Fundamentals",
+        "topics": [
+          "Number Systems – Decimal, Binary, Octal, Hexadecimal",
+          "Codes – Binary, BCD, Excess 3, Gray",
+          "Sum of products and product of sums",
+          "Minterms and Maxterms",
+          "Standard representation for logic functions",
+          "Simplification of logic functions using K-map",
+          "Minimization of logical functions",
+          "Dont care conditions",
+          "Code converter",
+          "Characteristics of Digital IC’s"
+        ],
+        "hours": null
+      },
+      {
+        "title": "Combinational Digital Circuits",
+        "topics": [
+          "Adders, Subtractors",
+          "Multiplexers & De-multiplexers",
+          "Encoder: Priority encoders",
+          "Decoders: 74138",
+          "ALU: 74181",
+          "Parity generator and checker",
+          "BCD adder and subtractor"
+        ],
+        "hours": null
+      },
+      {
+        "title": "Sequential Circuit",
+        "topics": [
+          "Introduction of flip-flop (F.F), 1 bit memory cell",
+          "Clocked S-R F.F., J-K F.F. race around condition",
+          "M/S J-K F.F, flip-flop truth table, excitation table",
+          "Flip-flop conversion, flip-flop characteristics",
+          "T and D F.F",
+          "Design of 4 – bit UP-Down ripple counter using J-K flip-flop",
+          "Design of Synchronous 3 bit up/down counter",
+          "Mod-n counters (IC -7490, 7493)"
+        ],
+        "hours": null
+      },
+      {
+        "title": "Introduction to 8086 microprocessor",
+        "topics": [
+          "Internal Architecture",
+          "Generation of physical address 8086",
+          "8086 memory segmentation",
+          "Register Organization",
+          "Addressing modes: Immediate addressing, Register addressing, Direct addressing, Indirect addressing, Relative addressing, Indexed addressing, Bit inherent addressing, bit direct addressing",
+          "8086 Instructions types and Interrupt Structure",
+          "Instruction types, formats, timings",
+          "Data transfer instructions, Arithmetic instructions",
+          "Logical instructions, Branch instructions",
+          "Subroutine instructions, Bit manipulation instruction",
+          "8086 pin functions: Minimum & Maximum Mode System",
+          "Interrupt Structure, Interrupt service Routine",
+          "Interrupt Vector Table, Hardware and Software Interrupts",
+          "INTR, NMI, Interrupt Response",
+          "Multiprocessor Architecture UMA, NUMA, COMA MPP Processor",
+          "Loosely and Tightly coupled multiprocessors",
+          "Characteristics of multiprocessors & multiprocessing",
+          "Inter Processor communication network",
+          "Time shared bus, Crossbar switch",
+          "Interleaved memories S access, C access",
+          "Cache coherency and bus snooping and directory based protocols",
+          "Massively Parallel Processors (MPP)",
+          "Inter Processor Communication and Synchronization"
+        ],
+        "hours": null
+      }
+    ],
+    "practicals": [
+      "Verification of Logical Gates and Boolean Algebra",
+      "Code converters e.g. Excess-3 to BCD and vice versa using logical gates",
+      "Multiplexer - e.g. 16:1 Mux using 4:1 Mux (IC 74153)",
+      "Decoder – e.g. 2 bit comparator (IC 74138)",
+      "Synchronous Up /down counter using JK flip-flop",
+      "Sequences detector using JK flip flop",
+      "Study of 8086 Architecture and Execution of sample programs",
+      "Write 8086 ALP to find and count negative and positive number from signed array stored in memory and display magnitude of negative numbers",
+      "Write 8086 ALP to access marks of 5 subjects stored in array and find overall percentage and display grade according to it",
+      "Write 8086 ALP to perform block transfer operation. (Don’t use string operations). Data bytes in a block stored in one array transfer to another array",
+      "Write 8086 ALP for following operations on the string entered by the user. (Use Extern Far Procedure). a. String length b. Reverse of the String c. Palindrome"
+    ],
+    "textbooks": [
+      "Douglas Hall, 'Microprocessors and Interfacing', 2nd Edition, Tata McGraw Hill Publications, ISBN 0-07-025742-6",
+      "'Advanced 80386, programming techniques', James Turley, Tata McGraw Hill Publications, ISBN – 0-07-881342-5",
+      "Intel 80386 Programmer's Reference Manual 1986, Intel Corporation, Order no.: 231630- 011, December 1995",
+      "R.P. Jain, 'Modern Digital Electronics', 3rd Edition, Tata McGraw-Hill, 2003, ISBN 0 - 07 - 049492 – 4"
+    ],
+    "reference_books": [
+      "Ray Duncan, 'Advanced MS DOS Programming', 2nd Edition BPB Publications ISBN 0 – 07 – 048677 – 8",
+      "M. Mano, 'Digital Design', 3rd Edition, Pearson Education, 2002, ISBN - 81 - 7808 – 555 – 0",
+      "A. Malvino, D. Leach, 'Digital Principles and Applications', 5th Edition, Tata McGraw Hill, 2003, ISBN 0 - 07 - 047258 – 05"
+    ],
+    "outcomes": [
+      "Learn and illustrate the standard representation for logical functions",
+      "Explore the knowledge of Digital logic circuits",
+      "Design applications based on combinational and sequential circuits",
+      "Demonstrate the concepts of microprocessor systems",
+      "Adapt the knowledge based on microprocessor instructions and interrupts",
+      "Understand the concept of multitasking and multi-core processors"
+    ]
+  },
+  {
+    "code": "IT2004",
+    "id": "at",
+    "title": "Automata Theory",
+    "prerequisites": ["Basic Mathematics", "Programming"],
+    "objectives": [
+      "To design suitable computational model/s for accepting / recognizing a given formal language",
+      "To compare computational models with respect to their power in recognizing different types of languages",
+      "To understand the notion of un/decidability of problems"
+    ],
+    "credits": 2,
+    "teaching_scheme": {
+      "theory": "2 Hours/Week"
+    },
+    "relevance": "This course lays a strong foundation for higher studies as well as research. For higher studies, there are different courses such as ‘Program Analysis and Verification’ which are based on the concepts of computation theory. For Research scholars, it would help in understanding the type and class of problems, and to solve and prove certainty of the provided solution. It would also help software developers in building the logic of programs, exploring its mathematical proofs, generating hypothetical scenarios, designing various computing machines.",
+    "sections": [
+      {
+        "title": "Finite Automata",
+        "topics": [
+          "Automaton as a model of computation",
+          "Alphabets, Strings, Languages",
+          "Deterministic Finite Automata (DFA)",
+          "Nondeterministic finite Automata (NFA)",
+          "State Minimization algorithm",
+          "NFA with epsilon transition",
+          "pumping lemma"
+        ],
+        "hours": 5
+      },
+      {
+        "title": "Regular Expressions",
+        "topics": [
+          "Definition of Regular Expression (RE)",
+          "Applications of Regular Expression",
+          "Kleene’s Theorem: Equivalence of RE and DFA",
+          "Closure properties of Regular Languages",
+          "Myhill-Nerode theorem and its applications"
+        ],
+        "hours": 5
+      },
+      {
+        "title": "Grammars",
+        "topics": [
+          "Chomsky hierarchy",
+          "Context Free Grammars (CFG)",
+          "Derivation",
+          "Languages of CFG",
+          "Constructing CFG",
+          "Derivation trees",
+          "Ambiguity in CFGs",
+          "Removing ambiguity",
+          "CNF",
+          "GNF",
+          "Applications of CFG"
+        ],
+        "hours": 4
+      },
+      {
+        "title": "Pushdown Automata",
+        "topics": [
+          "Pushdown Automata (PDA)",
+          "Acceptance by final state / empty stack",
+          "Deterministic and Non-deterministic PDAs",
+          "Equivalence of PDA and CFG",
+          "Context Sensitive Languages",
+          "Context Sensitive Grammars",
+          "Linear Bounded Automata"
+        ],
+        "hours": 5
+      },
+      {
+        "title": "Turing Machine",
+        "topics": [
+          "TM definition",
+          "Instantaneous Description",
+          "Language acceptance",
+          "Robustness of TM",
+          "Equivalence of TM variants",
+          "Universal Turing Machine",
+          "TM as enumerator",
+          "Recursive and Recursively Enumerable languages and their closure properties",
+          "Church-Turing thesis"
+        ],
+        "hours": 5
+      },
+      {
+        "title": "Undecidability",
+        "topics": [
+          "Complexity classes",
+          "Decidability",
+          "Undecidability of halting problem",
+          "Post correspondence problem"
+        ],
+        "hours": 4
+      }
+    ],
+    "textbooks": [
+      "Hopcroft J, Motwani R, Ullman, Addison-Wesley, 'Introduction to Automata Theory, Languages and Computation', Second Edition, ISBN 81-7808-347-7",
+      "Michael Sipser, 'Introduction to Theory of Computation', Third Edition, Course Technology, ISBN 10: 053494728X"
+    ],
+    "reference_books": [
+      "Mishra K.L.P, N. Chandrasekaran, 'Theory of Computer Science: Automata, Languages and Computation', Third Edition, PHI, ISBN 978-8120329683",
+      "John C. Martin, 'Introduction to Languages and The Theory of Computation', Fourth Edition, McGraw Hill, ISBN 978-0-07-319146-1"
+    ],
+    "outcomes": [
+      "Students should be able to design Automata / Regular expression for given computational problems",
+      "Students should be able to correlate given computational model with its Formal Language",
+      "Students should be able to understand Chomsky hierarchy and write grammar for languages",
+      "Students should be able to design PDA / TM for given computational problem",
+      "Students should be able to analyze power of different computational models",
+      "Students should be able to understand complexity classes and un / decidability of problems"
+    ]
+  },
+  {
+    "code": "IT2274",
+    "id": "wt",
+    "title": "Web Technology",
+    "prerequisites": [
+      "Computer Programming",
+      "Database Management Systems",
+      "Computer Network"
+    ],
+    "objectives": [
+      "Learn the fundamental tags of HTML5 and CSS.",
+      "Obtain knowledge of JavaScript as a client-side technology in web development.",
+      "Understand the use of jQuery in dynamic website designing.",
+      "Acquire skills in server-side technologies such as PHP in web development.",
+      "Build the user interface or front end of complex websites using React.",
+      "Study building the backend of a web application using NodeJS framework."
+    ],
+    "credits": 4,
+    "teaching_scheme": {
+      "theory": "2 Hours/Week",
+      "tutorial": "1 Hour/Week",
+      "lab": "2 Hours/Week"
+    },
+    "relevance": "Web development is the work involved in developing a website for the Internet or an intranet. It ranges from developing a simple single static page to complex web-based applications. Most jobs available in the IT industry are web technology related.",
+    "sections": [
+      {
+        "title": "Introduction to Web Technology",
+        "topics": [
+          "Introduction to web technology, Internet and WWW, web site planning and design issues.",
+          "HTML5: Structure of HTML document",
+          "commenting, formatting tags, list tags, hyperlink tags, image, table tags, frame tags, form tags",
+          "CSS, Bootstrap",
+          "JSON"
+        ],
+        "hours": 6
+      },
+      {
+        "title": "Client-side technologies - JavaScript",
+        "topics": [
+          "Overview of JavaScript",
+          "Data types",
+          "Control Structures",
+          "Arrays",
+          "Functions and Scopes",
+          "Objects in JS",
+          "Form validation",
+          "DOM Introduction",
+          "DOM levels",
+          "DOM Objects, their properties and methods",
+          "Manipulating DOM"
+        ],
+        "hours": 6
+      },
+      {
+        "title": "Client-side technologies - JQuery",
+        "topics": [
+          "Introduction",
+          "Loading JQuery",
+          "Selecting elements",
+          "Changing styles",
+          "Creating elements",
+          "Appending elements",
+          "Removing elements",
+          "Handling events"
+        ],
+        "hours": 2
+      },
+      {
+        "title": "Server-side technologies - PHP",
+        "topics": [
+          "Introduction",
+          "Features",
+          "PHP syntax",
+          "Control structures",
+          "Functions",
+          "Arrays",
+          "String",
+          "Form Handling",
+          "File Handling",
+          "Session and Cookies",
+          "Error Handling",
+          "MySQL with PHP"
+        ],
+        "hours": 6
+      },
+      {
+        "title": "Client-side technologies - React",
+        "topics": [
+          "Introduction",
+          "Architecture",
+          "Components",
+          "JSX",
+          "Class",
+          "State",
+          "Props",
+          "Events",
+          "Render function",
+          "Forms",
+          "Lists",
+          "Router",
+          "Flux"
+        ],
+        "hours": 4
+      },
+      {
+        "title": "Server-side technologies - NodeJS",
+        "topics": [
+          "Introduction",
+          "Installation of Node JS",
+          "Node JS Modules",
+          "Node Package Manager (npm)",
+          "Creating Web server",
+          "File System",
+          "Express JS",
+          "Serving Static Resources",
+          "Database connectivity"
+        ],
+        "hours": 4
+      }
+    ],
+
+    "tutorials": [
+      "Learn various HTML tags",
+      "Use of Bootstrap to design a web page",
+      "Understand the use of JavaScript in form validation",
+      "Study of Cookies in PHP",
+      "Study of Session in PHP",
+      "Study of different ways of working with PHP and MySQL",
+      "Express Framework",
+      "Laravel Framework",
+      "RESTFul API",
+      "React Hooks",
+      "Node JS and relational databases",
+      "Node JS and NoSQL databases"
+    ],
+    "practicals": [
+      "Installation, configuration, and understanding working of XAMPP server for localhost.",
+      "Design and implement a web page to demonstrate the use of different HTML tags.",
+      "Design and develop a web page demonstrating the use of CSS tags.",
+      "Design and develop an HTML form for student registration.",
+      "Write a code for validation of student registration form using JavaScript.",
+      "Design and develop a web page to demonstrate various methods of objects in JavaScript like Array, String, Math, Date.",
+      "Design and develop a web page demonstrating various effects using jQuery.",
+      "Write a PHP program to create a simple calculator that can accept two numbers and perform operations like add, subtract, multiplication and divide. Validate input values and prompt/alerts for invalid values.",
+      "Design a dynamic web application using PHP and MYSQL as back-end to perform insert, delete, view and update operation.",
+      "Design a web page demonstrating file handling operations like open, read, write, append copy, move, delete and rename using NodeJS.",
+      "Design and implement a simple website using React."
+    ],
+    "projects": [
+      "Student Registration System",
+      "Tours and Travel System",
+      "Canteen Food Ordering and Management System.",
+      "Online Personal Counseling",
+      "Online Recruitment System",
+      "Farming Assistant System",
+      "Hospital Management System",
+      "Hostel Management System",
+      "Online Event Management",
+      "Online Bus/Railway/Airways Booking System",
+      "Online Banking System"
+    ],
+    "seminar": [
+      "Bootstrap",
+      "Spring Framework",
+      "Joomla",
+      "Sass",
+      "Java Servlets",
+      "Object Oriented PHP",
+      "Angular JS",
+      "VueJS",
+      "Django",
+      "Laravel"
+    ],
+    "group_discussion": [
+      "Web Services",
+      "Client Side Frameworks",
+      "Server Side Frameworks",
+      "Relational and NoSQL Databases",
+      "AJAX",
+      "Client Side Technologies",
+      "Server Side Technologies",
+      "Template Engine",
+      "Progressive Web Apps",
+      "Markup Languages"
+    ],
+    "home_assignment": [
+      {
+        "type": "Design",
+        "topics": [
+          "Design, Develop and Deploy social web applications using Bootstrap.",
+          "Design, Develop and Deploy web applications using CMS.",
+          "Design, Develop and Deploy web application for Electricity Billing System.",
+          "Design, Develop and Deploy web application for the department.",
+          "Design, Develop and Deploy web application for Medical Shop."
+        ]
+      },
+      {
+        "type": "Case Study",
+        "topics": ["Angular JS", "VueJS", "Django", "Flask", "Wordpress"]
+      },
+      {
+        "type": "Blog",
+        "topics": [
+          "Recent Web Development Trends",
+          "Databases for Web Developers",
+          "Web Services",
+          "Web Security",
+          "Web Evolution"
+        ]
+      },
+      {
+        "type": "Survey",
+        "topics": [
+          "Comparison of Web Services",
+          "Frameworks for Web Development",
+          "Scripting languages for Web Designing",
+          "Web Server Vs Application Server",
+          "Current Technologies for Web Development"
+        ]
+      }
+    ],
+    "assessment_scheme": [
+      "Home Assignment",
+      "ESE",
+      "CVV",
+      "Seminar",
+      "Group Discussion",
+      "LAB-Course Assignment and Project Evaluation"
+    ],
+    "textbooks": [
+      "Thomas A. Powell, Complete reference HTML, 4th edition, Tata McGraw-Hill Publications",
+      "Black book, Web Technologies: HTML, JS, PHP, Java, JSP, ASP.NET, XML and AJAX, Dreamtech Press",
+      "Dave Mercer, Allan Ken, Beginning PHP 5, Dreamtech Publications",
+      "Martin, M.G., Programming for Beginners: 6 Books in 1 – Swift+PHP+Java+Javascript+Html+CSS: Basic Fundamental Guide for Beginners, Independently published",
+      "Robin Nixon, Learning PHP, MySQL, JavaScript, CSS and HTML 5, 5th Edition, O’Reilly publication"
+    ],
+    "reference_books": [
+      "Beginning JavaScript, 5th Edition, Wrox Publication",
+      "Full Stack Javascript Development with MEAN, Adam Bretz, Colin J Ihrig, SPD, ISBN-13: 978-0992461256",
+      "Full-Stack React Projects, Shama Hoque, 1st Edition, Packt Publishing, ISBN-13 978-1788835534",
+      "Modern Full-Stack Development, Frank Zammetti, 1st Edition, Apress, ISBN-13 978-1484257371"
+    ],
+    "outcomes": [
+      "Design reliable, efficient, scalable front-end view of web pages using HTML5, CSS with Bootstrap framework.",
+      "Perform client-side web page validation and event handling using JavaScript.",
+      "Develop the web pages more dynamic and interactive using jQuery.",
+      "Deliver realistic and extensible lightweight web application using suitable server side web technology like PHP.",
+      "Design and implement User Interface for complex web applications using React.",
+      "Build server-side applications, real-time applications, and cross-platform applications using NodeJS framework."
+    ]
+  },
+  {
+    "code": "IT2266",
+    "id": "cn",
+    "title": "Computer Networks",
+    "prerequisites": ["Fundamentals of Computer", "C/C++ programming"],
+    "objectives": [
+      "Understand the importance of Computer Network and its usage.",
+      "Study error control and flow control techniques.",
+      "Solve real-world problems in the context of today’s internet (TCP/IP and UDP/IP).",
+      "Distinguish and relate various physical Medias, interfacing standards and adapters.",
+      "Implement mathematically and logically the working of computer protocols in abstract."
+    ],
+    "credits": 4,
+    "teaching_scheme": {
+      "theory": "2 Hours/Week",
+      "tutorial": "1 Hours/Week",
+      "lab": "2 Hours/Week"
+    },
+    "relevance": "A system of interconnected computers and computerized peripherals such as printers is called a computer network. This course will explore common network services and protocols such as email, web services, etc. Networking is an ever-growing domain in which there is a constant need for support.",
+    "sections": [
+      {
+        "title": "Introduction",
+        "topics": [
+          "Introduction to computer network, LAN, MAN, WAN, PAN, Ad hoc Networks, Network Architectures Client Server, Peer To Peer, Network Topologies Bus, ring, tree, star, mesh, hybrid.",
+          "Communication Models OSI Model, TCP/IP Model, Design issues for layers."
+        ],
+        "hours": null
+      },
+      {
+        "title": "Physical Layer",
+        "topics": [
+          "Transmission media Guided media, unguided media.",
+          "Transmission Modes Simplex, Half Duplex and Full Duplex.",
+          "Network Devices Hub, Repeater, Bridge, Switch, Router, Gateways and Brouter.",
+          "Spread spectrum signal, FHSS, DSSS."
+        ],
+        "hours": null
+      },
+      {
+        "title": "Data Link Layer",
+        "topics": [
+          "Logical Link Layer Services to Network Layer, Framing, Error Control and Flow Control.",
+          "Framing in LLC framing challenges, types of framing.",
+          "Error Control in LLC error detection, error correction, Parity Bits, Hamming Codes (11/12 bits) and CRC.",
+          "Flow Control Protocols Unrestricted Simplex, Stop and Wait, Sliding Window Protocol.",
+          "WAN Connectivity PPP and HDLC."
+        ],
+        "hours": null
+      },
+      {
+        "title": "Medium Access Control",
+        "topics": [
+          "Channel Allocation Static and Dynamic, Multiple Access Protocols Pure and Slotted ALOHA, CSMA, WDMA, IEEE 802.3 Standards and Frame Formats, CSMA/CD."
+        ],
+        "hours": null
+      },
+      {
+        "title": "Network Layer",
+        "topics": [
+          "Switching techniques, IP Protocol, IPv4 and IPv6 addressing schemes, Subnetting, NAT, CIDR, ICMP, Routing Protocols-- Distance Vector, Link State, Path Vector, Routing in Internet-- RIP, OSPF, BGP, Congestion control and QoS."
+        ],
+        "hours": null
+      },
+      {
+        "title": "Transport Layer",
+        "topics": [
+          "Services, Berkeley Sockets, Addressing, Connection establishment, Connection release, Flow control and buffering, Multiplexing, TCP, TCP Timer management, Quality of Service (QoS), Differentiated services, TCP and UDP for Wireless."
+        ],
+        "hours": null
+      },
+      {
+        "title": "Application Layer",
+        "topics": [
+          "Domain Name System (DNS), Hyper Text Transfer Protocol (HTTP), Email: SMTP, MIME, POP3, Webmail, FTP, TELNET, Dynamic Host Control Protocol (DHCP), Simple Network Management Protocol (SNMP)."
+        ],
+        "hours": null
+      }
+    ],
+    "tutorials": [
+      "Identification of various networks components",
+      "Establishing LAN",
+      "Installation of network device drivers",
+      "Use/installation of proxy server",
+      "Configuration of network devices in CISCO packet tracer (Windows/Linux)",
+      "Implement communication between various network devices using CISCO packet tracer (Windows/Linux)",
+      "Network traffic monitoring using Wireshark/Ethereal (Windows/Linux)"
+    ],
+    "practicals": [
+      "Study and implement various networking commands on terminal.",
+      "Use Socket programming to create Client and Server to send Hello message.",
+      "Write a program for error detection and correction for 7/8 bits ASCII codes using Hamming Codes or CRC. Demonstrate the packets captured traces using Wireshark Packet Analyzer Tool for peer-to-peer mode. (50% students will perform Hamming Code and others will perform CRC)",
+      "Write a program to simulate Go back N and Selective Repeat Modes of Sliding Window Protocol in peer-to-peer mode",
+      "Write a program to find class and type of a given IP address.",
+      "Write a program to demonstrate subnetting and find the subnet masks.",
+      "Write a program using TCP socket for wired network for the following: a. Say Hello to Each other (For all students) b. File transfer (For all students) c. Calculator (Arithmetic) (50% students) d. Calculator (Trigonometry) (50% students)",
+      "Write a program using UDP Sockets to enable file transfer (Script, Text, Audio and Video one file each) between two machines.",
+      "Write a program to implement: a. Network Routing: Shortest path routing, AODV. b. Analysis of congestion control (TCP and UDP).",
+      "Write a program to analyze the following packet formats captured through Wireshark for wired networks. 1. Ethernet 2. IP 3. TCP 4. UDP"
+    ],
+    "projects": [
+      "Write a program using TCP sockets for wired networks to implement a. Peer to Peer Chat b. Multi-User Chat Demonstrate the packets captured traces using Wireshark Packet Analyzer Tool for peer-to-peer mode.",
+      "Implementation of shortest path protocol",
+      "Implementation of string encryption and decryption",
+      "Implementation of character stuffing and destuffing",
+      "Execution and analysis of Network commands",
+      "To find out details of network from IP addressing scheme using ‘C’ code",
+      "Implement real-time Internet route optimization.",
+      "Implement Broadcast Server System.",
+      "Implement a real-time voting System.",
+      "Real-time packet capture and analysis for malwares in wireless networks."
+    ],
+    "seminar": [
+      "Asynchronous Transfer Mode",
+      "Need Of Multiplexing for Signal Modulation",
+      "TDM with PAM a case study",
+      "Noise signal",
+      "Basic Network Protocols",
+      "Manchester Vs Differential Manchester coding technique",
+      "Amplitude Shift Keying: Working and Applications",
+      "Nyquist Sampling Theorem",
+      "CDMA",
+      "Line coding Techniques with example"
+    ],
+    "group_discussion": [
+      "TCP/IP Model",
+      "Mobile IP",
+      "Congestion Control and QoS",
+      "Wireless Technology for Short range and long range",
+      "Application Protocols and its security",
+      "IP Protocols",
+      "Data Communication Issues in IP Networks and Solutions to it",
+      "Congestion control in hybrid networks",
+      "Issues in Real-time Audio and video transmission protocol.",
+      "IPV6"
+    ],
+    "home_assignment": [
+      {
+        "type": "Design",
+        "topics": [
+          "Enumerate the challenges in Line coding. Draw the line code for the sequence 010011110 using Polar NRZ--L and NRZ--1 schemes.",
+          "Design the procedure to configure TCP/IP network layer services.",
+          "Simulation of Routing Protocols using NS2",
+          "Simulation of FTP based Protocols using CISCO packet Tracer/ NS2",
+          "Simulation of Congestion Control Protocols Using NS2"
+        ]
+      },
+      {
+        "type": "Case Study",
+        "topics": [
+          "Amplitude and Frequency Modulation Technique",
+          "Digital to Analog and Analog to Digital converters",
+          "Study of Various VPNs",
+          "IoT Solutions to Current Network Requirement",
+          "Unix Solutions for Broadcast System"
+        ]
+      },
+      {
+        "type": "Blog",
+        "topics": [
+          "Communication Protocol",
+          "Emerging Trends in Computer Networks",
+          "Use of IoT in Networks",
+          "Cloud-based Network Solutions for real-world problems",
+          "Recent Trends in Computer Security"
+        ]
+      },
+      {
+        "type": "Surveys",
+        "topics": [
+          "Survey of wireless Technologies",
+          "Survey of Congestion control methodologies",
+          "Survey of Bluetooth Technology",
+          "Survey of Virtual Private Networks",
+          "Survey of ADHOC Networks"
+        ]
+      }
+    ],
+    "assessment_scheme": ["PPT/GD", "HA", "ESE", "Course Project", "CVV"],
+    "textbooks": [
+      "James F. Kurose, and Keith W. Ross, 'A Top--Down Approach,' 4th edition, Publisher: Addison--Wesley ISBN: 0--321--49770--8",
+      "Behrouz A. Forouzan, 'Data Communication and Networking', 4th edition, Tata McGraw Hill",
+      "Andrew S. Tanenbaum, 'Computer Networks', 5th Edition, Pearson Education"
+    ],
+    "reference_books": [
+      "Kurose, Ross, 'Computer Networking a Top Down Approach Featuring the Internet', Pearson; 6th edition (March 5, 2012), ISBN--10: 0132856204",
+      "Holger Karl and Andreas Willig, 'Protocols and Architectures for Wireless Sensor Network', Wiley, ISBN: 0--470--09510--5",
+      "C. Siva Ram Murthy and B. S. Manoj, 'Ad Hoc Wireless Networks: Architectures and Protocols', Prentice Hall, 2004"
+    ],
+    "outcomes": [
+      "Select network architecture, topology and essential components to design computer networks.",
+      "Estimate reliability issues based on error control, flow control and pipelining by using bandwidth, latency, throughput and efficiency.",
+      "Design mechanisms to demonstrate server channel allocation in wired and wireless computer networks",
+      "Analyze data flow between peer to peer in an IP network using Application, Transport and Network Layer Protocols",
+      "Demonstrate Network Connections Strategies ,Protocols and Technologies",
+      "Develop Client-Server architectures and prototypes by the means of correct standards, protocols and technologies"
+    ]
+  },
+  {
+    "code": "IT2265",
+    "id": "ads",
+    "title": "Advanced Data Structures",
+    "prerequisites": ["Basic Programming Skills (C/C++)"],
+    "objectives": [
+      "Impart the basic concepts of tree data structures and algorithms.",
+      "Understand tree usage in different applications.",
+      "Construct and implement applications using Graphs.",
+      "Understand Hashing and its applications.",
+      "Emphasize the importance of Heap data structures in developing and implementing efficient algorithms."
+    ],
+    "credits": 5,
+    "teaching_scheme": {
+      "theory": "3 Hours/Week",
+      "tutorial": "1 Hour/Week",
+      "lab": "2 Hours/Week"
+    },
+    "relevance": "This is a basic course for Computer Engineering and allied branches. It has high relevance in all domains of computer engineering such as in industries, research, etc., as a basic prerequisite course.",
+    "sections": [
+      {
+        "title": "Trees",
+        "topics": [
+          "Basic terminology, representation using array and linked lists.",
+          "Tree Traversals: Recursive and Non-recursive, Operations on binary tree: Finding Height, Leaf nodes, counting the number of Nodes, etc.",
+          "Construction of binary tree from traversals, Binary Search trees (BST): Insertion, deletion of a node from BST.",
+          "Threaded Binary tree (TBT): Creation and traversals on TBT, AVL tree.",
+          "Advanced Trees: Red-Black Trees, B-Trees and B+ Trees, Splay trees, Tries and compressed tries, Suffix Trees.",
+          "Randomized Data Structures: Skip Lists and Treaps."
+        ],
+        "hours": null
+      },
+      {
+        "title": "Graph",
+        "topics": [
+          "Terminology and representation using Adjacency Matrix and Adjacency Lists.",
+          "Graph Traversals and Application: BFS and DFS.",
+          "Minimum Spanning tree: Prims and Kruskal’s Algorithm.",
+          "Shortest Path Algorithms: Single Source All destinations, all-pair shortest path algorithm, Topological Sort."
+        ],
+        "hours": null
+      },
+      {
+        "title": "Hashing",
+        "topics": [
+          "Hashing techniques, Hash table, Hash functions.",
+          "Collision handling and Collision resolution techniques, Cuckoo Hashing.",
+          "Dynamic Hashing: Motivation for Dynamic Hashing, Dynamic Hashing using Directories, directory less Dynamic Hashing.",
+          "Bloom Filters Bloom Filter Design."
+        ],
+        "hours": null
+      },
+      {
+        "title": "Heap",
+        "topics": [
+          "Amortized Analysis",
+          "Double Ended Priority queues",
+          "Leftist Trees",
+          "Binomial Heaps, Fibonacci Heaps, skew heaps, pairing heaps."
+        ],
+        "hours": null
+      }
+    ],
+    "tutorials": [
+      "Sorting Techniques: Quick, bucket sort, etc.",
+      "Searching Techniques: Ternary Search, Fibonacci Search.",
+      "Problem-solving using stack (Maze problem, Tower of Hanoi).",
+      "Expression conversion like infix to prefix and postfix and vice versa.",
+      "Priority Queues Job Scheduling Algorithms.",
+      "Generalized Linked Lists.",
+      "AVL tree.",
+      "Routing network problems.",
+      "Design of Hashing Functions and Collision Resolution techniques.",
+      "Cuckoo Hashing."
+    ],
+    "practicals": [
+      "Assignment based on Stack Application (Expression conversion etc.)",
+      "Assignment based on BST operations (Create, Insert, Delete, and Traversals).",
+      "Assignment based on various operations on Binary Tree (Mirror image, Height, Leaf node display, Level-wise display, etc.)",
+      "Assignment based on AVL (insert, delete, display).",
+      "Assignment based on Red-black tree (insert, delete, display).",
+      "Assignment based on B tree (insert, delete, display).",
+      "Assignment based on tries (insert, delete, display).",
+      "Assignment based on DFS and BFS.",
+      "Assignment based on MST using Prim’s and Kruskal’s Algorithm.",
+      "Assignment based on Finding the shortest path in the given Graph.",
+      "Assignment based on Hashing.",
+      "Assignment based on Directory-based dynamic hashing.",
+      "Assignment based on Directory-less dynamic hashing.",
+      "Assignment based on Binomial heap (insert, delete, display)."
+    ],
+    "projects": [
+      "Finding Nearest Neighbors.",
+      "Calendar Application using File handling.",
+      "Path finder in Maze.",
+      "Word Completion Using Tire.",
+      "Bloom Filters.",
+      "Different Management Systems.",
+      "Scheduling Applications and Simulation.",
+      "Shortest Path Applications. (Kirchhoff’s Circuit, TSP with Scenario.)",
+      "Efficient Storage and Data Retrieval Systems.",
+      "Different Gaming Application."
+    ],
+    "assessment_scheme": "ESE, CVV, Lab Assignment, Lab Exam, Course Project",
+    "textbooks": [
+      "James F. Kurose, and Keith W. Ross, 'A Top--Down Approach,' 4th edition, Publisher: Addison--Wesley ISBN: 0--321--49770--8",
+      "Behrouz A. Forouzan, 'Data Communication and Networking', 4th edition, Tata McGraw Hill",
+      "Andrew S. Tanenbaum, 'Computer Networks', 5th Edition, Pearson Education"
+    ],
+    "reference_books": [
+      "J. Tremblay, An Introduction to Data Structures with Applications, TMH Publication, null",
+      "G. A.V, PAI, Data Structures and Algorithms, McGraw Hill, ISBN-13: 978-0-07-066726-6"
+    ],
+    "outcomes": [
+      "To demonstrate the use of binary tree traversals. (2)",
+      "To interpret the tree data structures with their memory representations and time complexity analysis. (3)",
+      "To use advanced trees for solving real-world problems (4)",
+      "To analyze the Graph data structure with respect to Graph applications. (3)",
+      "To design the appropriate data structure by applying various hashing Techniques. (4)",
+      "To select heap data structure to characterize real data. (5)"
+    ]
+  },
+  {
+    "code": "IT2272",
+    "title": "Engineering Design and Innovation III",
+    "id": "edai3",
+    "prerequisites": ["Problem Based Learning"],
+    "credits": 4,
+    "teaching_scheme": {
+      "theory": "1 Hour/Week",
+      "lab": "6 Hours/Week"
+    },
+    "objectives": [
+      "Develop critical thinking and problem-solving ability by exploring and proposing solutions to realistic/social problems.",
+      "Evaluate alternative approaches and justify the use of selected tools and methods.",
+      "Emphasize learning activities that are long-term, interdisciplinary, and student-centric.",
+      "Engage students in rich and authentic learning experiences.",
+      "Provide every student the opportunity to get involved either individually or as a group to develop team skills and learn professionalism.",
+      "Develop an ecosystem to promote entrepreneurship and research culture among the students."
+    ],
+    "relevance": "Project Centric Learning (PCL) is a powerful tool for students to work in areas of their choice and strengths. Along with course-based projects, the curriculum can be enriched with semester-long Engineering Design and Development courses, in which students can solve socially relevant problems using various technologies from relevant disciplines.",
+    "sections": [
+      "The content and process mentioned below is the guideline document for the faculties and students to start with. It is not to limit the flexibility of faculty and students; rather, they are free to explore their creativity beyond the guideline mentioned herewith.",
+      "Industry Communication Standards",
+      "Single Board Computers and IoT",
+      "Computational Biology(Biomedical and Bioinformatics)",
+      "Robotics and Drone",
+      "Industry 4.0 (Artificial Intelligence, Human Computer Interfacing, 5G and IoT, Cloud Computing, Big Data, and Cyber Securityetc)"
+    ],
+    "assessment_scheme": ["MSE and ESE"],
+    "textbooks": [
+      "Terry Barrett, A new model of problem-based learning., All Ireland Society for higher education (AISHE), ISBN: 978-0-9935254-6-9",
+      "Mahnazmoallem, Woei Hung, and Nada Dabbagh, Problem-Based Learning., Wiley Publishers, null",
+      "Robert RobartCapraro, Mary Margaret Capraro, Stem Project-Based Learning and Integrated Science, Technology, Engineering and Mathematics Approach., null, null"
+    ],
+    "reference_books": [
+      "De Graaff E, Kolmos A., Management of Change: Implementation of Problem-Based and Project-Based Learning in Engineering., Sense Publishers, null",
+      "Gopalan, Project Management Core Textbook, Second Edition, Indian Edition., null, null",
+      "James Shore & Shane Warden, The Art of Agile Development., null, null"
+    ],
+    "outcomes": [
+      "CO1: Identify the real-life problem from a societal need point of view",
+      "CO2: Choose and compare alternative approaches to select the most feasible one",
+      "CO3: Analyze and synthesize the identified problem from a technological perspective",
+      "CO4: Design the reliable and scalable solution to meet challenges",
+      "CO5: Evaluate the solution based on the specified criteria",
+      "CO6: Inculcate a lifelong learning attitude towards societal problems"
+    ]
+  },
+  {
+    "code": "IT2268",
+    "title": "Design Thinking-III",
+    "id": "dt3",
+    "credits": 1,
+    "teaching_scheme": {
+      "tutorial": "1 Hour/Week"
+    },
+    "objectives": [
+      "To provide an ecosystem for students and faculty for paper publication and patent filing"
+    ],
+    "assessment_scheme": ["Publication of paper or patent"],
+    "sections": [
+      {
+        "title": "Paper Writing",
+        "topics": [
+          "Structure of The paper",
+          "Journal List (Top 50 Journals)",
+          "Selection of the journal",
+          "Use of various online journal selection tools",
+          "Plagiarism checking",
+          "Improving contents of the paper",
+          "Writing answers to reviewer questions",
+          "Modification in manuscript",
+          "Checking of publication draft"
+        ],
+        "hours": null
+      },
+      {
+        "title": "Patent",
+        "topics": ["Patent drafting", "Patent search", "Filing of patent"],
+        "hours": null
+      }
+    ]
+  }
+]
