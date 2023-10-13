@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { watch, ref } from 'vue'
+import { watch } from 'vue'
 import { useStore } from '@nanostores/vue'
 import {
   isMenuOpen,
@@ -12,16 +12,7 @@ const activeSection = useStore(activeSectionAtom)
 const activeSubsection = useStore(activeSubsectionAtom)
 const menuOpen = useStore(isMenuOpen)
 
-const imgTopSource = ref(null)
-const imgBottomSource = ref(null)
-
-const imgTop = ref(null)
-const imgBottom = ref(null)
-
 const setSection = (sectionIndex: number) => {
-  if (activeSection.value == -1) {
-    imgTopSource.value = `/images/menu/${sections[sectionIndex].id}`
-  }
   activeSubsectionAtom.set(-1)
   evilDOMHack(() => {
     activeSectionAtom.set(sectionIndex)
@@ -31,8 +22,6 @@ const setSection = (sectionIndex: number) => {
 const setSubsection = (subsectionIndex: number) => {
   activeSubsectionAtom.set(subsectionIndex)
 }
-
-console.log(typeof sections[0])
 
 let listenerAdded = false
 
@@ -52,23 +41,23 @@ watch(menuOpen, () => {
 <template>
   <Transition name="slideInFromTop">
     <div
-      class="menu-wrapper absolute top-0 left-0 w-screen h-screen text-white overflow-hidden bg-stone-950"
+      class="menu-wrapper absolute z-20 top-0 left-0 w-screen h-screen text-white overflow-hidden bg-stone-950"
       v-if="menuOpen"
     >
       <div
-        class="menu px-16 py-4 z-10 w-full h-full absolute top-0 left-0"
+        class="menu px-16 py-4 w-full h-full absolute top-0 left-0"
         :class="`${
           activeSection != -1 ? `${sections[activeSection].id}-background` : ''
         }`"
       >
         <slot name="menu-bar" />
 
-        <div class="menu-content flex items-start justify-start w-full px-20">
+        <div class="menu-content flex items-start justify-start w-full px-40">
           <div class="menu-sections text-8xl font-heading w-[26%]">
             <div
               class="menu-section my-12 cursor-pointer"
               :class="{
-                'text-gray-400':
+                'text-neutral-500':
                   activeSection != -1 && activeSection != sectionIndex,
               }"
               v-for="(section, sectionIndex) in sections"
@@ -89,14 +78,14 @@ watch(menuOpen, () => {
 
           <Transition name="slideInFromLeft">
             <div
-              class="menu-subsections text-4xl mr-[12rem] w-[14%]"
+              class="menu-subsections text-4xl mr-[16rem] w-[14%]"
               v-if="activeSection >= 0"
               :key="activeSection"
             >
               <div
                 class="menu-subsection my-8 cursor-pointer"
                 :class="{
-                  'text-gray-400':
+                  'text-neutral-500':
                     activeSubsection != -1 &&
                     activeSubsection != subsectionIndex,
                 }"

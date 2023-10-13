@@ -13,7 +13,6 @@ export async function POST({ params, request }) {
   try {
     let body = await request.json()
     let result = await db.query(body.query)
-    console.log(result)
     return new Response(JSON.stringify(result), {
       status: 200,
       headers: {
@@ -21,6 +20,7 @@ export async function POST({ params, request }) {
       },
     })
   } catch (e) {
+    console.log(e)
     return new Response(e.message, {
       status: 500,
     })

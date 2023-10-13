@@ -13,6 +13,7 @@ declare global {
   const getMetadata: typeof import('./utils/utils')['getMetadata']
   const getVariable: typeof import('./utils/utils')['getVariable']
   const isMenuOpen: typeof import('./store/menu')['isMenuOpen']
+  const navColor: typeof import('./store/menu')['navColor']
   const onMounted: typeof import('vue')['onMounted']
   const onUnmounted: typeof import('vue')['onUnmounted']
   const pascalize: typeof import('./utils/utils')['pascalize']

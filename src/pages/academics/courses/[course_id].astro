@@ -1,5 +1,5 @@
 ---
-import SiteLayout from '@layouts/SiteLayout.astro'
+import CourseLayout from '@layouts/CourseLayout.astro'
 import Course from './Course.vapor.vue'
 const courseID = Astro.params.course_id
 
@@ -12,10 +12,9 @@ const res = await fetch(
   },
 )
 
-let teachers = await res.json()
-let first_names = teachers[0].result.first_names
-let last_names = teachers[0].result.last_names
-let prefixes = teachers[0].result.prefixes
+let details = await res.json()
+let {first_names, last_names, prefixes} = details[0].result.teachers
+let course = details[0].result.course
 
 let teacherNames = first_names.map((name, index) => {
   return `${prefixes[index] != null ? prefixes[index] + ' ' : ''}${name} ${
@@ -25,7 +24,21 @@ let teacherNames = first_names.map((name, index) => {
 export const prerender = false
 ---
 
-<SiteLayout>
-  {courseID}
-  <Course teachers={teacherNames} />
-</SiteLayout>
+<CourseLayout courseName={course.name}>
+  
+  <div slot="summary" class="text-blue-400 bg-red-400">
+    <h2>Teachers</h2>
+    <ul>
+      {teacherNames.map((name) => {
+        return <li>{name}</li>
+      })}
+    </ul>
+  </div>
+
+  <Course
+    client:load
+    teachers={teacherNames}
+    course={course}
+    slot="intro"
+  />
+</CourseLayout>

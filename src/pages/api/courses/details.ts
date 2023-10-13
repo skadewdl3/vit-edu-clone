@@ -18,18 +18,22 @@ export async function GET({ params, request }) {
       let $first_names = select <-teaches<-teachers.first_name as first_name from only courses:${courseID};
       let $last_names = select <-teaches<-teachers.last_name as last_name from only courses:${courseID};
       let $prefixes = select <-teaches<-teachers.prefix as prefix from only courses:${courseID};
+      let $courseDetails = select * from only courses:${courseID};
 
       $first_names = $first_names.first_name;
       $last_names = $last_names.last_name;
       $prefixes = $prefixes.prefix;
       
-      $names = {
-        first_names: $first_names,
-        last_names: $last_names,
-        prefixes: $prefixes
+      $details = {
+        teachers: {
+          first_names: $first_names,
+          last_names: $last_names,
+          prefixes: $prefixes
+        },
+        course: $courseDetails
       };
 
-      return $names;
+      return $details;
       }
       `
     )

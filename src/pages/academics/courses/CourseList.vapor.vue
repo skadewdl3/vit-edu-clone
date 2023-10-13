@@ -1,6 +1,5 @@
 <script setup lang="ts">
 const props = defineProps(['courses'])
-// console.log(props.courses)
 </script>
 
 <template>

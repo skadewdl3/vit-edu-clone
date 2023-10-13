@@ -1,0 +1,38 @@
+---
+import '../stylus/base.styl'
+import Navbar from './Navbar.astro'
+import { navColor } from '@store/menu'
+
+const title = `Academics - ${Astro.props.courseName || 'Course'}`
+navColor.set('dark')
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>{title}</title>
+  </head>
+
+  <body class="relative">
+    <Navbar />
+
+    <main
+      class="relative w-full min-h-screen grid grid-cols-[3fr_1fr] px-60 z-0"
+    >
+      <div class="course-content px-28">
+        <div class="course-intro w-full bg-blue-400">
+          <slot name="intro" />
+        </div>
+        <div class="course-details">
+          <slot name="content" />
+        </div>
+      </div>
+
+      <aside class="course-summary">
+        <slot name="summary" />
+      </aside>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,1438 @@
+[
+  {
+    "code": "IT3221",
+    "id": "os",
+    "title": "Operating System",
+    "prerequisites": [
+      "Basics of Computer System",
+      "Computer Organization",
+      "Data Structures",
+      "Any Programming Language"
+    ],
+    "objectives": [
+      "To understand the basic concepts and functions of Operating System.",
+      "To gain knowledge of process synchronization and its mechanism.",
+      "To get familiar with CPU scheduling algorithms.",
+      "To discuss different deadlock handling mechanisms.",
+      "To learn memory management techniques and virtual memory.",
+      "To evaluate various disk scheduling algorithms."
+    ],
+    "credits": 4,
+    "teaching_scheme": {
+      "theory": "2 Hours/Week",
+      "tutorial": "1 Hour/Week",
+      "lab": "2 Hours/Week"
+    },
+    "relevance": "This course focuses on functions of the operating system. An operating system manages the resources of the computer system and simplifies application programming. The operating system acts as a platform for information exchange between your computer's hardware and the applications running on it.",
+    "sections": [
+      {
+        "title": "Introduction",
+        "topics": [
+          "What is OS?",
+          "Interaction of OS and hardware",
+          "Goals of OS",
+          "Basic functions of OS",
+          "OS Services",
+          "System Calls",
+          "Types of System calls",
+          "Types of OS: Batch, Multiprogramming, Time Sharing, Parallel, Distributed & Real-time OS."
+        ],
+        "hours": 2
+      },
+      {
+        "title": "Process Management",
+        "topics": [
+          "Process Concept",
+          "Process States: 2, 5, 7 state models",
+          "Process Description",
+          "Process Control",
+          "Thread implementations – User level and Kernel level threads",
+          "Concurrency: Issues with concurrency",
+          "Principles of Concurrency",
+          "Mutual Exclusion: OS/Programming Language Support: Semaphores, Mutex, Classical Process Synchronization problems.",
+          "Uniprocessor Scheduling: Scheduling Criteria",
+          "Types of Scheduling: Preemptive, Non-preemptive, Long-term, Medium-term, Short-term",
+          "Algorithms: FCFS, SJF, RR, Priority"
+        ],
+        "hours": 6
+      },
+      {
+        "title": "Deadlock",
+        "topics": [
+          "Principles of deadlock",
+          "Deadlock Prevention",
+          "Deadlock Avoidance",
+          "Deadlock Detection",
+          "Deadlock Recovery"
+        ],
+        "hours": 2
+      },
+      {
+        "title": "Memory Management",
+        "topics": [
+          "Memory Management requirements",
+          "Memory Partitioning",
+          "Paging",
+          "Segmentation",
+          "Address translation",
+          "Placement Strategies: First Fit, Best Fit, Next Fit, Worst Fit",
+          "Virtual Memory",
+          "VM with Paging",
+          "VM with Segmentation",
+          "Page Replacement Policies: FIFO, LRU, Optimal"
+        ],
+        "hours": 4
+      },
+      {
+        "title": "File and I/O Management",
+        "topics": [
+          "File Organization",
+          "File Directories",
+          "File Sharing",
+          "Record Blocking",
+          "I/O Buffering",
+          "Disk Scheduling: FCFS, SSTF, SCAN, C-SCAN"
+        ],
+        "hours": 2
+      }
+    ],
+    "tutorials": [
+      "Linux commands",
+      "Evolution of OS",
+      "Comparison of different OS",
+      "OS structures",
+      "Inter Process Communication",
+      "Symmetric Multiprocessor",
+      "Thread Scheduling",
+      "Translation Lookaside buffer",
+      "Secondary storage management",
+      "Linux Memory management",
+      "File System in Windows and Linux"
+    ],
+    "practicals": [
+      "Execution of Basic Linux commands",
+      "Execution of Advanced Linux commands",
+      "Write shell scripts covering basic arithmetic, control structures, command line arguments, functions, and arrays",
+      "Write a program demonstrating the use of different system calls",
+      "Implement multithreading for Matrix Operations using Pthreads",
+      "Implementation of Classical problems using Threads and Mutex",
+      "Implementation of Classical problems using Threads and Semaphore",
+      "Write a program to compute the finish time, turnaround time, and waiting time for various scheduling algorithms",
+      "Write a program to check whether a given system is in a safe state using Banker’s Deadlock Avoidance algorithm",
+      "Write a program to calculate the number of page faults for a reference string using various page replacement algorithms"
+    ],
+    "projects": [
+      {
+        "title": "Design and implementation of a Multiprogramming Operating System: Stage I",
+        "details": [
+          "CPU/Machine Simulation",
+          "Supervisor Call through interrupt"
+        ]
+      },
+      {
+        "title": "Design and implementation of a Multiprogramming Operating System: Stage II",
+        "details": [
+          "Paging",
+          "Error Handling",
+          "Interrupt Generation and Servicing",
+          "Process Data Structure"
+        ]
+      },
+      {
+        "title": "Design and implementation of a Multiprogramming Operating System: Stage III",
+        "details": [
+          "Multiprogramming",
+          "Virtual Memory",
+          "Process Scheduling and Synchronization",
+          "Inter-Process Communication",
+          "I/O Handling, Spooling, and Buffering"
+        ]
+      }
+    ],
+    "seminar": [
+      "Different File Systems in Windows and Linux OS",
+      "Operating System generations",
+      "OS Structures",
+      "HDFS",
+      "Process Vs Threads",
+      "Virtual Machines",
+      "Real Time Scheduling",
+      "Booting Process of different Operating Systems.",
+      "RAID",
+      "Protection and Security in Operating System"
+    ],
+    "group_discussion": [
+      "Flynn’s taxonomy",
+      "Role of Operating system",
+      "32 bit Vs 64 bit OS",
+      "Storage structures and their tradeoffs",
+      "Disk Scheduling",
+      "Desktop OS Vs Mobile OS",
+      "Security Vs Protection in OS",
+      "I/O processors",
+      "Linux Vs Windows OS",
+      "Best OS for smartphones"
+    ],
+    "home_assignment": [
+      {
+        "type": "Design",
+        "topics": [
+          "Report Generation using Shell Script and AWK",
+          "Library Management System using shell",
+          "Inter Process Communication in Linux",
+          "Design any real-time application using job scheduling",
+          "Design any application using Android"
+        ]
+      },
+      {
+        "type": "Case Study",
+        "topics": [
+          "Distributed Operating System",
+          "Microsoft Windows 11",
+          "VMware",
+          "Linux",
+          "Android"
+        ]
+      },
+      {
+        "type": "Surveys",
+        "topics": [
+          "A survey of Desktop OS",
+          "Analysis and Comparison of CPU Scheduling Algorithms",
+          "Device Drivers for various devices",
+          "Parallel Computing",
+          "Malware Analysis, Tools and Techniques"
+        ]
+      },
+      {
+        "type": "Blog",
+        "topics": [
+          "Operating System Forensics",
+          "Open Source OS Vs Commercial OS",
+          "BIOS",
+          "Comparative study of different mobile OS",
+          "Operating Systems for IoT Devices"
+        ]
+      }
+    ],
+    "assessment_scheme": [
+      "Home Assignment",
+      "ESE",
+      "CVV",
+      "Seminar",
+      "Group Discussion",
+      "LAB - Course Assignment and Project Evaluation"
+    ],
+    "textbooks": [
+      "Stalling William;“Operating Systems”; 6th Edition,Pearson Education;",
+      "Silberschatz A., Galvin P., Gagne G.;“Operating System Concepts” ; 9th Edition; John Wiley and Sons;",
+      "Yashavant Kanetkar; “Unix Shell Programming”; 2nd Edition, BPB Publications",
+      "Sumitabha Das; “Unix Concepts and Applications”; 4th Edition, TMH.",
+      "D M Dhamdhere; “Systems Programming & Operating Systems”; Tata McGraw Hill Publications, ISBN – 0074635794",
+      "John J Donovan; “Systems Programming”; Tata Mc-Graw Hill Edition, ISBN-13978-0-07-460482-3"
+    ],
+    "reference_books": [
+      "Silberschatz A., Galvin P., Gagne G; “Operating System Principles”; 7th Edition, John Wiley and Sons.",
+      "Forouzan B. A., Gilberg R. F.; “Unix And Shell Programming”; 1st Edition, Australia Thomson Brooks Cole.",
+      "Achyut S. Godbole , Atul Kahate; “Operating Systems”; 3rd Edition, McGraw Hill."
+    ],
+    "outcomes": [
+      "Examine the functions of a contemporary Operating System with respect to convenience, efficiency, and the ability to evolve.",
+      "Demonstrate knowledge in applying system software and tools available in modern operating systems for process synchronization mechanisms.",
+      "Apply various CPU scheduling algorithms to construct solutions to real-world problems.",
+      "Identify the mechanisms to deal with Deadlock.",
+      "Illustrate the organization of memory and memory management techniques.",
+      "Acquire a detailed understanding of various I/O buffering techniques and disk scheduling algorithms."
+    ]
+  },
+  {
+    "code": "IT3203",
+    "id": "ipcv",
+    "title": "Image Processing and Computer Vision",
+    "prerequisites": "Knowledge of Different types of Signals, Linear Algebra, Probability and Statistics",
+    "objectives": [
+      "To learn Image Processing fundamentals",
+      "To study Image preprocessing methods",
+      "To understand image lossless and lossy compression techniques",
+      "To introduce the major ideas, methods, and techniques of computer vision and pattern recognition",
+      "To acquaint with Image segmentation and shape representation",
+      "To explore object recognition and its application"
+    ],
+    "credits": 5,
+    "teaching_scheme": {
+      "theory": "2 Hours/Week",
+      "tutorial": "1 Hour/Week",
+      "lab": "2 Hours/Week"
+    },
+    "relevance": "Image processing and computer vision are of fundamental importance to any field in which images must be enhanced, manipulated, and analyzed. They play a key role in remote sensing, medical imaging, inspection, surveillance, autonomous vehicle guidance, and more. Students of this course will benefit from the direct visual realization of mathematical abstractions and concepts, and learn how to implement efficient algorithms to perform these tasks.",
+    "sections": [
+      {
+        "title": "Introduction",
+        "topics": [
+          "Elements of image processing system",
+          "Scenes and Images",
+          "Vector Algebra",
+          "Human Visual System",
+          "Color vision color model: RGB, HVS, YUV, CMYK, YCbCr",
+          "Spatial domain techniques...",
+          "Image Statistical and Geometrical properties",
+          "Image Smoothening",
+          "Image Sharpening",
+          "Introduction to Image compression and its need..."
+        ]
+      },
+      {
+        "title": "Image Segmentation techniques",
+        "topics": [
+          "Image Segmentation: Edge-Based approaches to segmentation",
+          "Object recognition"
+        ]
+      }
+    ],
+    "tutorials": [
+      "Implement Image preprocessing and Edge detection",
+      "Image Arithmetic Operations",
+      "Image quality Enhancement by using various techniques...",
+      "Image Compression",
+      "Implement Segmentation methods",
+      "Implement camera calibration methods",
+      "Determine depth map from Stereo pair",
+      "Construct 3D model from defocus image",
+      "Construct 3D model from Images",
+      "Implement object detection and tracking from video",
+      "Face detection and Recognition",
+      "Object detection from dynamic Background for Surveillance",
+      "Content-based video retrieval",
+      "Construct 3D model from a single image"
+    ],
+    "practicals": [
+      "Write MATLAB code for various image operations...",
+      "Pseudo-coloring operation of an image...",
+      "Study of different file formats...",
+      "Write C-language code to read and Display BMP image...",
+      "Write MATLAB code to find various statistical properties...",
+      "Write MATLAB code to enhance image quality...",
+      "Write MATLAB code for edge detection...",
+      "Write C-language code to find out Huffman code...",
+      "Write MATLAB code to design encoder and decoder...",
+      "Develop algorithms for image pre-processing...",
+      "Design algorithms for feature extraction...",
+      "Design algorithms for segmentation...",
+      "Design algorithms for object recognition...",
+      "Design algorithms for motion estimation...",
+      "Design algorithms for classifiers...",
+      "Line detection using Hough transform...",
+      "Apply the second level of DWT decomposition...",
+      "Write MATLAB code to apply second level of DWT decomposition..."
+    ],
+    "projects": [
+      "Lossless and Lossy Compression Techniques",
+      "Pseudo Colour Image Processing Model",
+      "Image and Video Enhancement models",
+      "Human Motion Detection",
+      "Object Detection Model",
+      "Face Recognition Model",
+      "Dynamic Texture Synthesis",
+      "Image and Video Editing",
+      "Develop an application for a vision-based security system...",
+      "Develop motion estimation/tracking system to recognize object..."
+    ],
+    "seminar": [
+      "Linear Algebra used for Image Processing",
+      "Image File format-TIFF",
+      "Color Model",
+      "Pseudo Colour Image Processing",
+      "Image Enhancement-Spatial Domain",
+      "Image Smoothening",
+      "Image Enhancement-Frequency Domain",
+      "Image Sharpening",
+      "Image Segmentation",
+      "Watershed Transformation",
+      "3-D model",
+      "Face Detection",
+      "Object Recognition"
+    ],
+    "group_discussion": [
+      "Lossy Compression Techniques",
+      "Lossless Compression Techniques",
+      "Fourier Transform",
+      "Set Partitioning in Hierarchical Trees-SPIHT Wavelet Transform",
+      "Image Understanding-Pattern Recognition Models",
+      "Object Recognitions",
+      "3-D models and its applications",
+      "Wavelet Transform",
+      "Face detection models, etc."
+    ],
+    "home_assignment": [
+      {
+        "type": "Design",
+        "topics": [
+          "Human Motion Detection",
+          "Object Detection Model",
+          "Face Recognition Model",
+          "Dynamic Texture Synthesis",
+          "Image and Video Editing",
+          "Design 3-D models",
+          "Face Detection Models",
+          "Develop an application for a vision-based security system...",
+          "Develop motion estimation/tracking system to recognize object...",
+          "Develop motion estimation/tracking system to recognize object..."
+        ]
+      },
+      {
+        "type": "Case Study",
+        "topics": [
+          "Image Processing for Smart City",
+          "Computer Vision for AR AVR"
+        ]
+      },
+      {
+        "type": "Research",
+        "topics": [
+          "Set Partitioning in Hierarchical Trees-SPIHT Wavelet Transform",
+          "Image Understanding-Pattern Recognition Models",
+          "Object Recognitions",
+          "3-D models and its applications",
+          "Wavelet Transform",
+          "Face detection models, etc."
+        ]
+      },
+      {
+        "type": "Blog",
+        "topics": [
+          "Computer Vision for Data Science",
+          "Image Processing for Smart Agriculture",
+          "Image Processing in Medical Field",
+          "Usage of AI for Computer Vision",
+          "Job Opportunities in Image Processing and Computer Vision",
+          "Usage of Image Processing in Computer Vision, Machine Learning, Deep Learning, and AI"
+        ]
+      },
+      {
+        "type": "Surveys",
+        "topics": [
+          "Steganography and Cryptography",
+          "Image Processing for Education",
+          "Dynamic Texture Synthesis",
+          "Classifications and Recognitions",
+          "Image & Video Compression",
+          "Drone-based Surveillance",
+          "Video Editing",
+          "Human Motion/Object tracking and detections",
+          "Image Processing using High-Performance Computing-Computational Complexity/Time Complexity and Execution time",
+          "Recent Trends in Image and Video Processing"
+        ]
+      }
+    ],
+
+    "assessment_scheme": [
+      "MSE",
+      "ESE",
+      "Lab and Course Project",
+      "GD",
+      "PPT",
+      "VIVA"
+    ],
+    "textbooks": [
+      "Rafael Gonzalez & Richard Woods, “Digital Image Processing,” 3rd Edition, Pearson publications, ISBN 0132345633.",
+      "S. Jayaraman, S Esakkirajan, & T Veerakumar, “Digital Image Processing,” Tata McGraw Hill Education, ISBN(13) 9780070144798.",
+      "Anil K. Jain, “Fundamentals of Digital Image Processing,” 5th Edition, PHI publication, ISBN 13: 9780133361650.",
+      "Richard Szeliski, “Computer Vision: Algorithms and Applications (CVAA)”, Springer, 2010.",
+      "E. R. Davies, “Computer & Machine Vision,” 4th Edition, Academic Press, 2012.",
+      "Simon J. D. Prince, “Computer Vision: Models, Learning, and Inference”, Cambridge University Press, 2012."
+    ],
+    "reference_books": [
+      "Pratt, “Digital Image Processing,” Wiley Publication, 3rd Edition, ISBN 0-471-37407-5.",
+      "K.R. Castleman, “Digital Image Processing,” 3rd Edition, Prentice Hall: Upper Saddle River, NJ, 3, ISBN 0-13-211467 -4.",
+      "K. D. Soman and K. I. Ramchandran, “Insight into wavelets - From theory to practice,” 2nd Edition PHI, 2005.",
+      "D. Forsyth and J. Ponce, “Computer Vision - A modern approach,” Prentice Hall",
+      "E. Trucco and A. Verri, “Introductory Techniques for 3D Computer Vision,” Publisher: Prentice Hall.",
+      "D. H. Ballard, C. M. Brown,“Computer Vision”, Prentice-Hall, Englewood Cliffs, 1982."
+    ],
+    "outcomes": [
+      "Apply lossless and Lossy compression techniques for image compression.",
+      "Explore pre-processing algorithms to acquire images.",
+      "Use Wavelet transforms to analyze and modify images.",
+      "Extract features from Images and do analysis of Images.",
+      "Apply Supervised and Unsupervised Machine Learning for Image Classification.",
+      "Make use of Computer Vision algorithms to solve real-world problems."
+    ]
+  },
+  {
+    "title": "Software Design and Methodology",
+    "code": "IT3209",
+    "id": "sdam",
+    "prerequisites": [
+      "Mastery of programming in a high-level, object-oriented language",
+      "Familiarity with data structures and algorithms"
+    ],
+    "objectives": [
+      "Understanding object-oriented analysis and design",
+      "Learn different software process models and principles and practices",
+      "Practicing UML to model OO systems",
+      "Familiarity with current models and standards for design",
+      "Exposure to organizational issues in software design",
+      "An ability to analyze and evaluate problems and draw on the theoretical and technical knowledge to develop solutions and systems"
+    ],
+    "credits": 4,
+    "relevance": "Software Architecture",
+    "teaching_scheme": {
+      "Theory": "2 Hours/Week",
+      "Lab": "2 Hours/Week"
+    },
+    "sections": [
+      {
+        "title": "SECTION I",
+        "topics": [
+          "Overview of Software Engineering",
+          "Software Modeling",
+          "Evolution of Software Modeling and Design Methods",
+          "Requirement Study",
+          "Study of classes",
+          "Methods for identification of classes",
+          "Class Diagram",
+          "Object diagram",
+          "Package diagram",
+          "Component diagram",
+          "Composite Structure diagram",
+          "Deployment Diagram",
+          "Activity diagram",
+          "Interaction diagram",
+          "Architecture in the Life Cycle",
+          "Design Patterns"
+        ]
+      }
+    ],
+    "tutorials": [
+      "Goals of software engineering",
+      "Software process models, life cycle models",
+      "Process improvement, Capability Maturity Model",
+      "Unified Modeling Language (UML)",
+      "Design patterns",
+      "Frameworks, software product lines",
+      "Software architecture",
+      "Software measurements and metrics",
+      "Software estimation methods",
+      "Static and dynamic analysis",
+      "Version control, configuration management",
+      "Software quality, verification and validation, software testing"
+    ],
+    "practicals": [
+      "To study modeling methodologies and identify their applicability to various categories of projects",
+      "To understand Requirement Elicitation Techniques and recognize types of requirements while preparing System Requirement Specification",
+      "To study MDD/MDA and identify the importance of Model Transformation",
+      "To study types of MOF and metamodel concepts for various diagrams in UML 2.0",
+      "To identify System Scope, Actors, Use Cases, Use Case structuring for a given problem and perform Use Case narration in template form with normal/alternate flows",
+      "To identify Entity, Control, Boundary objects and trace object interactions for scenarios from use cases",
+      "To prepare a state chart diagram for a given object scenario",
+      "To prepare detailed Activity diagram with notational compliance to UML 2.0 indicating clear use of pins, fork-join, synchronization, data stores",
+      "To prepare Class diagram for a defined problem with relationships, associations, hierarchies, interfaces, roles, and multiplicity indicators",
+      "To prepare Component and Deployment diagram for a defined problem"
+    ],
+    "projects": [
+      "ERP system",
+      "Hospital Management",
+      "Railway Reservation",
+      "Stock market management",
+      "Parking automation",
+      "Library Management",
+      "Online shopping",
+      "Content management"
+    ],
+    "seminar": [
+      "CMMI",
+      "Process Models",
+      "Agile Methodology",
+      "Modelling using UML",
+      "Analysis and Design in OO systems",
+      "Requirement Engineering",
+      "Principles and Practices of good Software Design",
+      "Collaborative software development",
+      "Component diagram",
+      "Deployment diagram"
+    ],
+    "group_discussion": [
+      "Traditional Vs Agile",
+      "Phases of SDLC. Which is more important?",
+      "UML modeling",
+      "Analysis Vs Design",
+      "Design Patterns",
+      "Design Vs Architecture",
+      "Architecture style",
+      "Design Vs Framework",
+      "Framework Vs Architecture",
+      "Archetype patterns"
+    ],
+    "home_assignment": [
+      {
+        "type": "Design",
+        "topics": [
+          "Requirement Engg steps",
+          "Analysis modeling",
+          "Design modeling",
+          "Architectural styles",
+          "Design patterns"
+        ]
+      },
+      {
+        "type": "Case Study",
+        "topics": [
+          "Imaging Software architecture",
+          "Banking Software architecture",
+          "ERP Software architecture",
+          "Online Shopping Software architecture",
+          "AI Software architecture"
+        ]
+      },
+      {
+        "type": "Blog",
+        "topics": [
+          "Software Engg Do’s and Don’ts",
+          "Which Process Model?",
+          "Scrum",
+          "Devops",
+          "Data ops"
+        ]
+      },
+      {
+        "type": "Surveys",
+        "topics": [
+          "Software Design",
+          "Software Methodologies",
+          "Software Architectures",
+          "Design Patterns",
+          "Architectural Patterns"
+        ]
+      }
+    ],
+    "textbooks": [
+      "Roger S. Pressman, Software Engineering: A Practitioner’s Approach, 6th, 2005, McGraw Hill International Edition",
+      "Jim Arlow, Ila Neustadt, UML 2 and the Unified Process – Practical Object-Oriented Analysis and Design, Second, Addison Wesley, 978-0201770605",
+      "Len Bass, Paul Clements, Rick Kazman, Software Architecture in Practice, Second, Pearson, 978-81-775-8996-2"
+    ],
+    "reference_books": [
+      "Hassan Gomaa, Software Modeling and Design- UML, Use Cases, Patterns, and Software Architectures, null, 2011, Cambridge University Press, 978-0-521-76414-8",
+      "Gardy Booch, James Rambaugh, Ivar Jacobson, The Unified Modeling Language User Guide, Second, 2008, Pearson Education, 0-321-24562",
+      "Ian Sommerville, Software Engineering, null, null, Addison and Wesley, 0-13-703515-2"
+    ],
+    "outcomes": [
+      "Summarize capabilities and impact of Software Development Process Models and justify process maturity through application of Software Engineering principles and practices focusing tailored processes that best fit the technical and market demands of a modern software project.",
+      "Discriminate competing and feasible system requirements indicating correct real-world problem scope and prepare stepwise system conceptual model using stakeholder analysis and requirement validation.",
+      "Formulate system specifications by analyzing User-level tasks and compose software artifacts using agile principles, practices, and Scrum framework.",
+      "Propose and demonstrate realistic solutions supported by well-formed documentation with the application of agile"
+    ]
+  },
+  {
+    "code": "IT3218",
+    "title": "Artificial Intelligence",
+    "id": "ai",
+    "prerequisites": ["Data structures", "Computer programming"],
+    "objectives": [
+      "To make students familiar with basic principles of AI",
+      "To make students capable of using heuristic searches",
+      "To make students aware of knowledge-based systems",
+      "To make students able to use fuzzy logic and neural networks",
+      "To make students learn various application domains of AI"
+    ],
+    "credits": 4,
+    "teaching_scheme": {
+      "theory": "2 Hours/Week",
+      "tutorial": "1 Hour/Week",
+      "lab": "2 Hours/Week"
+    },
+    "relevance": "This course is highly applied in many scientific and engineering disciplines",
+    "sections": [
+      {
+        "title": "Fundamentals of Artificial Intelligence",
+        "topics": [
+          "Introduction",
+          "A.I. Representation",
+          "Non-AI & AI Techniques",
+          "Representation of Knowledge",
+          "KnowledgeBase Systems",
+          "State Space Search",
+          "Production Systems",
+          "Problem Characteristics",
+          "types of production systems",
+          "Intelligent Agents and Environments",
+          "concept of rationality",
+          "the nature of environments",
+          "structure of agents",
+          "problem solving agents",
+          "problem formulation"
+        ],
+        "hours": null
+      },
+      {
+        "title": "Uninformed Search Strategies",
+        "topics": [
+          "Formulation of real-world problems",
+          "Breadth First Search",
+          "Depth First Search",
+          "Depth Limited Search",
+          "Iterative Deepening Depth First Search",
+          "Bidirectional Search",
+          "Comparison of Uninformed search Strategies"
+        ],
+        "hours": null
+      },
+      {
+        "title": "Informed Search Strategies",
+        "topics": [
+          "Generate & test",
+          "Hill Climbing",
+          "Best First Search",
+          "A*",
+          "Game playing: Minimax Search",
+          "Alpha-Beta Cutoffs",
+          "Waiting for Quiescence"
+        ],
+        "hours": null
+      },
+      {
+        "title": "Knowledge Representation",
+        "topics": [
+          "Knowledge based agents",
+          "Wumpus world",
+          "Propositional Logic"
+        ],
+        "hours": null
+      },
+      {
+        "title": "Introduction to PROLOG and ANN",
+        "topics": ["null"],
+        "hours": null
+      }
+    ],
+    "practicals": [
+      "Implement Non-AI and AI Techniques",
+      "Implement any one Technique from the following...",
+      "Implement Perceptron learning algorithm",
+      "Implement a real-life application in Prolog.",
+      "Expert System in Prolog-new application",
+      "Implement any two Player game using min-max search algorithm.",
+      "Design a fuzzy set for shape matching of handwritten character",
+      "Conducting Turing test of an online chat robot",
+      "Any real application of AI in gaming",
+      "Spam email detection and classification using any simple classifier"
+    ],
+    "projects": [
+      "Pattern recognition – Classification, Clustering, hybrid-classification clustering",
+      "Prediction using - Regression – Linear or nonlinear",
+      "Game playing - single player/2-player/multi-player",
+      "Use of Knowledge-based system for generating inferences",
+      "Deep Learning",
+      "Neural network training and using for a real application",
+      "Use of fuzzy sets for human-like reasoning",
+      "Use of any ML algorithm for solving real-world problem",
+      "Deep Learning framework-PyTorch",
+      "Expert system applications in medicine suggestions",
+      "Some other projects mutually decided by instructor and students"
+    ],
+    "assessment_scheme": ["Lab", "Course Project", "ESE", "CVV"],
+    "textbooks": [
+      "Elaine Rich and Kevin Knight, Artificial Intelligence, 2nd, Ed., Tata McGraw Hill, 1991",
+      "Stuart Russell & Peter Norvig, Artificial Intelligence : A Modern Approach, 2nd, Ed., Pearson Education, 2003"
+    ],
+    "reference_books": [
+      "Ivan Bratko, Prolog Programming For Artificial Intelligence, 2nd Ed. Addison Wesley, 1986.",
+      "Eugene, Charniak, Drew Mcdermott, Introduction to Artificial Intelligence, Addison Wesley, 1985",
+      "Dan W Patterson, Introduction to AI and Expert Systems, PHI, 1990",
+      "Nils J. Nilsson, Principles of Artificial Intelligence, 1st Ed., Morgan Kaufmann, 1982",
+      "Carl Townsend, Introduction to turbo Prolog, Paperback, 1987",
+      "Jacek M. Zurada, Introduction to artificial neural systems, Jaico Publication, 1994"
+    ],
+    "outcomes": [
+      "Understand the basics of the theory and practice of Artificial Intelligence as a discipline and about intelligent agents capable of problem formulation.",
+      "Evaluation of different uninformed search algorithms on well-formulated problems along with stating valid conclusions that the evaluation supports.",
+      "Design and Analysis of informed search algorithms on well-formulated problems.",
+      "Formulate and solve given problem using Propositional and First-order logic.",
+      "Apply neural network learning for solving AI problems",
+      "Apply reasoning for non-monotonic AI problems."
+    ]
+  },
+  {
+    "code": "IT3207",
+    "title": "Cloud Computing",
+    "id": "cc",
+    "prerequisites": [
+      "Computer Programming",
+      "Database Management Systems",
+      "Operating System",
+      "Computer Network"
+    ],
+    "objectives": [
+      "To study fundamental concepts of Cloud Computing.",
+      "To understand the basics of virtualization in Cloud Computing.",
+      "To learn security management in Cloud Computing."
+    ],
+    "credits": 4,
+    "teaching_scheme": {
+      "theory": "2 Hours/Week",
+      "tutorial": "1 Hour/Week",
+      "lab": "2 Hours/Week"
+    },
+    "relevance": "Cloud Computing is the on-demand solution for storing and retrieving data globally. Cloud computing has become a very integral part of the entire infrastructure of the IT industry.",
+    "sections": [
+      {
+        "title": "UNIT 1: Introduction to Cloud Computing (4 Hours)",
+        "topics": [
+          "Definition",
+          "Characteristics",
+          "Components",
+          "Cloud Types",
+          "Cloud Service Models",
+          "Cloud provider, benefits and limitations",
+          "Cloud computing vs. Cluster computing vs. Grid computing"
+        ],
+        "hours": 4
+      },
+      {
+        "title": "UNIT 2: Virtualization Technology (5 Hours)",
+        "topics": [
+          "Introduction & benefit of Virtualization",
+          "Different approaches to virtualization",
+          "Hypervisors",
+          "Machine Image",
+          "Virtual Machine (VM)",
+          "Virtualization: Server, Storage, Network",
+          "Virtual Machine (resource) provisioning and manageability",
+          "storage as a service, Data storage in cloud computing(storage as a service)",
+          "Multitenant software",
+          "Data access control for enterprise applications"
+        ],
+        "hours": 5
+      },
+      {
+        "title": "UNIT 3: Overview of Cloud file-systems (5 Hours)",
+        "topics": [
+          "GFS and HDFS, BigTable",
+          "Features and comparisons among GFS, HDFS.",
+          "Databases on Cloud: NoSQL, MogoDB, HBase, Hive, Dynamo, Graph databases"
+        ],
+        "hours": 5
+      },
+      {
+        "title": "UNIT 4: Cloud Platforms and Cloud Applications (6 Hours)",
+        "topics": [
+          "Amazon Web Services (AWS), Microsoft Azure",
+          "Cloud Computing Applications",
+          "Google App Engine",
+          "Map-Reduce and extensions",
+          "Service Oriented Architecture (SOA), Web services, Web 2.0, Web OS"
+        ],
+        "hours": 6
+      },
+      {
+        "title": "UNIT 5: Service Management in Cloud Computing (4 Hours)",
+        "topics": [
+          "Service Level Agreements(SLAs), Billing & Accounting",
+          "Comparing Scaling Hardware: Traditional vs. Cloud",
+          "Economics of scaling: Benefitting enormously",
+          "Managing Data - Looking at Data, Scalability & Cloud Services",
+          "Database & Data Stores in Cloud, Large Scale Data Processing"
+        ],
+        "hours": 4
+      },
+      {
+        "title": "Unit 6: Cloud Security (4 Hours)",
+        "topics": [
+          "Infrastructure Security - Network level security, Host level security, Application level security",
+          "Data security and Storage - Data privacy and security Issues.",
+          "Jurisdictional issues raised by Data location: Identity & Access Management, Access Control, Trust, Reputation, Risk, Authentication in cloud computing, Client access in cloud, Cloud contracting Model, Commercial and business considerations"
+        ],
+        "hours": 4
+      }
+    ],
+    "textbooks": [
+      "Judith Hurwitz, R.Bloor, M.Kanfman, F.Halper, 'Cloud Computing for Dummies', Wiley India.",
+      "Ronald Krutz and Russell Dean Vines, 'Cloud Security', Wiley-India"
+    ],
+    "reference_books": [
+      "Barrie Sosinsky, 'Cloud Computing Bible', Wiley India",
+      "Antohy T Velte, et.al, 'Cloud Computing: A Practical Approach', McGraw Hill.",
+      "McGraw Hill, 'Cloud Computing', Que Publishing."
+    ],
+    "outcomes": [
+      "Illustrate the architecture and infrastructure of cloud computing, including SaaS, PaaS, IaaS, public cloud, private cloud, hybrid cloud.",
+      "Investigate the resource virtualization technique for a given business case.",
+      "Choose the appropriate file system and database for a given business case.",
+      "Develop an application for a given business case using various cloud platforms.",
+      "Understand service management of cloud services.",
+      "Identify the challenges in Cloud Management and Cloud Security"
+    ]
+  },
+  {
+    "code": "IT3216",
+    "title": "Machine Learning and Deep Learning",
+    "id": "mldl",
+    "credits": 4,
+    "teaching_scheme": {
+      "theory": "2 Hours/Week",
+      "tutorial": "1 Hour/Week",
+      "lab": "2 Hours/Week"
+    },
+    "prerequisites": [
+      "Linear Algebra",
+      "Statistics",
+      "Calculus",
+      "Probability Basics"
+    ],
+    "objectives": [
+      "Understanding Human learning aspects.",
+      "Acquaintance with primitives in the learning process by a computer.",
+      "Understanding the nature of problems solved with Machine Learning and Deep Learning.",
+      "To study different Machine learning algorithms.",
+      "To study different Deep learning algorithms.",
+      "To understand the application development process using ML and DL"
+    ],
+    "relevance": "Machine Learning and Deep Learning are disruptive technologies. Powered by data science, machine learning, and Deep Learning makes our lives easier. Understanding the possibilities and recent innovations of ML technology and Deep Learning are important for businesses so that they can plot a course for the most efficient ways of conducting their business. It is also important to stay up to date to maintain competitiveness in the industry.",
+    "sections": [
+      {
+        "title": "Introduction",
+        "topics": [
+          "What is Machine Learning",
+          "Examples of Machine Learning applications",
+          "Training versus Testing",
+          "Cross-validation",
+          "Mathematical models"
+        ],
+        "hours": null
+      },
+      {
+        "title": "Types of Learning",
+        "topics": [
+          "Supervised, Unsupervised and Semi-Supervised Learning",
+          "Dimensionality Reduction"
+        ],
+        "hours": null
+      },
+      {
+        "title": "Regression and Generalization",
+        "topics": [
+          "Regression: Linear and Logistic Regressions",
+          "Assessing performance of Regression – Error measures",
+          "Overfitting and Underfitting",
+          "Catalysts for Overfitting"
+        ],
+        "hours": null
+      },
+      {
+        "title": "Classification",
+        "topics": [
+          "Binary and Multiclass Classification",
+          "Support Vector Machines (SVM), Soft Margin SVM",
+          "KNN Algorithm, Naïve Bayes Classifier, Decision Tree and Random Forest"
+        ],
+        "hours": null
+      },
+      {
+        "title": "Clustering",
+        "topics": [
+          "Distance Based Models",
+          "Distance-based clustering algorithms - K-means and C-means",
+          "Hierarchical clustering, Association rules mining – Apriori Algorithm, Confidence and Support parameters"
+        ],
+        "hours": null
+      },
+      {
+        "title": "Trends in Machine Learning",
+        "topics": ["Ensemble Learning", "Reinforcement Learning"],
+        "hours": null
+      },
+      {
+        "title": "Deep Learning",
+        "topics": [
+          "Introduction to deep learning",
+          "Neural Network Basics, Batch Normalization, The Neuron",
+          "Expressing Linear Perceptron as Neurons, Feed Forward Neural Networks",
+          "Linear Neurons and their Limitations, Sigmoid, Tanh and ReLU Neurons",
+          "Shallow Neural Network and Deep Neural Networks",
+          "Attacking neural networks with Adversarial Examples and Generative Adversarial Networks, Practical aspects of deep learning",
+          "Optimization algorithms, Hyperparameters Tuning, Batch Normalization"
+        ],
+        "hours": null
+      },
+      {
+        "title": "Deep Learning Strategy",
+        "topics": [
+          "A guide to convolution arithmetic for deep learning, Is the deconvolution layer the same as a convolutional layer?",
+          "Visualizing and Understanding Convolutional Networks, Deep Inside Convolutional Networks: Types of CNN, Visualizing Image Classification Models and Saliency Maps"
+        ],
+        "hours": null
+      }
+    ],
+    "seminar": [
+      "Validation",
+      "Naive Bayes Algorithm",
+      "Machine And Privacy",
+      "Limitations of ML",
+      "Ensemble Learning",
+      "Dimensionality reduction algorithms",
+      "Comparison of Machine Learning algorithms",
+      "Feature Extraction In Machine Learning",
+      "Reinforcement Learning"
+    ],
+    "group_discussion": [
+      "Supervised Vs Unsupervised",
+      "Univariate Vs Multivariate analysis",
+      "Accuracy measuring methods",
+      "Bias Vs Variance Tradeoff",
+      "Data Reduction Vs Dimensionality reduction",
+      "Continuos Vs Discrete variables",
+      "Feature Extraction Vs Automatic Feature detection",
+      "RNN Vs LSTM",
+      "Sentence Classification using Convolutional Neural Networks",
+      "Dog-breed Classifier",
+      "Generate TV Scripts",
+      "Generate Faces",
+      "Factoid Question Answering",
+      "Neural Summarization",
+      "Dialogue Generation with LSTMs"
+    ],
+    "home_assignment": [
+      {
+        "type": "Design",
+        "topics": [
+          "Propensity to Foreclose: Predicting propensity of the customer to foreclose their loans. The objective is to retain the customer for the maximum tenure.",
+          "Portfolio & Price Prediction for Intra-day trades: Price movement prediction using a masked set of features - This involves predicting short-term to mid-term price movements using a combination of multiple features.",
+          "Smart Building Energy Management System using Machine Learning",
+          "Quick analysis of quality of cereals, oilseeds and pulses using ML",
+          "Video Library Management System using Machine Learning",
+          "Building a Recurrent Neural Network",
+          "Character level Dinosaur Name generation",
+          "Music Generation",
+          "Operations on Word vectors",
+          "Neural Machine translation with attention"
+        ]
+      },
+      {
+        "type": "Case Study",
+        "topics": [
+          "Product Recommendation: Given a purchase history for a customer and a large inventory of products, identify those products in which that customer will be interested and likely to purchase. A model of this decision process would allow a program to make recommendations to a customer and motivate product purchases.",
+          "Medical Diagnosis: Given the symptoms exhibited in a patient and a database of anonymized patient records, predict whether the patient is likely to have an illness. A model of this decision problem could be used by a program to provide decision support to medical professionals.",
+          "Stock Trading: Given the current and past price movements for a stock, determine whether the stock should be bought, held, or sold. A model of this decision problem could provide decision support to financial analysts.",
+          "Customer Segmentation: Given the pattern of behavior by a user during a trial period and the past behaviors of all users, identify those users that will convert to the paid version of the product and those that will not. A model of this decision problem would allow a program to trigger customer interventions to persuade the customer to convert early or better engage in the trial.",
+          "Shape Detection: Given a user hand drawing a shape on a touch screen and a database of known shapes, determine which shape the user was trying to draw. A model of this decision would allow a program to show the platonic version of that shape the user drew to make crisp diagrams.",
+          "AlexNet",
+          "VGG",
+          "Inception",
+          "ResNet",
+          "YOLO"
+        ]
+      },
+      {
+        "type": "Blogs",
+        "topics": [
+          "Focusing Too Much on Algorithms and Theories.",
+          "Mastering ALL of ML.",
+          "Having Algorithms Become Obs mgolete as Soon as Data Grows.",
+          "Getting Bad Predictions to Come Together With Biases.",
+          "Making the Wrong Assumptions.",
+          "Receiving Bad Recommendations.",
+          "Having Bad Data Convert to Bad Results.",
+          "Open AI",
+          "Computer Vision",
+          "Google Brain",
+          "Deep Learning and Natural Language Processing",
+          "Multi-task Learning and Transfer Learning"
+        ]
+      },
+      {
+        "type": "Surveys",
+        "topics": [
+          "Concept learning",
+          "Reinforcement learning",
+          "Semi-supervised learning",
+          "Deep learning",
+          "Transfer learning",
+          "Deep Neural Networks in Speech and Vision Systems",
+          "GANs",
+          "Deep Learning for big data",
+          "Deep Learning for NLP"
+        ]
+      }
+    ],
+    "textbooks": [
+      "T. Mitchell, “Machine Learning”, McGraw-Hill, 1997.",
+      "Anup Kumar Srivastava, Soft Computing, Alpha Science International limited, 2009.",
+      "Deep Learning with Python by François Chollet, Manning Publications Co, ISBN: 9781617294433.",
+      "Deep Learning - A Practical Approach by Rajiv Chopra, Khana Publications, ISBN: 9789386173416."
+    ],
+    "reference_books": [
+      "Ethem Alpaydin, 'Introduction to Machine Learning', MIT press, 2004.",
+      "Jacek M. Zurada, 'Introduction to Artificial neural System', JAICO publishing house, 2002.",
+      "Deep Learning by Ian Goodfellow and Yoshua Bengio and Aaron Courville, Published by An MIT Press book."
+    ],
+    "outcomes": [
+      "Explore Different Machine Learning Techniques.",
+      "Evaluate Regression and Classifier Algorithms.",
+      "Use different Clustering Algorithms to different objects.",
+      "Acquaint with Trends in Machine Learning.",
+      "Build and train a Deep Neural Network.",
+      "Understand functionality of all layers in a Convolutional Neural Network."
+    ]
+  },
+
+  {
+    "code": "IT3202",
+    "id": "sp",
+    "title": "System Programming",
+    "prerequisites": "Data structures, programming in C/C++/Java",
+    "objectives": [
+      "To introduce students to the concepts and principles of system programming and to enable them to understand the duties and scope of a system programmer.",
+      "To provide students with knowledge about both theoretical and practical aspects of system programming, teaching them the methods and techniques for designing and implementing system-level programs.",
+      "To train students in developing skills for writing system software with the aid of sophisticated OS services, programming languages, and utility tools.",
+      "To train students in developing skills for writing a compiler from scratch.",
+      "To understand encoding-decoding of instruction set for a new machine."
+    ],
+    "credits": 5,
+    "teaching_scheme": {
+      "theory": "3 Hours/Week",
+      "tutorial": "1 Hour/Week",
+      "lab": "2 Hours/Week"
+    },
+    "relevance": "This course is helpful in designing different system softwares like operating systems, compilers, and device drivers, etc.",
+    "sections": [
+      {
+        "title": "Introduction",
+        "topics": [
+          "Software types, software hierarchy, components of system software, machine structure, interfaces, address space, levels of system software, recent trends in software development.",
+          "Language processors: Programming languages and language processors, fundamentals of language processing, life cycle of a source program, language processing activities, data structures for language processing: search data structures, allocation data structures.",
+          "Macroprocessor: Introduction, macro definition and call, macro expansion, nested macro calls, design of macroprocessor, design issues of macroprocessors, two-pass macroprocessors, one-pass macroprocessors."
+        ]
+      },
+      {
+        "title": "Assembler and Linkers/Loaders",
+        "topics": [
+          "Elements of assembly language programming, design of the assembler, assembler design criteria, types of assemblers, two-pass assemblers, one-pass assemblers, assembler algorithms, multi-pass assemblers, variants of assemblers, design of a two-pass assembler, machine-dependent and machine-independent assembler features, allocation, relocation, linker vs. loader.",
+          "Linkers and Loaders: relocation and linking concepts, static and dynamic linker, subroutine linkages, Linking of Overlay Structured Programs, dynamic linking libraries, MSDOS linker.",
+          "Loaders: Introduction to Loader, Sequential and Direct Loaders, loader schemes, compile and go loader, general loader scheme, absolute loader, relocating loader, dynamic linking loader."
+        ]
+      },
+      {
+        "title": "Systems Programming for Linux as Open Source OS",
+        "topics": [
+          "Essential concepts of Linux system programming, APIs and ABIs, standards, program segments/sections, the elf format, linking and loading, Linux dynamic libraries (shared objects), dynamic linking, API compatibility, dynamically linked libraries.",
+          "Advanced system programming concepts: Operating system interfaces, stack smashing, multitasking and paging, address translation, memory protection, comparison with Windows."
+        ]
+      },
+      {
+        "title": "Compilers, Interpreters, Debuggers, and Encoding/Decoding",
+        "topics": [
+          "Introduction to Compiler phases, Introduction to cross-compiler, Features of machine-dependent and independent compilers, types of compilers.",
+          "Interpreters: Compiler Vs. Interpreter, phases and working. Debuggers: Types of errors, debugging procedures, classification of debuggers, dynamic/interactive Debugger. Lexical Analyzer, Specification and Recognition of Tokens, LEX, Expressing Syntax, Top-Down Parsing, Predictive Parsers. Bottom-Up Parsing, LR Parsers: constructing SLR parsing tables, constructing Canonical LR parsing tables, Constructing LALR parsing tables, using ambiguous grammars, YACC.",
+          "Encoding and decoding schemes for the X-86 processor."
+        ]
+      }
+    ],
+    "tutorials": [
+      "File handling basics",
+      "Debugging concepts",
+      "Logic development for implementing assignments",
+      "Booting process and system files",
+      "Inbuilt drivers structure of Linux",
+      "Study of Linkers",
+      "Study of Loaders",
+      "Different DLL",
+      "Paging",
+      "Segmentation"
+    ],
+    "practicals": [
+      "Design and implementation of a symbol Table",
+      "Simulation of linkers",
+      "Simulation of loaders",
+      "Implementation of 2 Pass Assembler",
+      "Design and implementation of an Editor: Design of a Line or Screen Editor using C Language",
+      "Implementation of Macroprocessor",
+      "Write a TSR program in 8086 ALP to implement Real-Time Clock (RTC)",
+      "Write a TSR program in 8086 ALP to implement Screen Saver",
+      "Write a TSR program in 8086 ALP to handle the 'Divide by zero' interrupt",
+      "Write a TSR program in 'C' that would change the color of the screen every 10 seconds"
+    ],
+    "projects": [
+      "Design Macroprocessor",
+      "Design One-pass Assembler",
+      "Design Two-pass Assembler",
+      "Design direct linking loader",
+      "Mouse driver for Linux",
+      "USB driver for Linux",
+      "Keyboard driver for Linux",
+      "Implement a Lexical Analyzer using LEX for a subset of C",
+      "Design and implementation of DLL on Linux shared library",
+      "Design a device driver on Linux system"
+    ],
+    "seminar": [
+      "Macro processor design",
+      "Assembler design",
+      "Machine dependent and machine-independent assembler features",
+      "Linker vs. loader",
+      "Structured Programs",
+      "MSDOS linker",
+      "Dynamic linking loader",
+      "Dynamic linking libraries",
+      "Static and dynamic linker with subroutine linkages",
+      "Linux linking schemes"
+    ],
+    "group_discussion": [
+      "Windows Vs Linux OS",
+      "Application Programming Vs System Programming",
+      "Careers in Application Programming Vs System Programming",
+      "API Vs ABI",
+      "Single pass Vs multipass strategy",
+      "Compiler Vs Interpreter"
+    ],
+    "home_assignment": [
+      {
+        "type": "Design",
+        "topics": [
+          "Design and implementation of 2 Pass Macroprocessor",
+          "Design and implementation of 2 Pass Assembler",
+          "Simulation of linker & loader",
+          "Implement a Lexical Analyzer using LEX for a subset of C",
+          "Design and implementation of DLL on Linux shared library",
+          "Design a device driver on Linux system"
+        ]
+      },
+      {
+        "type": "Case Study",
+        "topics": [
+          "Linux OS system architecture",
+          "Windows OS system architecture",
+          "Android OS system architecture",
+          "MAC OS system architecture",
+          "New trends in linker and loaders"
+        ]
+      },
+      {
+        "type": "Blog",
+        "topics": [
+          "PASS-I Assembler",
+          "PASS-II Assembler",
+          "Macro expansion Algorithm",
+          "Macro Definition Algorithm",
+          "Machine Language Instruction Generation from Assembly Language Instruction",
+          "Language Processor Pass",
+          "Procedure vs Problem Oriented Languages",
+          "Macro Expansion and Macro definition",
+          "Linux FileSystem",
+          "Device Drivers",
+          "Dynamic Link Library",
+          "BIOS",
+          "DOS",
+          "LINKER",
+          "LOADER"
+        ]
+      }
+    ],
+    "assessment_scheme": [
+      "Home Assignment",
+      "MSE & ESE",
+      "Quiz",
+      "Seminar",
+      "Group Discussion",
+      "Lab - Course Assignment and Project Evaluation"
+    ],
+    "textbooks": [
+      "D M Dhamdhere, “Systems Programming & Operating Systems”, Tata McGraw-Hill Publications, ISBN – 0074635794",
+      "John J Donovan, “Systems Programming”, ISBN - 0070176035"
+    ],
+    "reference_books": [
+      "Robert Love, “Linux System Programming”, O’Reilly, ISBN 978-0-596-00958-8"
+    ],
+    "outcomes": [
+      "Discriminate among different System software and their functionalities.",
+      "Design language translators like Macroprocessor and Assembler.",
+      "Develop approaches and methods for implementing linker and loader.",
+      "Identify and interpret the different phases of a compiler and their functioning.",
+      "Design a well-structured system to ensure the syntactic and semantic correctness of a program.",
+      "Interpret the methods and techniques about instructions Encoding and Decoding for implementing system-level programs and Device Drivers."
+    ]
+  },
+  {
+    "code": "IT3215",
+    "id": "daaa",
+    "title": "Design and Analysis of Algorithms",
+    "prerequisites": [
+      "Basic programming Skills",
+      "Data structures",
+      "Discrete Structures"
+    ],
+    "objectives": [
+      "To understand asymptotic notations and apply suitable mathematical techniques to find asymptotic time and space complexities of algorithms.",
+      "To provide students with foundations to deal with a variety of computational problems using different design strategies.",
+      "To select appropriate algorithm design strategies to solve real-world problems.",
+      "To understand notions of NP-hardness and NP-completeness and their relationship with the intractability of decision problems.",
+      "To understand randomized, approximation algorithms for given computational problems."
+    ],
+    "credits": 5,
+    "teaching_scheme": {
+      "Theory": "3 Hours/Week",
+      "Tutorial": "1 Hour/Week",
+      "Lab": "2 Hours/Week"
+    },
+    "relevance": "This is an important course for Information Technology Engineering. It develops algorithmic thinking capability of students and is relevant for research careers in theory of computing, computational complexity theory, and advanced algorithmic research.",
+    "sections": [
+      {
+        "title": "Basic introduction to time and space complexity analysis",
+        "topics": [
+          "Asymptotic notations (Big Oh, small oh, Big Omega, Theta notations).",
+          "Best case, average case, and worst-case time and space complexity of algorithms.",
+          "Using Recurrence relations and Mathematical Induction to get asymptotic bounds on time complexity.",
+          "Master’s theorem and applications.",
+          "Proving correctness of algorithms."
+        ]
+      },
+      {
+        "title": "Divide and Conquer",
+        "topics": [
+          "General strategy, Binary search and applications.",
+          "Analyzing Quick sort, Merge sort, Counting Inversions, finding a majority element.",
+          "Josephus problem using recurrence, Efficient algorithms for Integer arithmetic (Euclid's algorithm, Karatsuba's algorithm for integer multiplication, fast exponentiation)."
+        ]
+      },
+      {
+        "title": "Greedy strategy",
+        "topics": [
+          "General strategy, Analysis and correctness proof of minimum spanning tree and shortest path algorithms, fractional knapsack problem, Huffman coding, conflict-free scheduling."
+        ]
+      },
+      {
+        "title": "Dynamic Programming",
+        "topics": [
+          "General strategy, Principle of Optimality, simple dynamic programming-based algorithms to compute Fibonacci numbers, binomial coefficients, Matrix Chain multiplication, Optimal binary search tree (OBST) construction, Coin change problem, 0-1 Knapsack, Traveling Salesperson Problem, Bellman Ford shortest path algorithm, longest increasing subsequence problem, Largest independent set for trees."
+        ]
+      },
+      {
+        "title": "Backtracking strategy",
+        "topics": [
+          "General strategy, n-queen problem, backtracking strategy for some NP Complete problems (e.g., graph coloring, subset sum problem)."
+        ]
+      },
+      {
+        "title": "Branch and Bound strategy",
+        "topics": [
+          "Control abstraction for LIFO, Least Cost Search and FIFO branch and bound, 0-1 knapsack problem using LC branch and bound."
+        ]
+      },
+      {
+        "title": "Computational Complexity classes",
+        "topics": [
+          "Complexity classes P, NP, NP-complete, NP Hard and their interrelation.",
+          "Notion of polynomial time reduction, Cook-Levin theorem and implication to P versus NP question, Satisfiability Problem, NP-hardness of halting problem, NP-Complete problems (some selected examples)."
+        ]
+      },
+      {
+        "title": "Introduction to Randomized and Approximation algorithms",
+        "topics": [
+          "Introduction to randomness in computation, Las-Vegas and Monte-Carlo algorithms, Abundance of witnesses/solutions and application of randomization, randomized quick sort, Introduction to Approximation algorithms for NP-optimization problems (like Vertex Cover)."
+        ]
+      }
+    ],
+    "practicals": [
+      "Assignment based on some simple coding problems on numbers, graphs, matrices.",
+      "Assignment based on analysis of quick sort (deterministic and randomized variant).",
+      "Assignment based on Divide and Conquer strategy (e.g. majority element search, finding kth rank element in an array).",
+      "Assignment based on Divide and Conquer strategy (e.g. efficient algorithm for Josephus problem using recurrence relations, fast modular exponentiation).",
+      "Assignment based on Dynamic Programming strategy (e.g. Matrix chain multiplication, Longest increasing subsequence).",
+      "Assignment based on Dynamic Programming strategy (e.g. All pair shortest path, Traveling Sales Person problem).",
+      "Assignment based on Greedy strategy (e.g. Huffman encoding, fractional knapsack problem).",
+      "Assignment based on Backtracking (e.g. graph coloring, n-queen problem).",
+      "Assignment based on Las-Vegas and Monte-Carlo algorithm for majority element search.",
+      "Assignment based on factor-2 approximation algorithm for metric-TSP."
+    ],
+    "projects": [
+      "Applications of A* algorithm in gaming",
+      "Pac-Man game",
+      "Creation / Solution of Maze (comparing the backtracking-based solution and Dijkstra’s algorithm).",
+      "Different exact and approximation algorithms for Travelling-Sales-Person Problem.",
+      "Knight tour algorithms.",
+      "Network flow optimization and maximum matching.",
+      "AI for different games such as minesweeper, shooting games, Hex, connect-4, sokoban, etc.",
+      "SUDOKU solver.",
+      "Algorithms for factoring large integers.",
+      "Randomized algorithms for primality testing (Miller-Rabin, Solovay-Strassen).",
+      "Slider puzzle game."
+    ],
+    "seminar": [
+      "Complexity classes",
+      "Space complexity",
+      "Divide and Conquer Vs Dynamic Programming",
+      "Greedy strategy Vs Backtracking strategy",
+      "Dynamic Programming Vs Greedy",
+      "Computational Complexity",
+      "Comparison of P Vs NP problems",
+      "Compression Techniques",
+      "Approximation algorithms",
+      "Pseudorandom number generators"
+    ],
+    "home_assignment": [
+      {
+        "type": "Design",
+        "topics": [
+          "Divide and Conquer strategy for real-world problem solving",
+          "Dynamic Programming strategy for real-world problem solving",
+          "Problems on Randomized Algorithms",
+          "Problems on Approximation Algorithms",
+          "Problems on NP completeness"
+        ]
+      },
+      {
+        "type": "Case Study",
+        "topics": [
+          "Encoding techniques",
+          "Network flow optimization algorithms",
+          "Approximation algorithms for TSP",
+          "Sorting techniques",
+          "AKS primality test"
+        ]
+      },
+      {
+        "type": "Blog",
+        "topics": [
+          "How to decide the suitability of Approximation Algorithms",
+          "When do Randomized Algorithms perform best",
+          "Applications of Computational Geometry Algorithms",
+          "Role of number-theoretic algorithms in cryptography",
+          "Performance analysis of Graph Theoretic Algorithms"
+        ]
+      },
+      {
+        "type": "Surveys",
+        "topics": [
+          "Primality Testing Algorithms",
+          "Integer Factoring Algorithms",
+          "Shortest Path Algorithms",
+          "Algorithms for finding Minimum Weight Spanning Tree",
+          "SAT solvers"
+        ]
+      }
+    ],
+    "assessment_scheme": [
+      "Home Assignment",
+      "MSE & ESE (Mid-Semester Examination & End-Semester Examination)",
+      "Seminar",
+      "LAB - Course Assignment and Project Evaluation"
+    ],
+    "textbooks": [
+      "Cormen, Leiserson, Rivest and Stein “Introduction to Algorithms”, 3rd edition, 2009. ISBN 81-203-2141-3, PHI",
+      "Horowitz and Sahani, Fundamentals of computer Algorithms, Galgotia, ISBN 81-7371-612-9",
+      "Jon Kleinberg, Eva Tardos “Algorithm Design”, 1st edition, 2005. ISBN 978-81-317-0310-6, Pearson",
+      "Dasgupta, Papadimitriu, Vazirani “Algorithms”, 1st edition (September 13, 2006), ISBN-10: 9780073523408, ISBN-13: 978-0073523408, McGraw-Hill Education"
+    ],
+    "reference_books": [
+      "Anany Levitin, “Introduction to the Design & Analysis of Algorithm”, Pearson, ISBN 81-7758-835-4.",
+      "Gilles Brassard, Paul Bratle, Fundamentals of Algorithms, Pearson, ISBN 978-81-317-1244-3.",
+      "Motwani, Raghavan “Randomized Algorithms”, 1st edition (August 25, 1995), ISBN-10: 0521474655, ISBN-13: 978-0521474658, Cambridge University Press",
+      "Vazirani, “Approximation Algorithms”, ISBN-10: 3642084699, ISBN-13: 978-3642084690, Springer (December 8, 2010)"
+    ],
+    "outcomes": [
+      "To formulate computational problems mathematically.",
+      "To apply appropriate algorithmic paradigm to design efficient algorithms for computational problems.",
+      "To apply suitable mathematical techniques to analyze asymptotic complexity of the algorithm for a complex computational problem.",
+      "To understand the significance of NP--completeness of some decision problems and its relationship with the intractability of the decision problems.",
+      "To understand the significance of randomness, approximability in computation and design randomized and approximation algorithms for suitable problems.",
+      "To incorporate appropriate data structures, algorithmic paradigms to craft innovative scientific solutions for complex computing problems."
+    ]
+  }
+]

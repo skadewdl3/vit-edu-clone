@@ -19,6 +19,7 @@
     "astro-auto-import": "^0.3.1",
     "autoprefixer": "^10.4.16",
     "heroicons-astro": "^1.0.4",
+    "lodash": "^4.17.21",
     "nanostores": "^0.9.3",
     "surrealdb.js": "^0.9.1",
     "tailwindcss": "^3.3.3",
@@ -26,6 +27,7 @@
     "vue": "^3.3.4"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.199",
     "stylus": "^0.60.0"
   }
 }
