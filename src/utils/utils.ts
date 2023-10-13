@@ -28,10 +28,6 @@ export const evilDOMHack = (callback, timeout = 0) => {
 }
 
 export const sections: MenuSection[] = [
-  // {
-  //   name: 'Test',
-  //   route: '/heheboi',
-  // },
   {
     name: 'Academics',
     id: 'academics.webp',
@@ -39,20 +35,21 @@ export const sections: MenuSection[] = [
       {
         name: 'Courses',
         description: 'Learning at VIT breaks the boundaries of the classroom.',
-        sections: [
-          {
-            name: 'Second Year',
-            route: '/academics/courses/sy',
-          },
-          {
-            name: 'Third Year',
-            route: '/academics/courses/sy',
-          },
-          {
-            name: 'Final Year',
-            route: '/academics/courses/btech',
-          },
-        ],
+        // sections: [
+        //   {
+        //     name: 'Second Year',
+        //     route: '/academics/courses/sy',
+        //   },
+        //   {
+        //     name: 'Third Year',
+        //     route: '/academics/courses/sy',
+        //   },
+        //   {
+        //     name: 'Final Year',
+        //     route: '/academics/courses/btech',
+        //   },
+        // ],
+        route: '/academics/courses',
       },
       {
         name: 'Syllabus',

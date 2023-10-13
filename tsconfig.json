@@ -25,6 +25,9 @@
 
       "@store/*": [
         "src/store/*"
+      ],
+      "@database/*": [
+        "src/database/*"
       ]
     },
     "types": [

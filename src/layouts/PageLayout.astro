@@ -1,0 +1,22 @@
+---
+import '../stylus/base.styl'
+import Navbar from './Navbar.astro'
+
+const title = Astro.props.title || 'Vishwakamra Institute of Technology'
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>{title}</title>
+  </head>
+
+  <body class="relative">
+    <Navbar />
+    <main class="absolute top-0 left-0 w-full h-screen min-h-screen py-60">
+      <slot />
+    </main>
+  </body>
+</html>

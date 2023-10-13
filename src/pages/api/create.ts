@@ -1,13 +1,4 @@
-import { Surreal } from 'surrealdb.js'
-
-const db = new Surreal()
-await db.connect('http://0.0.0.0:8000/rpc')
-db.signin({
-  user: 'root',
-  pass: 'root',
-  ns: 'test',
-  db: 'test',
-})
+import db from '@database/surreal.ts'
 
 export async function POST({ params, request }) {
   try {

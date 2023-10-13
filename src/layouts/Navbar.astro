@@ -40,9 +40,7 @@ console.log(navColor)
       logo.classList.remove('text-6xl')
       sublogo.classList.remove('px-28')
       sublogo.classList.add('text-lg', 'px-20')
-      if (expectedNavColor != 'light') {
-        navColorAtom.set('dark')
-      }
+      expectedNavColor ? navColorAtom.set(expectedNavColor) : navColorAtom.set('dark')
       navIsSmall = true
 
     } else if (document.documentElement.scrollTop < 50 && navIsSmall) {
@@ -58,9 +56,7 @@ console.log(navColor)
       logo.classList.add('text-6xl')
       sublogo.classList.add('px-28')
       sublogo.classList.remove('text-lg', 'px-20')
-      if (expectedNavColor != 'dark') {
-        navColorAtom.set('light')
-      }
+      expectedNavColor ? navColorAtom.set(expectedNavColor) : navColorAtom.set('light')
       navIsSmall = false
     }
   }, 100)

@@ -1,11 +1,30 @@
 ---
-import Courses from './CourseList.vapor.vue'
-import SiteLayout from '@layouts/SiteLayout.astro'
+import PageLayout from '@layouts/PageLayout.astro'
+import { expectedNavColor, navColor } from '@store/menu'
 
 const res = await fetch(`${Astro.url.origin}/api/courses/list`)
-let json = await res.json()
+let courses = await res.json()
+
+console.log(courses[0])
+
+expectedNavColor.set('dark')
+navColor.set('dark')
 ---
 
-<SiteLayout>
-  <Courses courses={json[0].result} />
-</SiteLayout>
+<PageLayout>
+  <div class="px-60 grid grid-cols-3">
+    {
+      courses.map((course: any) => {
+        return (
+          <div class="couse-card w-[70%] rounded-xl overflow-hidden shadow-sm shadow-black/50 mb-12">
+            <img class="course-image" src={course.image} class="block w-full h-full object-cover" />
+            <div class="course-content px-4 py-2">
+              <div class="course-name text-4xl mb-4">{course.name}</div>
+              <div class="course-relevance text-2xl">{course.relevance}</div>
+              </div>
+          </div>
+        )
+      })
+    }
+  </div>
+</PageLayout>
