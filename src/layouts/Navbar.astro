@@ -13,9 +13,10 @@ console.log(navColor)
 <script>
   import { isMenuOpen } from '@store/menu'
   import { throttle } from 'lodash'
-  import { navColor as navColorAtom } from '@store/menu'
+  import { navColor as navColorAtom, expectedNavColor as expectedNavColorAtom } from '@store/menu'
 
   const openMenu = () => isMenuOpen.set(true)
+  const expectedNavColor = expectedNavColorAtom.get()
 
   document.querySelector('.menu-trigger').addEventListener('click', openMenu)
   let navbar = document.querySelector('.navbar')
@@ -27,19 +28,29 @@ console.log(navColor)
 
   const scrollListener = throttle(e => {
     if (document.documentElement.scrollTop >= 50 && !navIsSmall) {
-      navbar.classList.remove('px-60', 'py-8', 'text-white')
+      navbar.classList.remove('px-60', 'py-8')
       navbar.classList.add('px-20', 'py-4', 'bg-white/80', 'opacity-90', 'text-black')
+      if (expectedNavColor == 'dark') {
+        navbar.classList.remove('text-white')
+        navbar.classList.add('text-black')
+      }
       image.classList.remove('w-28')
       image.classList.add('w-20')
       logo.classList.add('text-4xl')
       logo.classList.remove('text-6xl')
       sublogo.classList.remove('px-28')
       sublogo.classList.add('text-lg', 'px-20')
-      navColorAtom.set('dark')
+      if (expectedNavColor != 'light') {
+        navColorAtom.set('dark')
+      }
       navIsSmall = true
 
     } else if (document.documentElement.scrollTop < 50 && navIsSmall) {
-      navbar.classList.add('px-60', 'py-8', 'text-white')
+      navbar.classList.add('px-60', 'py-8')
+      if (expectedNavColor == 'dark') {
+        navbar.classList.remove('text-white')
+        navbar.classList.add('text-black')
+      }
       navbar.classList.remove('px-20', 'py-4', 'bg-white/80', 'opacity-90', 'text-black')
       image.classList.add('w-28')
       image.classList.remove('w-20')
@@ -47,7 +58,9 @@ console.log(navColor)
       logo.classList.add('text-6xl')
       sublogo.classList.add('px-28')
       sublogo.classList.remove('text-lg', 'px-20')
-      navColorAtom.set('light')
+      if (expectedNavColor != 'dark') {
+        navColorAtom.set('light')
+      }
       navIsSmall = false
     }
   }, 100)
@@ -61,7 +74,8 @@ console.log(navColor)
     class="navbar transition-all bg-white/0 fixed top-0 left-0 z-10 px-60 py-8 w-full flex items-center justify-between"
     class:list={{
       'text-white': navColor == 'light',
-      'text-black': navColor == 'dark',
+      'text-black bg-white': navColor == 'dark',
+      
     }}
   >
     <div class="navbar-left flex flex-col items-start justify-center">

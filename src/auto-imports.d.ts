@@ -10,6 +10,7 @@ declare global {
   const camelize: typeof import('./utils/utils.js')['camelize']
   const computed: typeof import('vue')['computed']
   const evilDOMHack: typeof import('./utils/utils')['evilDOMHack']
+  const expectedNavColor: typeof import('./store/menu')['expectedNavColor']
   const getMetadata: typeof import('./utils/utils')['getMetadata']
   const getVariable: typeof import('./utils/utils')['getVariable']
   const isMenuOpen: typeof import('./store/menu')['isMenuOpen']

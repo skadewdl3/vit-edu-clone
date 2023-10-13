@@ -8,6 +8,7 @@ const props = defineProps(['teachers', 'course'])
     <p v-for="teacher in teachers">
       {{teacher}}
     </p>
+    <div class="text-2xl">{{ props.course }}</div>
   </div>
 </template>
 
