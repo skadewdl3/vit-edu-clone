@@ -1,13 +1,6 @@
-import { Surreal } from 'surrealdb.js'
+import { storage } from '@database/firebase-server'
+import db from '@database/surreal'
 
-const db = new Surreal()
-await db.connect('http://0.0.0.0:8000/rpc')
-db.signin({
-  user: 'root',
-  pass: 'root',
-  ns: 'test',
-  db: 'test',
-})
 export async function GET({ params, request }) {
   let courseID = new URLSearchParams(request.url.split('?')[1]).get('courseID')
   try {
@@ -37,7 +30,21 @@ export async function GET({ params, request }) {
       }
       `
     )
-    return new Response(JSON.stringify(res), {
+
+    let result = JSON.parse(JSON.stringify(res[0].result))
+
+    if (result.course.image) {
+      let url = await storage
+        .bucket(import.meta.env.FIREBASE_STORAGE_BUCKET)
+        .file(result.course.image)
+        .getSignedUrl({
+          action: 'read',
+          expires: '03-09-2491',
+        })
+      result.course.image = url[0]
+    }
+
+    return new Response(JSON.stringify(result), {
       status: 200,
       headers: {
         'Content-Type': 'application/json',

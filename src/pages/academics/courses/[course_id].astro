@@ -1,6 +1,6 @@
 ---
 import CourseLayout from '@layouts/CourseLayout.astro'
-import Course from './Course.vapor.vue'
+import { Image } from 'astro:assets'
 const courseID = Astro.params.course_id
 
 const res = await fetch(
@@ -12,9 +12,9 @@ const res = await fetch(
   },
 )
 
-let details = await res.json()
-let {first_names, last_names, prefixes} = details[0].result.teachers
-let course = details[0].result.course
+let result = await res.json()
+let {first_names, last_names, prefixes} = result.teachers
+let course = result.course
 
 let teacherNames = first_names.map((name, index) => {
   return `${prefixes[index] != null ? prefixes[index] + ' ' : ''}${name} ${
@@ -24,21 +24,14 @@ let teacherNames = first_names.map((name, index) => {
 export const prerender = false
 ---
 
-<CourseLayout courseName={course.name}>
+<CourseLayout courseName={'heheboi'}>
   
   <div slot="summary" class="text-blue-400 bg-red-400">
-    <h2>Teachers</h2>
-    <ul>
-      {teacherNames.map((name) => {
-        return <li>{name}</li>
-      })}
-    </ul>
+    {course.image && <Image src={course.image} alt={course.name + ' Cover Image'} width={800} height={800} />}
   </div>
 
-  <Course
-    client:load
-    teachers={teacherNames}
-    course={course}
-    slot="intro"
-  />
+  <div slot="intro">
+    <h1 class="text-6xl font-bold">{course.name}</h1>
+    <!-- <p>{course.description}</p> -->
+  </div>
 </CourseLayout>

@@ -68,7 +68,7 @@ const createTeachesString = (teacher: any) => {
 //   queryString +=  '\n\n' + createTeachesString(course)
 // }
 
-queryString += createCourseString(oldCourses.find(course => course.id == 'dt'))
+queryString += createCourseString(oldCourses.find(course => course.id == 'edai'))
 
 queryString += '\nCOMMIT TRANSACTION;'
 

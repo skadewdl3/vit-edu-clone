@@ -809,7 +809,7 @@
   {
     "code": "IT2272",
     "title": "Engineering Design and Innovation III",
-    "id": "edai3",
+    "id": "edai",
     "prerequisites": ["Problem Based Learning"],
     "credits": 4,
     "teaching_scheme": {

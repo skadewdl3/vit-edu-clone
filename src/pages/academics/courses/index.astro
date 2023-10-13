@@ -1,28 +1,40 @@
 ---
 import PageLayout from '@layouts/PageLayout.astro'
 import { expectedNavColor, navColor } from '@store/menu'
+import { Image } from 'astro:assets'
 
 const res = await fetch(`${Astro.url.origin}/api/courses/list`)
 let courses = await res.json()
 
-console.log(courses[0])
+console.log()
 
 expectedNavColor.set('dark')
 navColor.set('dark')
 ---
 
 <PageLayout>
-  <div class="px-60 grid grid-cols-3">
+  <div class="grid grid-cols-3 mx-auto w-[60%]">
     {
       courses.map((course: any) => {
         return (
-          <div class="couse-card w-[70%] rounded-xl overflow-hidden shadow-sm shadow-black/50 mb-12">
-            <img class="course-image" src={course.image} class="block w-full h-full object-cover" />
-            <div class="course-content px-4 py-2">
+          <a
+            class="couse-card w-[90%] group mx-auto rounded-xl overflow-hidden border-2 border-solid border-primary/20 mb-12 cursor-pointer hover:border-primary/50 transition-all"
+            href={`/academics/courses/${course.id.split(':')[1]}`}
+          >
+            {course.image && (
+              <div class="image-container w-full max-h-[20rem] overflow-hidden">
+                <img
+                  class="course-image block object-cover scale-125 group-hover:scale-100 transition-all"
+                  src={course.image}
+                  alt={course.name + ' Cover Image'}
+                />
+              </div>
+            )}
+            <div class="course-content px-8 py-4">
               <div class="course-name text-4xl mb-4">{course.name}</div>
               <div class="course-relevance text-2xl">{course.relevance}</div>
-              </div>
-          </div>
+            </div>
+          </a>
         )
       })
     }
