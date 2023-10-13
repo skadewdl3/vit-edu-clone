@@ -7,11 +7,13 @@ import NavbarLinks from '@components/NavbarLinks.vapor.vue'
 import { navColor as navColorAtom } from '@store/menu'
 
 const navColor = navColorAtom.get()
+console.log(navColor)
 ---
 
 <script>
   import { isMenuOpen } from '@store/menu'
   import { throttle } from 'lodash'
+  import { navColor as navColorAtom } from '@store/menu'
 
   const openMenu = () => isMenuOpen.set(true)
 
@@ -25,21 +27,28 @@ const navColor = navColorAtom.get()
 
   const scrollListener = throttle(e => {
     if (document.documentElement.scrollTop >= 50 && !navIsSmall) {
-      navbar.classList.add('px-20', 'py-4', 'bg-white/80', 'opacity-90')
+      navbar.classList.remove('px-60', 'py-8', 'text-white')
+      navbar.classList.add('px-20', 'py-4', 'bg-white/80', 'opacity-90', 'text-black')
+      image.classList.remove('w-28')
       image.classList.add('w-20')
       logo.classList.add('text-4xl')
       logo.classList.remove('text-6xl')
+      sublogo.classList.remove('px-28')
       sublogo.classList.add('text-lg', 'px-20')
-      console.log('this ran')
+      navColorAtom.set('dark')
       navIsSmall = true
+
     } else if (document.documentElement.scrollTop < 50 && navIsSmall) {
-      navbar.classList.remove('px-20', 'py-4', 'bg-white/80', 'opacity-90')
+      navbar.classList.add('px-60', 'py-8', 'text-black')
+      navbar.classList.remove('px-20', 'py-4', 'bg-white/80', 'opacity-90', 'text-white')
+      image.classList.add('w-28')
       image.classList.remove('w-20')
       logo.classList.remove('text-4xl')
       logo.classList.add('text-6xl')
+      sublogo.classList.add('px-28')
       sublogo.classList.remove('text-lg', 'px-20')
+      navColorAtom.set('light')
       navIsSmall = false
-      console.log('this ran 2')
     }
   }, 100)
 

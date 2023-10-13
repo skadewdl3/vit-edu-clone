@@ -41,7 +41,7 @@ watch(menuOpen, () => {
 <template>
   <Transition name="slideInFromTop">
     <div
-      class="menu-wrapper absolute z-20 top-0 left-0 w-screen h-screen text-white overflow-hidden bg-stone-950"
+      class="menu-wrapper fixed z-20 top-0 left-0 w-screen h-screen text-white overflow-hidden bg-stone-950"
       v-if="menuOpen"
     >
       <div

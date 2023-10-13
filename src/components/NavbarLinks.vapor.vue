@@ -19,7 +19,7 @@ const openSection = (sectionIndex: number) => {
      v-for="(section, index) in Array.from(sections).reverse()"
      @click="openSection(sections.length - 1 - index)"
      >
-      <span class="text-2xl font-bold uppercase"  :class="{'text-gray-400': navColor == 'light', 'text-primary': navColor == 'dark'}">{{ section.name }}</span>
+      <span class="navbar-link-text text-2xl font-bold uppercase"  :class="{'text-gray-400': navColor == 'light', 'text-primary': navColor == 'dark'}">{{ section.name }}</span>
       <span v-if="index != sections.length - 1" class="text-lg text-gray-400 mx-4">/</span>
     </div>
   </div>
