@@ -16,10 +16,12 @@ let result = await res.json().catch(e => {
   console.log(e)
 })
 
-if (!('teachers' in result)) return
+if (!result) return
 
 let { first_names, last_names, prefixes } = result.teachers
 let course = result.course
+
+if (!course) return
 
 let teacherNames = first_names.map((name, index) => {
   return `${prefixes[index] != null ? prefixes[index] + ' ' : ''}${name} ${
