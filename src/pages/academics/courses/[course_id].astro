@@ -13,21 +13,66 @@ const res = await fetch(
 )
 
 let result = await res.json()
-let {first_names, last_names, prefixes} = result.teachers
+let { first_names, last_names, prefixes } = result.teachers
 let course = result.course
 
 let teacherNames = first_names.map((name, index) => {
   return `${prefixes[index] != null ? prefixes[index] + ' ' : ''}${name} ${
-    last_names[index]}`
+    last_names[index]
+  }`
 })
+
+console.log(result)
 
 export const prerender = false
 ---
 
 <CourseLayout courseName={'heheboi'}>
-  
-  <div slot="summary" class="text-blue-400 bg-red-400">
-    {course.image && <Image src={course.image} alt={course.name + ' Cover Image'} width={800} height={800} />}
+  <div
+    slot="summary"
+    class="max-h-[80rem] flex flex-col items-center border-2 border-black/50 border-solid rounded-xl overflow-hidden"
+  >
+    {
+      course.image && (
+        <div class="cover-image">
+          <Image
+            src={course.image}
+            alt={course.name + ' Cover Image'}
+            width={800}
+            height={800}
+          />
+        </div>
+      )
+    }
+
+    <div
+      class="summary-content flex flex-col items-start w-full px-8 py-4 text-2xl"
+    >
+      <h3 class="summary-tite">
+        <span class="font-bold">Course Code:{' '}</span>{course.code}
+      </h3>
+      <h3 class="summary-tite">
+        <span class="font-bold">Credits:{' '}</span>{course.credits}
+      </h3>
+      <h3 class="summary-tite">
+        <span class="font-bold">Teachers:{' '}</span>
+        {
+          teacherNames.map((name, index) => {
+            return (
+              <a href={`/academics/faculty/${result.teachers.ids[index].split(':')[1]}`} class="teacher-name hover:text-primary hover:underline cursor-pointer">
+                {name}
+                {index != teacherNames.length - 1 && <span>, </span>}
+              </a>
+            )
+          })
+        }
+      </h3>
+    </div>
+
+    <button
+      class="mx-auto bg-gray-800 hover:bg-gray-700 transition-all text-white px-8 py-4 rounded text-2xl font-bold my-4"
+      >View Syllabus</button
+    >
   </div>
 
   <div slot="intro">
