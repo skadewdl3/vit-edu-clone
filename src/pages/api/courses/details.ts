@@ -34,6 +34,7 @@ export async function GET({ params, request }) {
       `
     )
 
+    // console.log(JSON.parse(JSON.stringify(res[0].result)))
     let result = JSON.parse(JSON.stringify(res[0].result))
 
     if (result.course.image) {
