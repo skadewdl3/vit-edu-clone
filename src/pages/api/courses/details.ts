@@ -48,15 +48,12 @@ export async function GET({ params, request }) {
       result.course.image = url[0]
     }
 
-    return new Response(JSON.stringify(result), {
-      status: 200,
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
+    return {
+      body: JSON.stringify(result),
+    }
   } catch (e) {
-    return new Response(e.message, {
-      status: 500,
-    })
+    return {
+      body: JSON.stringify(e.message),
+    }
   }
 }
