@@ -1,5 +1,6 @@
 // For defining astro configuration
 import { defineConfig } from 'astro/config'
+import vercel from '@astrojs/vercel/serverless'
 
 // Astro plugins for react and tailwind setup
 import tailwind from '@astrojs/tailwind'
@@ -33,6 +34,7 @@ const autoImportConfig = {
 // https://astro.build/config
 export default defineConfig({
   output: 'hybrid',
+  adapter: vercel(),
   integrations: [vue(), tailwind(), AutoImport(autoImportConfig)],
   vite: {
     css: {
