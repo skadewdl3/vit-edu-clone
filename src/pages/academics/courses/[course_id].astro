@@ -12,7 +12,9 @@ const res = await fetch(
   },
 )
 
-let result = await res.json()
+let result = await res.json().catch(e => {
+  console.log(e)
+})
 let { first_names, last_names, prefixes } = result.teachers
 let course = result.course
 
