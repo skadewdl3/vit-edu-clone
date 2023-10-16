@@ -7,59 +7,6 @@ import NavbarIsland from '@components/Navbar.vapor.vue'
 import Menu from '@components/Menu.vapor.vue'
 ---
 
-<!-- <script>
-  import { isMenuOpen } from '@store/menu'
-  import { throttle } from 'lodash'
-  import { navColor as navColorAtom, expectedNavColor as expectedNavColorAtom } from '@store/menu'
-
-  const openMenu = () => isMenuOpen.set(true)
-  const expectedNavColor = expectedNavColorAtom.get()
-
-  document.querySelector('.menu-trigger').addEventListener('click', openMenu)
-  let navbar = document.querySelector('.navbar')
-  let image = document.querySelector('.menu-logo-img')
-  let logo = document.querySelector('.menu-logo')
-  let sublogo = document.querySelector('.menu-sub-logo')
-
-  let navIsSmall = false
-
-  const scrollListener = throttle(e => {
-    if (document.documentElement.scrollTop >= 50 && !navIsSmall) {
-      navbar.classList.remove('px-60', 'py-8')
-      navbar.classList.add('px-20', 'py-4', 'bg-white/80', 'opacity-90', 'text-black')
-      if (expectedNavColor == 'dark') {
-        navbar.classList.remove('text-white')
-        navbar.classList.add('text-black')
-      }
-      image.classList.remove('w-28')
-      image.classList.add('w-20')
-      logo.classList.add('text-4xl')
-      logo.classList.remove('text-6xl')
-      sublogo.classList.remove('px-28')
-      sublogo.classList.add('text-lg', 'px-20')
-      expectedNavColor ? navColorAtom.set(expectedNavColor) : navColorAtom.set('dark')
-      navIsSmall = true
-
-    } else if (document.documentElement.scrollTop < 50 && navIsSmall) {
-      navbar.classList.add('px-60', 'py-8')
-      if (expectedNavColor == 'dark') {
-        navbar.classList.remove('text-white')
-        navbar.classList.add('text-black')
-      }
-      navbar.classList.remove('px-20', 'py-4', 'bg-white/80', 'opacity-90', 'text-black')
-      image.classList.add('w-28')
-      image.classList.remove('w-20')
-      logo.classList.remove('text-4xl')
-      logo.classList.add('text-6xl')
-      sublogo.classList.add('px-28')
-      sublogo.classList.remove('text-lg', 'px-20')
-      expectedNavColor ? navColorAtom.set(expectedNavColor) : navColorAtom.set('light')
-      navIsSmall = false
-    }
-  }, 100)
-
-  window.addEventListener('scroll', scrollListener)
-</script> -->
 <NavbarIsland client:load>
   <Image src={logo} alt="VIT Logo" slot="logo" />
   <Menu client:load slot="menu">
@@ -71,8 +18,8 @@ import Menu from '@components/Menu.vapor.vue'
         <div class="menu-logo-main flex items-end justify-start">
           <div class="menu-logo-img w-28 aspect-square">
             <!-- Using Astro's built in Image component gives better optimisation for images -->
-
-            <slot name="logo" />
+            <Image src={logo} alt="VIT Logo" slot="logo" />
+            
           </div>
           <div class="menu-logo font-heading text-6xl">ishwakarma</div>
         </div>

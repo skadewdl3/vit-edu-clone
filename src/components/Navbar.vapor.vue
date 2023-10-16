@@ -11,6 +11,7 @@ import { useWindowScroll } from '@vueuse/core'
 import { throttle } from 'lodash'
 
 const navColor = useStore(navColorAtom)
+const menuOpen = useStore(isMenuOpen)
 
 const isSmall = ref(false)
 
@@ -25,15 +26,23 @@ const openMenu = () => {
   isMenuOpen.set(true)
 }
 
+watch(menuOpen, () => {
+  if (menuOpen.value) {
+    document.body.style.overflow = 'hidden'
+  } else {
+    document.body.style.overflow = 'auto'
+  }
+})
+
 const { x, y } = useWindowScroll()
 let prevColor = 'light'
 
 const scrollListener = throttle(() => {
-  if (y.value > 100) {
+  if (y.value >= 100 && !isSmall.value) {
     prevColor = navColor.value
     isSmall.value = true
     navColorAtom.set('dark')
-  } else {
+  } else if (y.value < 100 && isSmall.value) {
     isSmall.value = false
     navColorAtom.set(prevColor)
   }

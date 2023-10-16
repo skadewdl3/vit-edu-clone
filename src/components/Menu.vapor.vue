@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { watch } from 'vue'
+import { watch, onMounted } from 'vue'
 import { useStore } from '@nanostores/vue'
 import {
   isMenuOpen,
@@ -21,11 +21,6 @@ const setSection = (sectionIndex: number) => {
 
 const setSubsection = (subsectionIndex: number) => {
   activeSubsectionAtom.set(subsectionIndex)
-}
-
-let listenerAdded = false
-
-if (!listenerAdded) {
 }
 
 watch(menuOpen, () => {
