@@ -48,12 +48,18 @@ export async function GET({ params, request }) {
       result.course.image = url[0]
     }
 
-    return {
-      body: JSON.stringify(result),
-    }
+    return new Response(JSON.stringify(result), {
+      headers: {
+        'content-type': 'application/json;charset=UTF-8',
+      },
+      status: 200,
+    })
   } catch (e) {
-    return {
-      body: JSON.stringify(e.message),
-    }
+    return new Response(JSON.stringify(e.message), {
+      headers: {
+        'content-type': 'application/json;charset=UTF-8',
+      },
+      status: 500,
+    })
   }
 }
