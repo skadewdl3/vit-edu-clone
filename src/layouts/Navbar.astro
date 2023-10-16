@@ -1,16 +1,13 @@
 ---
 import Icon from '@components/Icon.vapor.vue'
 import { Image } from 'astro:assets'
-import Menu from '@components/Menu.vapor.vue'
 import logo from '@assets/images/logo.png'
-import NavbarLinks from '@components/NavbarLinks.vapor.vue'
-import { navColor as navColorAtom } from '@store/menu'
 
-const navColor = navColorAtom.get()
-console.log(navColor)
+import NavbarIsland from '@components/Navbar.vapor.vue'
+import Menu from '@components/Menu.vapor.vue'
 ---
 
-<script>
+<!-- <script>
   import { isMenuOpen } from '@store/menu'
   import { throttle } from 'lodash'
   import { navColor as navColorAtom, expectedNavColor as expectedNavColorAtom } from '@store/menu'
@@ -62,49 +59,10 @@ console.log(navColor)
   }, 100)
 
   window.addEventListener('scroll', scrollListener)
-</script>
-
-<div>
-  <div class="hidden px-20 py-4 fixed text-4xl"></div>
-  <div
-    class="navbar transition-all bg-white/0 fixed top-0 left-0 z-10 px-60 py-8 w-full flex items-center justify-between"
-    class:list={{
-      'text-white': navColor == 'light',
-      'text-black bg-white': navColor == 'dark',
-      
-    }}
-  >
-    <div class="navbar-left flex flex-col items-start justify-center">
-      <div class="menu-logo-main flex items-end justify-start">
-        <div class="menu-logo-img w-28 aspect-square">
-          <Image
-            slot="logo"
-            alt="Vishwakarma Institute of Technology Logo"
-            src={logo}
-          />
-        </div>
-        <div class="menu-logo font-heading text-6xl">ishwakarma</div>
-      </div>
-
-      <div class="menu-sub-logo font-heading text-2xl px-28">
-        Institute of Technology
-      </div>
-    </div>
-    <div class="navbar-right flex flex-col items-end justify-start w-[80%]">
-      <div class="navbar-right-top">
-        <button
-          class="bg-accent menu-trigger flex items-center justify-center text-2xl text-bold uppercase px-8 py-4 text-white"
-        >
-          <span>Menu</span>
-          <Icon name="bars-2" class="w-8 ml-4" />
-        </button>
-      </div>
-
-      <NavbarLinks client:load />
-    </div>
-  </div>
-
-  <Menu client:load>
+</script> -->
+<NavbarIsland client:load>
+  <Image src={logo} alt="VIT Logo" slot="logo" />
+  <Menu client:load slot="menu">
     <div
       class="menu-bar w-full my-4 mb-40 bg-red flex items-center justify-between"
       slot="menu-bar"
@@ -113,11 +71,8 @@ console.log(navColor)
         <div class="menu-logo-main flex items-end justify-start">
           <div class="menu-logo-img w-28 aspect-square">
             <!-- Using Astro's built in Image component gives better optimisation for images -->
-            <Image
-              slot="logo"
-              alt="Vishwakarma Institute of Technology Logo"
-              src={logo}
-            />
+
+            <slot name="logo" />
           </div>
           <div class="menu-logo font-heading text-6xl">ishwakarma</div>
         </div>
@@ -138,10 +93,6 @@ console.log(navColor)
     </div>
     <Icon name="chevron-right" class="w-8" slot="arrow-right" />
   </Menu>
-</div>
+  <Icon name="bars-2" class="w-8 ml-4" slot="close-icon" />
 
-<style>
-  .fixed {
-    position: fixed;
-  }
-</style>
+</NavbarIsland>

@@ -1,11 +1,8 @@
 ---
 import '../stylus/base.styl'
 import Navbar from './Navbar.astro'
-import { navColor, expectedNavColor } from '@store/menu'
 
 const title = `Academics - ${Astro.props.courseName || 'Course'}`
-navColor.set('dark')
-expectedNavColor.set('dark')
 ---
 
 <html lang="en">
@@ -17,7 +14,7 @@ expectedNavColor.set('dark')
   </head>
 
   <body class="relative">
-    <Navbar navColor="dark" />
+    <Navbar />
 
     <main
       class="absolute top-0 left-1/2 -translate-x-1/2 w-[60%] min-h-screen grid grid-cols-[2fr_1fr] py-60 z-0"
