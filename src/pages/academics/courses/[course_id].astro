@@ -2,6 +2,7 @@
 import CourseLayout from '@layouts/CourseLayout.astro'
 import { Image } from 'astro:assets'
 import Sections from '@components/Sections.vapor.vue'
+import Icon from '@components/Icon.vapor.vue'
 
 const courseID = Astro.params.course_id
 
@@ -84,6 +85,8 @@ export const prerender = false
 
   <div slot="intro">
     <h1 class="text-6xl font-bold">{course.name}</h1>
-    <Sections client:load sections={course.sections} />
+    <Sections client:load sections={course.sections}>
+    <Icon name="chevron-down"  slot="icon-down"  class="w-6" />
+    </Sections>
   </div>
 </CourseLayout>
