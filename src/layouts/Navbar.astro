@@ -7,7 +7,7 @@ import NavbarIsland from '@components/Navbar.vapor.vue'
 import Menu from '@components/Menu.vapor.vue'
 ---
 
-<NavbarIsland client:load>
+<NavbarIsland client:only>
   <Image src={logo} alt="VIT Logo" slot="logo" />
   <Menu client:load slot="menu">
     <div

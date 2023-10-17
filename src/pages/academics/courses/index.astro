@@ -1,17 +1,14 @@
 ---
 import PageLayout from '@layouts/PageLayout.astro'
-import { expectedNavColor, navColor } from '@store/menu'
-import { Image } from 'astro:assets'
-
 const res = await fetch(`${Astro.url.origin}/api/courses/list`)
 let courses = await res.json()
-
-console.log()
-
-navColor.set('dark')
-
 export const prerender = false
 ---
+
+<script>
+  import { navColor } from '@store/menu'
+  navColor.set('dark')
+</script>
 
 <PageLayout>
   <div class="grid grid-cols-3 mx-auto w-[60%]">

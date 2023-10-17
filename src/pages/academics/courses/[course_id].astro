@@ -35,10 +35,18 @@ let teacherNames = first_names.map((name, index) => {
 export const prerender = false
 ---
 
+<script>
+  import { navColor } from '@store/menu'
+  navColor.set('dark')
+</script>
+
 <CourseLayout courseName={'heheboi'}>
   <div
     slot="summary"
-    class="max-h-[80rem] flex flex-col items-center border-2 border-black/50 border-solid rounded-xl overflow-hidden"
+    class="max-h-[80rem]
+    flex flex-col items-center
+    border-2 border-black/50 border-solid rounded-xl
+    "
   >
     {
       course.image && (
@@ -59,6 +67,9 @@ export const prerender = false
       <h3 class="summary-tite">
         <span class="font-bold">Course Code:{' '}</span>{course.code}
       </h3>
+      {course.year && <h3 class="summary-tite">
+        <span class="font-bold">Year:{' '}</span>{course.year}
+      </h3>}
       <h3 class="summary-tite">
         <span class="font-bold">Credits:{' '}</span>{course.credits}
       </h3>
@@ -83,8 +94,14 @@ export const prerender = false
     >
   </div>
 
-  <div slot="intro">
+  <div slot="content">
     <h1 class="text-6xl font-bold">{course.name}</h1>
+    <div class="content-section my-8">
+      <h2 class="content-section-title text-4xl font-bold">Relevance</h2>
+      <p class="text-2xl">{course.relevance}</p>
+    </div>
+
+    <h2 class="text-4xl font-bold">Syllabus</h2>
     <Sections client:load sections={course.sections}>
     <Icon name="chevron-down"  slot="icon-down"  class="w-6" />
     </Sections>

@@ -13,24 +13,22 @@ const title = `Academics - ${Astro.props.courseName || 'Course'}`
     <title>{title}</title>
   </head>
 
-  <body class="relative">
+  <body>
     <Navbar />
 
     <main
       class="absolute top-0 left-1/2 -translate-x-1/2 w-[60%] min-h-screen grid grid-cols-[2fr_1fr] py-60 z-0"
     >
-      <div class="course-content px-28">
-        <div class="course-intro w-full">
-          <slot name="intro" />
-        </div>
-        <div class="course-details">
+        <div class="course-intro w-full px-28">
           <slot name="content" />
         </div>
-      </div>
 
-      <aside class="course-summary rounded-xl overflow-hidden">
+        
+      <aside class="course-summary rounded-xl">
         <slot name="summary" />
       </aside>
     </main>
+    
   </body>
+  
 </html>

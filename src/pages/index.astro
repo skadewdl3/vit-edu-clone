@@ -1,9 +1,11 @@
 ---
 import SiteLayout from '@layouts/SiteLayout.astro'
-import { navColor } from '@store/menu';
-
-navColor.set('light')
 ---
+
+<script>
+  import { navColor } from '@store/menu'
+  navColor.set('light')
+</script>
 
 <SiteLayout>
   <div class="home flex items-center justify-center w-full h-[95%]">

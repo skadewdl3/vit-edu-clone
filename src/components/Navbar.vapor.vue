@@ -35,7 +35,7 @@ watch(menuOpen, () => {
 })
 
 const { x, y } = useWindowScroll()
-let prevColor = 'light'
+let prevColor = navColor.value
 
 const scrollListener = throttle(() => {
   if (y.value >= 100 && !isSmall.value) {
@@ -55,7 +55,6 @@ watch(y, scrollListener)
 
 <template>
   <div>
-    <div class="hidden px-20 py-4 fixed text-4xl"></div>
     <div
       class="navbar fixed top-0 left-0 flex items-center justify-between z-10 w-full transition-all"
       :class="{
@@ -63,12 +62,14 @@ watch(y, scrollListener)
         'px-60 py-8 bg-transparent': !isSmall,
       }"
     >
-      <div
+      <a
         class="navbar-left flex flex-col items-start justify-center"
         :class="{
           'text-black': navColor == 'dark',
           'text-white': navColor == 'light',
         }"
+        href="/"
+        target="_blank"
       >
         <div class="menu-logo-main flex items-end justify-start">
           <div
@@ -101,7 +102,7 @@ watch(y, scrollListener)
         >
           Institute of Technology
         </div>
-      </div>
+      </a>
       <div class="navbar-right flex flex-col items-end justify-start w-[80%]">
         <div class="navbar-right-top">
           <button
