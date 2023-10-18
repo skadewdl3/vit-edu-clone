@@ -1,6 +1,7 @@
 ---
 import CourseLayout from '@layouts/CourseLayout.astro'
 import { Image } from 'astro:assets'
+import Summary from '@components/Summary.vapor.vue'
 import Sections from '@components/Sections.vapor.vue'
 import Icon from '@components/Icon.vapor.vue'
 
@@ -19,12 +20,8 @@ let result = await res.json().catch(e => {
   console.log(e)
 })
 
-if (!result) return
-
 let { first_names, last_names, prefixes } = result.teachers
 let course = result.course
-
-if (!course) return
 
 let teacherNames = first_names.map((name, index) => {
   return `${prefixes[index] != null ? prefixes[index] + ' ' : ''}${name} ${
@@ -40,45 +37,58 @@ export const prerender = false
   navColor.set('dark')
 </script>
 
-<CourseLayout courseName={'heheboi'}>
-  <div
-    slot="summary"
-    class="max-h-[80rem]
-    flex flex-col items-center
-    border-2 border-black/50 border-solid rounded-xl
-    "
-  >
-    {
-      course.image && (
-        <div class="cover-image">
-          <Image
-            src={course.image}
-            alt={course.name + ' Cover Image'}
-            width={800}
-            height={800}
-          />
-        </div>
-      )
-    }
+<CourseLayout courseName={course.name}>
+  <Summary slot="summary" course={course} client:load>
+    <Image
+      slot="cover-image"
+      src={course.image}
+      alt={course.name + ' Cover Image'}
+      width={800}
+      height={800}
+    />
 
-    <div
-      class="summary-content flex flex-col items-start w-full px-8 py-4 text-2xl"
-    >
-      <h3 class="summary-tite">
+    <div slot="summary-content">
+      <h3 class="summary-section">
         <span class="font-bold">Course Code:{' '}</span>{course.code}
       </h3>
-      {course.year && <h3 class="summary-tite">
-        <span class="font-bold">Year:{' '}</span>{course.year}
-      </h3>}
-      <h3 class="summary-tite">
+      {
+        course.year && (
+          <h3 class="summary-section">
+            <span class="font-bold">Year: </span>
+            {course.year}
+          </h3>
+        )
+      }
+      {
+        Array.isArray(course.prerequisites) &&
+          course.prerequisites.length != 0 && (
+            <h3 class="summary-section">
+              <span class="font-bold">Prerequisites: </span>
+              {course.prerequisites.map((name, index) => {
+                return (
+                  <span class="course-prerequisite cursor-pointer">
+                    {name}
+                    {index != teacherNames.length - 1 && <span>, </span>}
+                  </span>
+                )
+              })}
+            </h3>
+          )
+      }
+      <h3 class="summary-section">
         <span class="font-bold">Credits:{' '}</span>{course.credits}
       </h3>
-      <h3 class="summary-tite">
+      <h3 class="summary-section">
         <span class="font-bold">Teachers:{' '}</span>
         {
           teacherNames.map((name, index) => {
             return (
-              <a href={`/academics/faculty/${result.teachers.ids[index].split(':')[1]}`} class="teacher-name hover:text-primary hover:underline cursor-pointer">
+              <a
+                href={`/academics/faculty/${
+                  result.teachers.ids[index].split(':')[1]
+                }`}
+                class="teacher-name hover:text-primary hover:underline cursor-pointer"
+              >
                 {name}
                 {index != teacherNames.length - 1 && <span>, </span>}
               </a>
@@ -87,23 +97,248 @@ export const prerender = false
         }
       </h3>
     </div>
-
-    <button
-      class="mx-auto bg-gray-800 hover:bg-gray-700 transition-all text-white px-8 py-4 rounded text-2xl font-bold my-4"
-      >View Syllabus</button
-    >
-  </div>
+  </Summary>
 
   <div slot="content">
     <h1 class="text-6xl font-bold">{course.name}</h1>
-    <div class="content-section my-8">
-      <h2 class="content-section-title text-4xl font-bold">Relevance</h2>
+
+    <div class="course-content-section my-8">
+      <h2 class="content-section-title text-4xl font-bold mb-2">Relevance</h2>
       <p class="text-2xl">{course.relevance}</p>
     </div>
 
-    <h2 class="text-4xl font-bold">Syllabus</h2>
-    <Sections client:load sections={course.sections}>
-    <Icon name="chevron-down"  slot="icon-down"  class="w-6" />
-    </Sections>
+    {
+      Array.isArray(course.objectives) && course.objectives.length != 0 && (
+        <div class="course-content-section my-8">
+          <h2 class="text-4xl font-bold flex items-center justify-between mb-4">
+            <span>Objectives</span>
+          </h2>
+          <ul class="list-disc pl-8">
+            {course.objectives.map(objective => {
+              return (
+                <li class="text-2xl">
+                  <span>{objective}</span>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
+      )
+    }
+
+    {
+      course.teaching_scheme && (
+        <div class="course-content-section my-8">
+          <h2 class="text-4xl font-bold flex items-center justify-between mb-4">
+            <span>Teaching Scheme</span>
+          </h2>
+          <ul class="list-disc pl-8">
+            {Object.entries(course.teaching_scheme).map(([type, hours]) => {
+              return (
+                <li class="text-2xl">
+                  <span class="capitalize">{type} - </span>
+                  <span>{hours}</span>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
+      )
+    }
+
+    {
+      course.assessment_scheme && (
+        <div class="course-content-section my-8 course-assesment-scheme">
+          <h2 class="text-4xl font-bold flex items-center justify-between mb-4">
+            <span>Assessment Scheme</span>
+          </h2>
+          <ul class="list-disc pl-8">
+            {course.assessment_scheme.map(scheme => {
+              return (
+                <li class="text-2xl">
+                  <span class="capitalize">{scheme}</span>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
+      )
+    }
+
+    <div class="course-content-section my-8 course-syllabus">
+      <h2 class="text-4xl font-bold flex items-center justify-between mb-4">
+        <span>Syllabus</span>
+      </h2>
+
+      <Sections client:load sections={course.sections}>
+        <Icon name="chevron-down" slot="icon-down" class="w-6" />
+      </Sections>
+    </div>
+
+    {
+      (Array.isArray(course.practicals) && course.practicals.length != 0) && (
+        <div class="course-content-section my-8">
+          <h2 class="text-4xl font-bold flex items-center justify-between mb-4">
+            <span>Practicals</span>
+          </h2>
+          <ol class="list-decimal pl-8">
+            {course.practicals.map(item => {
+              return (
+                <li class="text-2xl">
+                  <span class="capitalize">{item}</span>
+                </li>
+              )
+            })}
+          </ol>
+        </div>
+      )
+    }
+
+    {
+      (Array.isArray(course.projects) && course.projects.length != 0) && (
+        <div class="course-content-section my-8">
+          <h2 class="text-4xl font-bold flex items-center justify-between mb-4">
+            <span>Projects</span>
+          </h2>
+          <ol class="list-decimal pl-8">
+            {course.projects.map(item => {
+              return (
+                <li class="text-2xl">
+                  <span class="capitalize">{item}</span>
+                </li>
+              )
+            })}
+          </ol>
+        </div>
+      )
+    }
+    {
+      (Array.isArray(course.seminar) && course.seminar.length != 0) && (
+        <div class="course-content-section my-8">
+          <h2 class="text-4xl font-bold flex items-center justify-between mb-4">
+            <span>Seminar</span>
+          </h2>
+          <ol class="list-decimal pl-8">
+            {course.seminar.map(item => {
+              return (
+                <li class="text-2xl">
+                  <span class="capitalize">{item}</span>
+                </li>
+              )
+            })}
+          </ol>
+        </div>
+      )
+    }
+
+    {
+      (Array.isArray(course.group_discussion) && course.group_discussion.length != 0) && (
+        <div class="course-content-section my-8">
+          <h2 class="text-4xl font-bold flex items-center justify-between mb-4">
+            <span>Group Discussion</span>
+          </h2>
+          <ol class="list-decimal pl-8">
+            {course.group_discussion.map(item => {
+              return (
+                <li class="text-2xl">
+                  <span class="capitalize">{item}</span>
+                </li>
+              )
+            })}
+          </ol>
+        </div>
+      )
+    }
+
+    {
+      (Array.isArray(course.home_assignment) && course.home_assignment.length != 0) && (
+        <div class="course-content-section my-8">
+          <h2 class="text-4xl font-bold flex items-center justify-between mb-4">
+            <span>Home Assignment</span>
+          </h2>
+
+          {
+            course.home_assignment.map(assignment => {
+              return (Array.isArray(assignment.topics) && assignment.topics.length != 0) && (
+                <div class="pl-8">
+                  <h2 class="text-2xl font-bold flex items-center justify-between mt-4">
+                    <span class="capitalize">{ assignment.type}</span>
+                  </h2>
+  
+                  <ol class="list-decimal pl-8">
+                    {assignment.topics.map(item => {
+                      return (
+                        <li class="text-2xl">
+                          <span class="capitalize">{item}</span>
+                        </li>
+                      )
+                    })}
+                  </ol>
+                  </div>
+              )
+            })
+          }
+          
+        </div>
+      )
+    }
+    
+
+    {
+      (Array.isArray(course.textbooks) && course.textbooks.length != 0) && (
+        <div class="course-content-section my-8">
+          <h2 class="text-4xl font-bold flex items-center justify-between mb-4">
+            <span>Textbooks</span>
+          </h2>
+          <ol class="list-decimal pl-8">
+            {course.textbooks.map(item => {
+              return (
+                <li class="text-2xl">
+                  <span class="capitalize">{item}</span>
+                </li>
+              )
+            })}
+          </ol>
+        </div>
+      )
+    }
+
+    {
+      (Array.isArray(course.reference_books) && course.reference_books.length != 0) && (
+        <div class="course-content-section my-8">
+          <h2 class="text-4xl font-bold flex items-center justify-between mb-4">
+            <span>Reference Books</span>
+          </h2>
+          <ol class="list-decimal pl-8">
+            {course.reference_books.map(item => {
+              return (
+                <li class="text-2xl">
+                  <span class="capitalize">{item}</span>
+                </li>
+              )
+            })}
+          </ol>
+        </div>
+      )
+    }
+
+    {
+      (Array.isArray(course.outcomes) && course.outcomes.length != 0) && (
+        <div class="course-content-section my-8">
+          <h2 class="text-4xl font-bold flex items-center justify-between mb-4">
+            <span>Course Outcomes</span>
+          </h2>
+          <ol class="list-decimal pl-8">
+            {course.outcomes.map(item => {
+              return (
+                <li class="text-2xl">
+                  <span class="capitalize">{item}</span>
+                </li>
+              )
+            })}
+          </ol>
+        </div>
+      )
+    }
   </div>
 </CourseLayout>

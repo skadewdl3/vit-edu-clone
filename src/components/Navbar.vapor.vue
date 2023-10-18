@@ -6,7 +6,7 @@ import {
 } from '@store/menu'
 import { sections } from '@utils/utils'
 import { useStore } from '@nanostores/vue'
-import { ref, watch } from 'vue'
+import { ref, watch, onMounted } from 'vue'
 import { useWindowScroll } from '@vueuse/core'
 import { throttle } from 'lodash'
 
@@ -34,6 +34,7 @@ watch(menuOpen, () => {
   }
 })
 
+
 const { x, y } = useWindowScroll()
 let prevColor = navColor.value
 
@@ -50,7 +51,11 @@ const scrollListener = throttle(() => {
 
 watch(y, scrollListener)
 
-// Add shrink on scrol logic
+onMounted(() => {
+  if (y.value >= 100) {
+    isSmall.value = true
+  }
+})
 </script>
 
 <template>

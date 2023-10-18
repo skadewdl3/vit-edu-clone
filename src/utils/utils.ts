@@ -52,6 +52,10 @@ export const sections: MenuSection[] = [
         route: '/academics/courses',
       },
       {
+        name: 'Faculty',
+        route: '/academics/faculty',
+      },
+      {
         name: 'Syllabus',
         route: '/academics/syllabus',
       },

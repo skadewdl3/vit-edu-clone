@@ -25,12 +25,12 @@ designated_date = ${teacher.designated_date ? `'${teacher.designated_date}'` : '
 
 const createCourseString = (course: any) => {
   return `
-  \n\nCREATE courses:${course.id} SET
+  \n\nUPDATE courses:${course.id} SET
   name = "${course.title}",
   code = "${course.code}",
   relevance = ${course.relevance ? `"${course.relevance}"` : 'NULL'},
-  objectives = ${course.objectives ? `"${course.objectives}"` : 'NULL'},
-  outcomes = ${course.outcomes ? `"${course.outcomes}"` : 'NULL'},
+  objectives = ${course.objectives ? JSON.stringify(course.objectives) : 'NULL'},
+  outcomes = ${course.outcomes ? JSON.stringify(course.objectives) : 'NULL'},
   prerequisites = ${JSON.stringify(course.prerequisites)},
   credits = ${course.credits},
   teaching_scheme = ${JSON.stringify(course.teaching_scheme)},
@@ -39,7 +39,7 @@ const createCourseString = (course: any) => {
   tutorials = ${course.tutorials ? JSON.stringify(course.tutorials) : 'NULL'},
   practicals = ${course.practicals ? JSON.stringify(course.practicals) : 'NULL'},
   group_discussion = ${course.group_discussion ? JSON.stringify(course.group_discussion) : 'NULL'},
-  project = ${course.project ? JSON.stringify(course.project) : 'NULL'},
+  projects = ${course.projects ? JSON.stringify(course.projects) : 'NULL'},
   seminar = ${course.seminar ? JSON.stringify(course.seminar) : 'NULL'},
   home_assignment = ${course.home_assignment ? JSON.stringify(course.home_assignment) : 'NULL'},
   textbooks = ${course.textbooks ? JSON.stringify(course.textbooks) : 'NULL'},
@@ -64,11 +64,11 @@ const createTeachesString = (teacher: any) => {
   return str
 }
   
-// for (let course of courses) {
-//   queryString +=  '\n\n' + createTeachesString(course)
-// }
+for (let course of courses) {
+  queryString +=  '\n\n' + createCourseString(course)
+}
 
-queryString += createCourseString(oldCourses.find(course => course.id == 'edai'))
+// queryString += createCourseString(oldCourses.find(course => course.id == 'edai'))
 
 queryString += '\nCOMMIT TRANSACTION;'
 

@@ -7,10 +7,12 @@ const sectionsExpanded = ref(Array(props.sections.length).fill(false))
 const toggleSection = index => {
   sectionsExpanded.value[index] = !sectionsExpanded.value[index]
 }
+
 </script>
 
 <template>
   <div class="course-sections my-2 border-solid border-2 border-black/20 rounded-xl">
+    
     <div
       v-for="(section, index) in props.sections"
       class="course-section"
