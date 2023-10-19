@@ -1,5 +1,26 @@
 ---
 import PageLayout from '@layouts/PageLayout.astro'
+import { sections } from '@utils/utils';
+
+let sectionList = []
+sections.forEach(section => {
+  if (section['sections']) {
+    section['sections'].forEach(subsection => {
+      if (subsection['sections']) {
+        subsection['sections'].forEach(subsubsection => {
+          sectionList.push(subsubsection)
+        })
+      }
+      else {
+        sectionList.push(subsection)
+      }
+    })
+  } else {
+    sectionList.push(section)
+  }
+})
+
+console.log(sectionList)
 ---
 
 <PageLayout navColor="dark">
@@ -9,5 +30,10 @@ import PageLayout from '@layouts/PageLayout.astro'
       You can <a href="/" class="text-primary hover:underline">go back home</a>
       or check out the following links:
     </p>
+    <ul>{
+      sectionList.map(item => (
+        <li class="text-2xl text-primary hover:underline cursor-pointer my-2"><a href={item.route}>{item.name}</a></li>
+      ))  
+    }</ul>
   </div>
 </PageLayout>

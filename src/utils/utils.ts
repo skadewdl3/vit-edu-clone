@@ -181,10 +181,6 @@ export const sections: MenuSection[] = [
     id: 'about',
     sections: [
       {
-        name: 'From the HODs Desk',
-        route: '/about/vision-mission',
-      },
-      {
         name: 'Vision and Mission',
         route: '/about/vision-mission',
       },

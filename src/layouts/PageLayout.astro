@@ -24,9 +24,9 @@ navColor.set(Astro.props.navColor || 'light')
 
   <body data-nav-color={Astro.props.navColor || 'light'}>
     <Navbar />
-    <main class="absolute top-0 left-0 w-full h-screen min-h-screen py-60">
+    <main class="w-full py-60">
       <slot />
-      <Footer />
     </main>
   </body>
+  <Footer />
 </html>
