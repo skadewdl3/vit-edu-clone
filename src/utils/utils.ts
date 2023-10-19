@@ -182,7 +182,7 @@ export const sections: MenuSection[] = [
     sections: [
       {
         name: 'Vision and Mission',
-        route: '/about/vision-mission',
+        route: '/about/vission-mission',
       },
 
       {

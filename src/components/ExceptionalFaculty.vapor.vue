@@ -39,7 +39,7 @@ const setActiveIndex = (index: number) => {
   <div class="py-60" ref="exceptionalFacultyContent">
     <Transition name="fade">
       <div
-        class="exceptional-faculty-section grid grid-cols-[1fr_2fr] w-[50%] mx-auto"
+        class="exceptional-faculty-section grid grid-cols-[1fr_2fr] w-[50%] mx-auto border-2 border-black/50 border-solid m-8 p-8 rounded-md"
         v-if="activeIndex == 0"
       >
         <div class="exceptional-faculty-image rounded-full overflow-hidden">
@@ -62,7 +62,7 @@ const setActiveIndex = (index: number) => {
 
     <Transition name="fade">
       <div
-        class="exceptional-faculty-section grid grid-cols-[1fr_2fr] w-[50%] mx-auto"
+        class="exceptional-faculty-section grid grid-cols-[1fr_2fr] w-[50%] mx-auto border-2 border-black/50 border-solid m-8 p-8 rounded-md"
         v-if="activeIndex == 1"
       >
         <div class="exceptional-faculty-image rounded-full overflow-hidden">
@@ -85,7 +85,7 @@ const setActiveIndex = (index: number) => {
 
     <Transition name="fade">
       <div
-        class="exceptional-faculty-section grid grid-cols-[1fr_2fr] w-[50%] mx-auto"
+        class="exceptional-faculty-section grid grid-cols-[1fr_2fr] w-[50%] mx-auto border-2 border-black/50 border-solid m-8 p-8 rounded-md"
         v-if="activeIndex == 2"
       >
         <div class="exceptional-faculty-image rounded-full overflow-hidden">

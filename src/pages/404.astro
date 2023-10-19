@@ -1,6 +1,6 @@
 ---
 import PageLayout from '@layouts/PageLayout.astro'
-import { sections } from '@utils/utils';
+import { sections } from '@utils/utils'
 
 let sectionList = []
 sections.forEach(section => {
@@ -10,8 +10,7 @@ sections.forEach(section => {
         subsection['sections'].forEach(subsubsection => {
           sectionList.push(subsubsection)
         })
-      }
-      else {
+      } else {
         sectionList.push(subsection)
       }
     })
@@ -28,12 +27,16 @@ console.log(sectionList)
     <h1 class="text-primary text-8xl font-bold">Oops! Page not found.</h1>
     <p class="text-3xl my-10">
       You can <a href="/" class="text-primary hover:underline">go back home</a>
-      or check out the following links:
+       or check out the following links:
     </p>
-    <ul>{
-      sectionList.map(item => (
-        <li class="text-2xl text-primary hover:underline cursor-pointer my-2"><a href={item.route}>{item.name}</a></li>
-      ))  
-    }</ul>
+    <ul>
+      {
+        sectionList.map(item => (
+          <li class="text-2xl text-primary hover:underline cursor-pointer my-2">
+            <a href={item.route}>{item.name}</a>
+          </li>
+        ))
+      }
+    </ul>
   </div>
 </PageLayout>
