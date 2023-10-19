@@ -56,6 +56,7 @@ watch(y, scrollListener)
 onMounted(() => {
   if (y.value >= 100) {
     isSmall.value = true
+    navColorAtom.set('dark')
   }
 })
 </script>
