@@ -32,12 +32,7 @@ let teacherNames = first_names.map((name, index) => {
 export const prerender = false
 ---
 
-<script>
-  import { navColor } from '@store/menu'
-  navColor.set('dark')
-</script>
-
-<CourseLayout courseName={course.name}>
+<CourseLayout courseName={course.name} navColor="dark">
   <Summary slot="summary" course={course} client:load>
     <Image
       slot="cover-image"
@@ -100,7 +95,10 @@ export const prerender = false
   </Summary>
 
   <div slot="content">
-    <h1 class="text-6xl font-bold">{course.name}</h1>
+    <div class="relative w-full">
+      <h1 class="highlight-animation text-6xl font-bold bg-[#009fe2] p-4 whitespace-pre h-full">{' '}</h1>
+      <h1 class="highlight-text text-6xl absolute top-0 text-black p-4 left-0 font-bold">{course.name}</h1>
+    </div>
 
     <div class="course-content-section my-8">
       <h2 class="content-section-title text-4xl font-bold mb-2">Relevance</h2>
@@ -185,7 +183,7 @@ export const prerender = false
             {course.practicals.map(item => {
               return (
                 <li class="text-2xl">
-                  <span class="capitalize">{item}</span>
+                  <span class="">{item}</span>
                 </li>
               )
             })}
@@ -204,7 +202,7 @@ export const prerender = false
             {course.projects.map(item => {
               return (
                 <li class="text-2xl">
-                  <span class="capitalize">{item}</span>
+                  <span class="">{item}</span>
                 </li>
               )
             })}
@@ -222,7 +220,7 @@ export const prerender = false
             {course.seminar.map(item => {
               return (
                 <li class="text-2xl">
-                  <span class="capitalize">{item}</span>
+                  <span class="">{item}</span>
                 </li>
               )
             })}
@@ -241,7 +239,7 @@ export const prerender = false
             {course.group_discussion.map(item => {
               return (
                 <li class="text-2xl">
-                  <span class="capitalize">{item}</span>
+                  <span class="">{item}</span>
                 </li>
               )
             })}
@@ -262,14 +260,14 @@ export const prerender = false
               return (Array.isArray(assignment.topics) && assignment.topics.length != 0) && (
                 <div class="pl-8">
                   <h2 class="text-2xl font-bold flex items-center justify-between mt-4">
-                    <span class="capitalize">{ assignment.type}</span>
+                    <span class="">{ assignment.type}</span>
                   </h2>
   
                   <ol class="list-decimal pl-8">
                     {assignment.topics.map(item => {
                       return (
                         <li class="text-2xl">
-                          <span class="capitalize">{item}</span>
+                          <span class="">{item}</span>
                         </li>
                       )
                     })}
@@ -294,7 +292,7 @@ export const prerender = false
             {course.textbooks.map(item => {
               return (
                 <li class="text-2xl">
-                  <span class="capitalize">{item}</span>
+                  <span class="">{item}</span>
                 </li>
               )
             })}
@@ -313,7 +311,7 @@ export const prerender = false
             {course.reference_books.map(item => {
               return (
                 <li class="text-2xl">
-                  <span class="capitalize">{item}</span>
+                  <span class="">{item}</span>
                 </li>
               )
             })}
@@ -332,7 +330,7 @@ export const prerender = false
             {course.outcomes.map(item => {
               return (
                 <li class="text-2xl">
-                  <span class="capitalize">{item}</span>
+                  <span class="">{item}</span>
                 </li>
               )
             })}
@@ -342,3 +340,21 @@ export const prerender = false
     }
   </div>
 </CourseLayout>
+
+<style lang="stylus">
+
+bezier = cubic-bezier(0.740, -0.095, 0.085, 1.035)
+
+.highlight-animation
+  animation-name highlight
+  animation-duration 2s
+  animation-timing-function bezier
+
+@keyframes highlight
+  from
+    width 0
+  to
+    width 100%
+
+  
+</style>

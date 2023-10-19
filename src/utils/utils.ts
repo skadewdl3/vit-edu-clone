@@ -176,4 +176,33 @@ export const sections: MenuSection[] = [
       },
     ],
   },
+  {
+    name: 'About',
+    id: 'about',
+    sections: [
+      {
+        name: 'From the HODs Desk',
+        route: '/about/vision-mission',
+      },
+      {
+        name: 'Vision and Mission',
+        route: '/about/vision-mission',
+      },
+
+      {
+        name: 'Boards',
+        sections: [
+          {
+            name: 'Board of Studies',
+            route: '/about/boards/studies',
+          },
+
+          {
+            name: 'Industry Advisory Board',
+            route: '/about/boards/industry',
+          },
+        ],
+      },
+    ],
+  },
 ]

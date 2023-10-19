@@ -20,5 +20,6 @@ declare global {
   const pascalize: typeof import('./utils/utils')['pascalize']
   const ref: typeof import('vue')['ref']
   const sections: typeof import('./utils/utils')['sections']
+  const smallNavColor: typeof import('./store/menu')['smallNavColor']
   const watch: typeof import('vue')['watch']
 }

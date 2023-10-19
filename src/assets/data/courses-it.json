@@ -787,7 +787,13 @@
       "Efficient Storage and Data Retrieval Systems.",
       "Different Gaming Application."
     ],
-    "assessment_scheme": "ESE, CVV, Lab Assignment, Lab Exam, Course Project",
+    "assessment_scheme": [
+      "ESE",
+      "CVV",
+      "Lab Assignment",
+      "Lab Exam",
+      "Course Project"
+    ],
     "textbooks": [
       "James F. Kurose, and Keith W. Ross, 'A Top--Down Approach,' 4th edition, Publisher: Addison--Wesley ISBN: 0--321--49770--8",
       "Behrouz A. Forouzan, 'Data Communication and Networking', 4th edition, Tata McGraw Hill",

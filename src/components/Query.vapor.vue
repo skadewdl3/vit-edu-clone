@@ -28,7 +28,6 @@ const createCourseString = (course: any) => {
   \n\nUPDATE courses:${course.id} SET
   name = "${course.title}",
   code = "${course.code}",
-  relevance = ${course.relevance ? `"${course.relevance}"` : 'NULL'},
   objectives = ${course.objectives ? JSON.stringify(course.objectives) : 'NULL'},
   outcomes = ${course.outcomes ? JSON.stringify(course.objectives) : 'NULL'},
   prerequisites = ${JSON.stringify(course.prerequisites)},
@@ -64,7 +63,7 @@ const createTeachesString = (teacher: any) => {
   return str
 }
   
-for (let course of courses) {
+for (let course of oldCourses) {
   queryString +=  '\n\n' + createCourseString(course)
 }
 

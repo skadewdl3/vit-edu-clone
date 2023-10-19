@@ -1,9 +1,16 @@
 ---
 import '../stylus/base.styl'
 import Navbar from './Navbar.astro'
+import Footer from './Footer.astro';
+import { navColor } from '@store/menu';
 
 const title = `Academics - ${Astro.props.courseName || 'Course'}`
+navColor.set(Astro.props.navColor || 'light');
 ---
+<script>
+  import { navColor } from "@store/menu";
+  navColor.set(document.body.dataset.navColor);
+</script>
 
 <html lang="en">
   <head>
@@ -13,11 +20,13 @@ const title = `Academics - ${Astro.props.courseName || 'Course'}`
     <title>{title}</title>
   </head>
 
-  <body>
+  <body
+  data-nav-color={Astro.props.navColor || 'light'}
+  >
     <Navbar />
 
     <main
-      class="absolute top-0 left-1/2 -translate-x-1/2 w-[60%] min-h-screen grid grid-cols-[2fr_1fr] py-60 z-0"
+      class="mx-auto w-[60%] min-h-screen grid grid-cols-[2fr_1fr] py-60 z-0"
     >
         <div class="course-intro w-full px-28">
           <slot name="content" />
@@ -28,7 +37,7 @@ const title = `Academics - ${Astro.props.courseName || 'Course'}`
         <slot name="summary" />
       </aside>
     </main>
-    
+    <Footer />
   </body>
   
 </html>

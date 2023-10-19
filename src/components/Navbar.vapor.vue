@@ -3,6 +3,7 @@ import {
   isMenuOpen,
   activeSection as activeSectionAtom,
   navColor as navColorAtom,
+  smallNavColor as smallNavColorAtom
 } from '@store/menu'
 import { sections } from '@utils/utils'
 import { useStore } from '@nanostores/vue'
@@ -11,6 +12,7 @@ import { useWindowScroll } from '@vueuse/core'
 import { throttle } from 'lodash'
 
 const navColor = useStore(navColorAtom)
+const smallNavColor = useStore(smallNavColorAtom)
 const menuOpen = useStore(isMenuOpen)
 
 const isSmall = ref(false)
@@ -63,15 +65,17 @@ onMounted(() => {
     <div
       class="navbar fixed top-0 left-0 flex items-center justify-between z-10 w-full transition-all"
       :class="{
-        'px-20 py-4 bg-white/80 opacity-90': isSmall,
+        'px-20 py-4 opacity-90': isSmall,
         'px-60 py-8 bg-transparent': !isSmall,
+        'bg-white/80': isSmall && smallNavColor == 'light',
+        'bg-black/70': isSmall && smallNavColor == 'dark',
       }"
     >
       <a
         class="navbar-left flex flex-col items-start justify-center"
         :class="{
-          'text-black': navColor == 'dark',
-          'text-white': navColor == 'light',
+          'text-black': (navColor == 'dark') || (isSmall && smallNavColor == 'light'),
+          'text-white': (navColor == 'light') || isSmall && smallNavColor == 'dark',
         }"
         href="/"
         target="_blank"

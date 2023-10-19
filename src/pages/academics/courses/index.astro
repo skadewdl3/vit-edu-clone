@@ -5,12 +5,7 @@ let courses = await res.json()
 export const prerender = false
 ---
 
-<script>
-  import { navColor } from '@store/menu'
-  navColor.set('dark')
-</script>
-
-<PageLayout>
+<PageLayout navColor="dark">
   <div class="grid grid-cols-3 mx-auto w-[60%]">
     {
       courses.map((course: any) => {
