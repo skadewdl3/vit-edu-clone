@@ -1,15 +1,18 @@
 ---
 import '../stylus/base.styl'
-import Navbar from './Navbar.astro';
-import Footer from './Footer.astro';
-import { navColor, smallNavColor } from '@store/menu';
+import Navbar from './Navbar.astro'
+import Footer from './Footer.astro'
+import { navTheme, smallNavTheme } from '@store/menu'
 
 const title = Astro.props.title || 'Vishwakamra Institute of Technology'
-navColor.set(Astro.props.navColor || 'light');
+navTheme.set(Astro.props.navTheme || 'light')
+smallNavTheme.set(Astro.props.smallNavTheme || 'light')
 ---
+
 <script>
-  import { navColor, smallNavColor } from "@store/menu";
-  navColor.set(document.body.dataset.navColor);
+  import { navTheme, smallNavTheme } from '@store/menu'
+  navTheme.set(document.body.dataset.navTheme)
+  smallNavTheme.set(document.body.dataset.smallNavTheme)
 </script>
 
 <html lang="en">
@@ -20,9 +23,9 @@ navColor.set(Astro.props.navColor || 'light');
     <title>{title}</title>
   </head>
 
-  
   <body
-  data-nav-color={Astro.props.navColor || 'light'}
+    data-nav-theme={Astro.props.navTheme || 'light'}
+    data-small-nav-theme={Astro.props.smallNavTheme || 'light'}
   >
     <Navbar />
     <main class="w-full h-screen min-h-screen">
@@ -30,5 +33,4 @@ navColor.set(Astro.props.navColor || 'light');
       <Footer />
     </main>
   </body>
-
 </html>

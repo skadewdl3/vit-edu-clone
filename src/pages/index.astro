@@ -14,7 +14,56 @@ import lab1309 from '@assets/images/1309.jpg'
 import lab1201 from '@assets/images/1201.jpg'
 ---
 
-<SiteLayout navColor="light">
+<!-- <script>
+  import {throttle} from 'lodash'
+  import { smallNavTheme } from '@store/menu'
+
+  const isInViewport = (element: HTMLElement) => {
+    const rect = element.getBoundingClientRect()
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    )
+  }
+  
+  let scrollDown = true
+  let prevScrollTop = 0
+  let scrollTop = 0
+
+  let hero = document.querySelector('.home')
+  let exceptionalFaculty = document.querySelector('.exceptional-faculty')
+  let facilities = document.querySelector('.facilties')
+
+  const handleScroll = throttle(() => {
+    scrollTop = document.body.getBoundingClientRect().top
+    scrollDown = scrollTop < prevScrollTop ? true : false
+
+    console.log(scrollTop, hero.getBoundingClientRect().bottom)
+    
+    if (scrollDown) {
+      if (hero.getBoundingClientRect().top > scrollTop) {
+        smallNavTheme.set('dark')
+        console.log('tshi ran')
+      }
+      if (exceptionalFaculty.getBoundingClientRect().top < scrollTop) {
+        smallNavTheme.set('light')
+      }
+      console.log(scrollTop)
+    }
+    else {
+
+    }
+
+    prevScrollTop = scrollTop
+  }, 200)
+
+  window.addEventListener('scroll', handleScroll)
+</script> -->
+
+<SiteLayout navTheme="transparent" smallNavTheme="dark">
   <div class="home flex items-center justify-center w-full h-[98%]">
     <div
       class="w-full px-80 flex flex-col items-center justify-center font-heading text-white"
@@ -80,7 +129,7 @@ import lab1201 from '@assets/images/1201.jpg'
           Center of Excellence in Machine Learning & Deep Learning
         </div>
         <div class="facility-description px-40 text-2xl">
-           Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
           nesciunt sapiente commodi quod ducimus, nobis sint distinctio expedita
           fuga, sit consequuntur! Vel, impedit explicabo? Ipsa et incidunt ea
           quis odit.
@@ -129,9 +178,15 @@ import lab1201 from '@assets/images/1201.jpg'
     </div>
   </div>
 
-  <!-- <div class="testimonials px-80 py-40">
-    <div class="testimonials-header text-8xl font-heading">Testimonials</div>
-  </div> -->
+  <div class="testimonials px-80 py-80">
+    <div class="mx-80 h-full relative">
+      <div class="testimonials-header text-8xl font-heading absolute bg-white left-1/2 -translate-x-1/2 -translate-y-1/2">Testimonials</div>
+      <div class="testimonial-content border-2 border-solid border-black py-20 px-40 text-2xl">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur dolor non incidunt illo ea! Laborum voluptate repellendus corporis, magni voluptas, fuga numquam dolores unde eius pariatur, alias nam sed aut. Lorem ipsum dolor sit amet consectetur adipisicing elit. A provident architecto, sed ratione iure exercitationem dolor facere cum reiciendis, error dolorum tenetur aspernatur. Laborum veritatis, sed reprehenderit voluptatibus corrupti perferendis?
+      </div>
+      <div class="testimonials-footer text-4xl font-heading absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 bg-white">Hello World</div>
+    </div>
+  </div>
 </SiteLayout>
 
 <style lang="stylus">

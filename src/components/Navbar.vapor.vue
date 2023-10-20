@@ -2,8 +2,8 @@
 import {
   isMenuOpen,
   activeSection as activeSectionAtom,
-  navColor as navColorAtom,
-  smallNavColor as smallNavColorAtom
+  navTheme as navThemeAtom,
+  smallNavTheme as smallNavThemeAtom
 } from '@store/menu'
 import { sections } from '@utils/utils'
 import { useStore } from '@nanostores/vue'
@@ -11,8 +11,9 @@ import { ref, watch, onMounted } from 'vue'
 import { useWindowScroll } from '@vueuse/core'
 import { throttle } from 'lodash'
 
-const navColor = useStore(navColorAtom)
-const smallNavColor = useStore(smallNavColorAtom)
+const navThemeValue = useStore(navThemeAtom)
+const smallNavThemeValue = useStore(smallNavThemeAtom)
+const navTheme = ref(navThemeValue.value)
 const menuOpen = useStore(isMenuOpen)
 
 const isSmall = ref(false)
@@ -36,18 +37,26 @@ watch(menuOpen, () => {
   }
 })
 
+watch([navThemeValue, smallNavThemeValue], () => {
+  if (!isSmall.value) {
+    navTheme.value = navThemeValue.value
+  } else {
+    navTheme.value = smallNavThemeValue.value
+  }
+})
 
-const { x, y } = useWindowScroll()
-let prevColor = navColor.value
+
+const { y } = useWindowScroll()
+let prevColor = navTheme.value
 
 const scrollListener = throttle(() => {
   if (y.value >= 100 && !isSmall.value) {
-    prevColor = navColor.value
+    prevColor = navTheme.value
     isSmall.value = true
-    navColorAtom.set('dark')
+    navTheme.value = smallNavThemeValue.value
   } else if (y.value < 100 && isSmall.value) {
     isSmall.value = false
-    navColorAtom.set(prevColor)
+    navTheme.value = navThemeValue.value
   }
 }, 100)
 
@@ -56,7 +65,7 @@ watch(y, scrollListener)
 onMounted(() => {
   if (y.value >= 100) {
     isSmall.value = true
-    navColorAtom.set('dark')
+    navTheme.value = smallNavThemeValue.value
   }
 })
 </script>
@@ -66,17 +75,20 @@ onMounted(() => {
     <div
       class="navbar fixed top-0 left-0 flex items-center justify-between z-10 w-full transition-all"
       :class="{
-        'px-20 py-4 opacity-90': isSmall,
-        'px-60 py-8 bg-transparent': !isSmall,
-        'bg-white/80': isSmall && smallNavColor == 'light',
-        'bg-black/70': isSmall && smallNavColor == 'dark',
+        'px-20 py-4': isSmall,
+        'px-60 py-8': !isSmall,
+
+        'bg-white/90': navTheme == 'light',
+        'bg-black/95': navTheme == 'dark',
+        'bg-transparent': navTheme == 'transparent',
+
+        'text-black': (navTheme == 'light'),
+        'text-white': (navTheme == 'dark' || navTheme == 'transparent'),
       }"
     >
       <a
         class="navbar-left flex flex-col items-start justify-center"
         :class="{
-          'text-black': (navColor == 'dark') || (isSmall && smallNavColor == 'light'),
-          'text-white': (navColor == 'light') || isSmall && smallNavColor == 'dark',
         }"
         href="/"
         target="_blank"
@@ -135,8 +147,8 @@ onMounted(() => {
             <span
               class="navbar-link-text text-2xl font-bold uppercase"
               :class="{
-                'text-gray-400': navColor == 'light',
-                'text-primary': navColor == 'dark',
+                'text-gray-400': !isSmall,
+                'text-primary': isSmall,
               }"
               >{{ section.name }}</span
             >

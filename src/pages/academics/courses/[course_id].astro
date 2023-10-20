@@ -32,7 +32,7 @@ let teacherNames = first_names.map((name, index) => {
 export const prerender = false
 ---
 
-<CourseLayout courseName={course.name} navColor="dark">
+<CourseLayout courseName={course.name} navTheme="light">
   <Summary slot="summary" course={course} client:load>
     <Image
       slot="cover-image"

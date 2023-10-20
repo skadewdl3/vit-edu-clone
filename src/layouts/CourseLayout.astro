@@ -1,15 +1,18 @@
 ---
 import '../stylus/base.styl'
 import Navbar from './Navbar.astro'
-import Footer from './Footer.astro';
-import { navColor } from '@store/menu';
+import Footer from './Footer.astro'
+import { navTheme, smallNavTheme } from '@store/menu'
 
 const title = `Academics - ${Astro.props.courseName || 'Course'}`
-navColor.set(Astro.props.navColor || 'light');
+navTheme.set(Astro.props.navTheme || 'light')
+smallNavTheme.set(Astro.props.smallNavTheme || 'light')
 ---
+
 <script>
-  import { navColor } from "@store/menu";
-  navColor.set(document.body.dataset.navColor);
+  import { navTheme } from '@store/menu'
+  navTheme.set(document.body.dataset.navTheme)
+  smallNavTheme.set(document.body.dataset.smallNavTheme)
 </script>
 
 <html lang="en">
@@ -21,23 +24,22 @@ navColor.set(Astro.props.navColor || 'light');
   </head>
 
   <body
-  data-nav-color={Astro.props.navColor || 'light'}
+    data-nav-theme={Astro.props.navTheme || 'light'}
+    data-small-nav-theme={Astro.props.smallNavTheme || 'light'}
   >
     <Navbar />
 
     <main
       class="mx-auto w-[60%] min-h-screen grid grid-cols-[2fr_1fr] py-60 z-0"
     >
-        <div class="course-intro w-full px-28">
-          <slot name="content" />
-        </div>
+      <div class="course-intro w-full px-28">
+        <slot name="content" />
+      </div>
 
-        
       <aside class="course-summary rounded-xl">
         <slot name="summary" />
       </aside>
     </main>
     <Footer />
   </body>
-  
 </html>
