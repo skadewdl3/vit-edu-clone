@@ -1,1 +1,76 @@
-<p>Hello Worls</p>
+---
+import SiteLayout from '@layouts/SiteLayout.astro'
+import { Image } from 'astro:assets'
+import hodImage from '@assets/images/HOD.jpeg'
+---
+
+<SiteLayout navTheme="transparent" smallNavTheme="light">
+  <div class="vission-mission px-80 py-60 text-white bg-black/90">
+    <div class="grid grid-cols-[2fr_1fr] py-60">
+      <div class="my-auto">
+        <h2 class="text-6xl font-heading">From the HOD's Desk</h2>
+        <p class="text-3xl mt-8 w-[80%]">
+          It gives me an immense pleasure to lead the department of Information
+          Technology. The motto of our department is to provide quality
+          technical education to students, which will lead them sustain peaks in
+          the field of technology. Department of Information Technology has labs
+          equipped with high configuration machines and latest software’s
+          required for teaching/learning process and research. The department
+          leads to empower students with quality education in the wide areas of
+          information technology. The department is loaded with competent
+          faculty to teach advanced topics of Software Engineering, Cloud
+          computing, Cyber security, Artificial Intelligence and so on. The
+          faculty is actively engaged in research and publications as well. Thus
+          we are confident enough that our Engineers will emerge as assets not
+          only to this institution and to the organization, but also to the
+          country at an extent. Along with academic knowledge we also train our
+          Engineers to face the challenges in life by providing many value added
+          courses to enhance their career prospects. The excellent
+          infrastructure, teaching faculty of the best kind ensuring quality
+          education such as interaction among students, parents and staff, along
+          with the Training & Placement Cell ensuring a bright future to our
+          students.
+        </p>
+      </div>
+      <Image class="rounded-lg my-auto" src={hodImage} alt="IT HOD Image" />
+    </div>
+
+    <div class="dept-vision-mission py-32">
+      <h2 class="text-6xl grid grid-cols-2">
+        <div class="vision mx-auto">
+          <h2 class="text-6xl font-heading">Our Vision</h2>
+          <p class="text-4xl w-[90%]">
+            To provide student-centered state-of-the-art academically enriched
+            environment for productive careers in the world of computing through
+            creativity and innovation
+          
+          </p>
+        </div>
+        <div class="mission mx-auto">
+          <h2 class="text-6xl mx-8 font-heading">Our Mission</h2>
+          <ul class="list-disc text-2xl px-16 w-[90%] [&_li]:my-4">
+            <li>
+              To promote aspiring ethically conscious engineers demonstrating
+              sustainable employability and entrepreneurship.
+            </li>
+            <li>
+              To impart quality education with the focus on analytical and
+              problem-solving skill development.
+            </li>
+            <li>
+              To foster inspired scholarly environment through active
+              student-faculty participation in research and development
+              resulting in new knowledge-base or insights.
+            </li>
+            <li>
+              To prepare students to shoulder social responsibilities by
+              application of their skill set for betterment of society.
+            </li>
+          </ul>
+        </div>
+      </h2>
+    </div>
+
+    <div class="dept-mission"></div>
+  </div>
+</SiteLayout>

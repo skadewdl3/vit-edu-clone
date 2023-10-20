@@ -28,9 +28,11 @@ smallNavTheme.set(Astro.props.smallNavTheme || 'light')
     data-small-nav-theme={Astro.props.smallNavTheme || 'light'}
   >
     <Navbar />
-    <main class="w-full h-screen min-h-screen">
-      <slot />
-      <Footer />
+    <main
+      class="w-full h-screen min-h-screen text-primary text-8xl px-80 py-80"
+    >
+      This page is under construction! Please check back later.
     </main>
+    <Footer />
   </body>
 </html>

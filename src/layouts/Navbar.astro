@@ -14,7 +14,7 @@ import Menu from '@components/Menu.vapor.vue'
       class="menu-bar w-full my-4 mb-40 bg-red flex items-center justify-between"
       slot="menu-bar"
     >
-      <div class="menu-bar-left flex flex-col items-start justify-center">
+      <a href="/" class="menu-bar-left flex flex-col items-start justify-center">
         <div class="menu-logo-main flex items-end justify-start">
           <div class="menu-logo-img w-28 aspect-square">
             <!-- Using Astro's built in Image component gives better optimisation for images -->
@@ -27,7 +27,7 @@ import Menu from '@components/Menu.vapor.vue'
         <div class="menu-logo font-heading text-2xl px-28">
           Institute of Technology
         </div>
-      </div>
+      </a>
       <button
         class="menu-close text-3xl flex items-center justify-end cursor-pointer text-gray-400 hover:text-white transition-colors"
       >

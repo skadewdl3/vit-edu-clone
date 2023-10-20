@@ -42,7 +42,10 @@ const setActiveIndex = (index: number) => {
         class="exceptional-faculty-section grid grid-cols-[1fr_2fr] w-[50%] mx-auto border-2 border-black/50 border-solid m-8 p-8 rounded-md"
         v-if="activeIndex == 0"
       >
-        <div class="exceptional-faculty-image rounded-full overflow-hidden">
+        <div class="exceptional-faculty-image rounded-full overflow-hidden"><div class="flex [&>span]:ml-4">
+      <Icon name="map-pin" class="w-8" />
+      <span>Google Maps</span>
+    </div>
           <slot name="faculty-image-a" />
         </div>
 
@@ -51,10 +54,7 @@ const setActiveIndex = (index: number) => {
             Prof. Dr. Premanand Ghadekar
           </div>
           <div class="exceptional-faculty-description text-2xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. In
-            laboriosam non minima, distinctio voluptatem consequatur nam esse a
-            provident dolores quam molestias sunt beatae. Architecto molestiae
-            dolorum in dolorem assumenda?
+            Head of Department - Information Technology
           </div>
         </div>
       </div>
@@ -71,13 +71,10 @@ const setActiveIndex = (index: number) => {
 
         <div class="my-auto ml-12">
           <div class="exceptional-faculty-name text-5xl mb-10">
-            Prof. Dr. Premanand Ghadekar
+            Prof. Deepali Deshpande
           </div>
           <div class="exceptional-faculty-description text-2xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. In
-            laboriosam non minima, distinctio voluptatem consequatur nam esse a
-            provident dolores quam molestias sunt beatae. Architecto molestiae
-            dolorum in dolorem assumenda?
+            Assistant Head, Academics
           </div>
         </div>
       </div>
@@ -94,13 +91,11 @@ const setActiveIndex = (index: number) => {
 
         <div class="my-auto ml-12">
           <div class="exceptional-faculty-name text-5xl mb-10">
-            Prof. Dr. Premanand Ghadekar
+            Prof. Priyadarshan Dhabe
           </div>
           <div class="exceptional-faculty-description text-2xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. In
-            laboriosam non minima, distinctio voluptatem consequatur nam esse a
-            provident dolores quam molestias sunt beatae. Architecto molestiae
-            dolorum in dolorem assumenda?
+            Professor 
+
           </div>
         </div>
       </div>

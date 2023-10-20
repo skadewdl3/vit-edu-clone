@@ -91,7 +91,6 @@ onMounted(() => {
         :class="{
         }"
         href="/"
-        target="_blank"
       >
         <div class="menu-logo-main flex items-end justify-start">
           <div
